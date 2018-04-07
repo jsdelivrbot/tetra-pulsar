@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vouchers | Pulsar Construction</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/select.bootstrap.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/dataTables.checkboxes.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/fixedColumns.dataTables.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">  
+  <!-- style -->
+  <link rel="stylesheet" href="../../dist/css/style.min.css">
+  <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
+  <style>
+    .vouchers-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+    .vouchers-modal .modal {background: transparent !important;}
+    thead {background-color: #3c8dbc; color: #fff;}
+    #vouchers {cursor: pointer;}
+  </style>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="../../index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>P</b>C</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b></b>Pulsar Construction</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Maintenance notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> Purchase order notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> Employee notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Maintenance notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-calendar text-blue"></i> Calendar notifications
+                    </a>
+                  </li>                  
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 1
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 2
+                        <small class="pull-right">40%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 3
+                        <small class="pull-right">60%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 4
+                        <small class="pull-right">80%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Mykee Caparas</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Mykee Caparas - Administrator
+                  <small>Member since Nov. 2018</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar ">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Mykee Caparas</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Administrator</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li><a href="../../index.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cogs"></i> <span>Maintenance</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
+            <li><a href="../maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
+            <li><a href="../maintenance/list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-exclamation-triangle"></i> <span>Alerts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-yellow">12</small>
+              <small class="label pull-right bg-red">15</small>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o text-red"></i> Due for Maintenance</a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-green"></i> On-going Maintenance</a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Supply Levels</a></li>
+          </ul>
+        </li>   
+        <li>
+          <a href="../calendar/calendar.html">
+            <i class="fa fa-calendar"></i> <span>Calendar</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-aqua">12</small>
+              <small class="label pull-right bg-blue">15</small>
+            </span>
+          </a>
+        </li>
+        <li class="header">TRANSACTIONS</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder-open"></i> <span>Job Orders</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../job-order/list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
+            <li><a href="../job-order/create-jo.html"><i class="fa fa-pencil"></i> Create J.O.</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
+            <li><a href="../requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-shopping-basket"></i> <span>Purchase Order</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
+            <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
+          </ul>
+        </li>
+        <li class="treeview active">
+          <a href="#">
+            <i class="fa fa-credit-card"></i> <span> Vouchers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="#"><i class="fa fa-list-ul"></i> List of Vouchers</a></li>
+            <li><a href="../voucher/create-voucher.html"><i class="fa fa-pencil"></i> Create a Voucher</a></li>
+          </ul>
+        </li>        
+        <li class="header">DATABASE</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-tags"></i> <span>Assets</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
+            <li><a href="../asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-briefcase"></i> <span>Supplies</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
+            <li><a href="#"><i class="fa fa-pencil"></i> Create Supply</a></li>
+            <li><a href="#"><i class="fa fa-plus"></i> Add Supply</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cube"></i> <span>Project Monitoring</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
+            <li><a href="../project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
+          </ul>
+        </li>
+        <li><a href="../employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
+        <li class="header">TOOLS</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Reports</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-paperclip"></i>Maintenance Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>Asset Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>Supplies Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>J.O. Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>R.S. Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>P.O. Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>Project Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>Status Reports</a></li>
+            <li><a href="#"><i class="fa fa-paperclip"></i>Other Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-wrench"></i> <span>Setup</span></a></li>
+        <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1><span class="fa fa-credit-card"> </span> List of Disbursement Vouchers</h1>
+      <ol class="breadcrumb">
+        <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
+        <li class="active">Vouchers</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-sm-12">
+      <div class="box">
+        <!-- form start -->
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <div class="col-sm-3">
+                <select class="form-control select2" style="width: 100%;" required="">
+                <option selected="selected" value="0">Select Payee Type</option>
+                <option value="1">EMPLOYEE</option>
+                <option value="2">SUPPLIER</option>
+                <option value="3">BANK</option>
+                </select>
+                </div>
+                <div class="col-sm-3"> 
+                <button type="button" class="btn btn-default" id="daterange-btn">
+                  <span><i class="fa fa-calendar"></i> Date range picker </span> <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+                <div class="col-sm-3"> 
+                <button type="button" class="btn btn-primary"><li class="fa fa-refresh"></li> Filter Display</button>
+                </div>  
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </form>
+      </div>
+    </div>
+  </div>
+      <div class="box box-primary">
+            <div class="box-body">
+              <table id="vouchers" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th></th>
+                  <th>DV No.</th>
+                  <th>Payee Type</th>
+                  <th>Payee Name</th>
+                  <th>Particulars</th>
+                  <th>Description/Remarks</th>
+                  <th>Amount</th>
+                  <th>VAT Payee</th>
+                  <th>Other Taxes</th>
+                  <th>Tax 1</th>
+                  <th>Tax 2</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td> </td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-1</b></a></td>
+                  <td>SUPPLIER</td>
+                  <td>Metal Construction &amp; Supplies</td>
+                  <td>StatementofAccountHere</td>
+                  <td>Pay for dumptruck 1 maintenance, etc.</td>
+                  <td>800,000</td>
+                  <td>Yes</td>
+                  <td>70,000</td>
+                  <td>5,000</td>
+                  <td>3,000</td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-2</b></a></td>
+                  <td>EMPLOYEE</td>
+                  <td>Michael Johnson</td>
+                  <td>Travel Voucher</td>
+                  <td>Pay for seminar trip</td>
+                  <td>10,000</td>
+                  <td>No</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-3</b></a></td>
+                  <td>BANK</td>
+                  <td>BPI</td>
+                  <td>Monthly Wage</td>
+                  <td>Employee wage payment</td>
+                  <td>1,000,000</td>
+                  <td>No</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title"><li class="fa fa-credit-card"></li> DV No: <b>03302018-1</b></h4>
+        </div>
+        <div class="modal-body">
+          <p>DV details/editing soon&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->  
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
+    <strong>Copyright &copy; <a target="_blank" href="http://bizlogiks.ph/">Bizlogiks-Business Solutions</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- Sparkline -->
+<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Confirmation -->
+<script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
+<!-- date-range-picker -->
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.buttons.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jszip.min.js"></script>
+<script src="../../bower_components/datatables.net/js/pdfmake.min.js"></script>
+<script src="../../bower_components/datatables.net/js/vfs_fonts.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.html5.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.select.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.checkboxes.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.fixedColumns.min.js"></script>
+<!-- page script -->
+<script>
+///////////// UNDER CONSTRUCTION - CHECKBOX  
+let example = $('#vouchers').DataTable({
+    columnDefs: [{
+        orderable: false,
+        className: 'select-checkbox',
+        targets: 0
+    }],
+    select: {
+        style: 'multi',
+    },
+    order: [
+        [1, 'asc']
+    ]
+});
+example.on("click", "th.select-checkbox", function() {
+    if ($("th.select-checkbox").hasClass("selected")) {
+        example.rows().deselect();
+        $("th.select-checkbox").removeClass("selected");
+    } else {
+        example.rows().select();
+        $("th.select-checkbox").addClass("selected");
+    }
+}).on("select deselect", function() {
+    ("Some selection or deselection going on")
+    if (example.rows({
+            selected: true
+        }).count() !== example.rows().count()) {
+        $("th.select-checkbox").removeClass("selected");
+    } else {
+        $("th.select-checkbox").addClass("selected");
+    }
+});
+
+///////////// UNDER CONSTRUCTION
+
+$(document).ready(function() {
+    $('#vouchers').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: true,
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'Blfrtip',
+      buttons: [
+//// FOR PRINT BUTTON
+            {
+              extend: "print",
+              pageSize: 'LEGAL',
+              exportOptions: { columns: ':visible',search: 'applied',order: 'applied',modifier: { selected: null } },
+              customize: function(win)
+              {
+                $(win.document.body)
+                  .css( 'font-size', '9pt' );
+
+                $(win.document.body).find( 'table' )
+                  .addClass( 'compact' )
+                  .css( 'font-size', '9pt' );
+                  var last = null;
+                  var current = null;
+                  var bod = [];
+   
+                  var css = '@page { size: landscape; }',
+                      head = win.document.head || win.document.getElementsByTagName('head')[0],
+                      style = win.document.createElement('style');
+   
+                  style.type = 'text/css';
+                  style.media = 'print';
+   
+                  if (style.styleSheet)
+                  {
+                    style.styleSheet.cssText = css;
+                  }
+                  else
+                  {
+                    style.appendChild(win.document.createTextNode(css));
+                  }
+                  head.appendChild(style);
+              }
+            },
+            /// FOR PRINT SELECTED BUTTON
+            {
+              extend: 'print',
+              text: 'Print selected',
+                            customize: function(win)
+              {
+                $(win.document.body)
+                  .css( 'font-size', '9pt' );
+
+                $(win.document.body).find( 'table' )
+                  .addClass( 'compact' )
+                  .css( 'font-size', '9pt' );
+                  var last = null;
+                  var current = null;
+                  var bod = [];
+   
+                  var css = '@page { size: landscape; }',
+                      head = win.document.head || win.document.getElementsByTagName('head')[0],
+                      style = win.document.createElement('style');
+   
+                  style.type = 'text/css';
+                  style.media = 'print';
+   
+                  if (style.styleSheet)
+                  {
+                    style.styleSheet.cssText = css;
+                  }
+                  else
+                  {
+                    style.appendChild(win.document.createTextNode(css));
+                  }
+                  head.appendChild(style);
+              }
+            }, 
+//// FOR PDF BUTTON https://codepen.io/RedJokingInn/pen/XMVoXL   
+            {
+              extend: 'pdfHtml5',
+              orientation: 'landscape',
+              pageSize: 'LEGAL',
+              exportOptions: { columns: ':visible',search: 'applied',order: 'applied' },
+              customize: function (doc) 
+              {
+                //Remove the title created by datatTables
+                doc.content.splice(0,1);
+                //Create a date string that we use in the footer. Format is dd-mm-yyyy
+                var now = new Date();
+                var jsDate = now.getDate()+'-'+(now.getMonth()+1)+'-'+now.getFullYear();
+
+                doc.pageMargins = [90,60,30,40];
+                doc.defaultStyle.fontSize = 9;
+                doc.styles.tableHeader.fontSize = 9;
+
+                doc['header']=(function() {
+                  return {
+                    columns: [
+                      {
+                        alignment: 'left',
+                        text: 'Pulsar Construction, Inc.',
+                        fontSize: 16,
+                        margin: [69,10]
+                      },
+                      {
+                        alignment: 'right',
+                        fontSize: 12,
+                        italics: true,
+                        text: 'List of Disbursement Vouchers',
+                        margin: [0,10]
+                      }
+                    ],
+                    margin: 20
+                  }
+                });
+                // Create a footer object with 2 columns
+                doc['footer']=(function(page, pages) {
+                  return {
+                    columns: [
+                      {
+                        alignment: 'left',
+                        text: ['Extracted on: ', { text: jsDate.toString() }],
+                        margin: [69,0,0,40]
+                      },
+                      {
+                        alignment: 'right',
+                        text: ['page ', { text: page.toString() },  ' of ', { text: pages.toString() }],
+                        margin: [0,0,10,40]
+                      }
+                    ],
+                    margin: 10
+                  }
+                });
+                // Change dataTable layout (Table styling)
+                // To use predefined layouts uncomment the line below and comment the custom lines below
+                // doc.content[0].layout = 'lightHorizontalLines'; // noBorders , headerLineOnly
+                var objLayout = {};
+                objLayout['hLineWidth'] = function(i) { return .5; };
+                objLayout['vLineWidth'] = function(i) { return .5; };
+                objLayout['hLineColor'] = function(i) { return '#aaa'; };
+                objLayout['vLineColor'] = function(i) { return '#aaa'; };
+                objLayout['paddingLeft'] = function(i) { return 4; };
+                objLayout['paddingRight'] = function(i) { return 4; };
+                doc.content[0].layout = objLayout;
+              }
+            },
+/// FOR SHOW/HIDE COLUMNS BUTTON
+            {
+              extend: 'colvis',
+              text: 'Show/Hide Columns',
+              postfixButtons: [ 'colvisRestore' ]
+            },
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+        ],
+        columnDefs: [ {visible: false} ],
+        select: true
+    } );
+} );
+
+
+$('[data-toggle=confirmation]').confirmation({
+  rootSelector: '[data-toggle=confirmation]',
+  // other options
+});
+
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+  })
+</script>
+</body>
+</html>
