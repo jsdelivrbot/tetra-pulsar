@@ -672,12 +672,12 @@
 
       <!-- MODAL CONTENTS -->
         <div class="modal fade" id="modal-default">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Edit Employee Information</h4>
+                <h4 class="modal-title">Add Employee Information</h4>
               </div>
               <div class="modal-body">
                 <!-- Custom Tabs (Pulled to the right) -->
@@ -691,7 +691,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mark as Finished</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Assign</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
                       </ul>
@@ -704,24 +704,44 @@
                         <form class="form-horizontal" id="">
                           <div class="box-body">
                             <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">Employee ID</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_id"></div>
+                              <!-- <label class="col-sm-2 control-label"></label>
+                              <div class="col-sm-9 text-blue"><h4><i class="fa fa-user-o"></i><b> Employee Info</b></h4></div> -->
                             </div>
                             <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">Last Name</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_lname"></div>
+                              <label for="controlnumber" class="col-sm-2 control-label">Employee ID</label>
+                              <div class="col-sm-6"><input type="text" class="form-control" id="emp_id"></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">First Name</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_fname"></div>
+                              <label for="controlnumber" class="col-sm-2 control-label">Last Name</label>
+                              <div class="col-sm-6"><input type="text" class="form-control" id="emp_lname"></div>
+                              <label for="controlnumber" class="col-sm-2 control-label">Suffix</label>
+                              <div class="col-sm-2"><input type="text" class="form-control" id="emp_sfx"></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">Suffix</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_sfx"></div>
+                              <label for="controlnumber" class="col-sm-2 control-label">First Name</label>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_fname"></div>
+                              <label class="col-sm-2 control-label">Birth Date</label>
+                              <div class="col-sm-4">
+                              <div class="input-group date">
+                              <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                              <input type="text" class="form-control pull-right" id="datepicker-bday">
+                            </div></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label class="col-sm-3 control-label">Job Title</label>
-                              <div class="col-sm-9">
+                              <label for="controlnumber" class="col-sm-2 control-label">Email Account</label>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_email"></div>
+                              <label for="controlnumber" class="col-sm-2 control-label">Phone No.</label>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_phone"></div>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                              <!-- <label class="col-sm-2 control-label"></label>
+                              <div class="col-sm-10 text-blue"><h4><i class="fa fa-clone"></i><b> Assignment</b></h4></div> -->
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Job Title</label>
+                              <div class="col-sm-10">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="0">- - select job title - -</option>
                               <option value="1">OFFICE CLERK</option>
@@ -730,24 +750,8 @@
                               </select></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label class="col-sm-3 control-label">Birth Date</label>
-                              <div class="col-sm-9">
-                              <div class="input-group date">
-                              <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                              <input type="text" class="form-control pull-right" id="datepicker-bday">
-                            </div></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">Email Account</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_sfx"></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-3 control-label">Phone No.</label>
-                              <div class="col-sm-9"><input type="text" class="form-control" id="emp_sfx"></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-3 control-label">Department</label>
-                              <div class="col-sm-9">
+                              <label class="col-sm-2 control-label">Department</label>
+                              <div class="col-sm-10">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="0">- - select department - -</option>
                               <option value="1">PULSAR CONSTRUCTION</option>
@@ -756,8 +760,8 @@
                               </select></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label class="col-sm-3 control-label">Division</label>
-                              <div class="col-sm-9">
+                              <label class="col-sm-2 control-label">Division</label>
+                              <div class="col-sm-4">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="0">- - select division - -</option>
                               <option value="1">CONSTRUCTION</option>
@@ -765,16 +769,61 @@
                               <option value="3">ACCOUNTING</option>
                               <option value="3">ENGINEERING</option>
                               </select></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-3 control-label">Unit</label>
-                              <div class="col-sm-9">
+                              <label class="col-sm-2 control-label">Unit</label>
+                              <div class="col-sm-4">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="0">- - select unit - -</option>
                               <option value="1">MAINTENANCE</option>
                               <option value="2">UNIT 2</option>
                               <option value="3">UNIT 3</option>
                               </select></div>
+                            </div>
+                            <br>
+                            
+                            <div class="form-group col-sm-12">
+                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                              <!-- <label class="col-sm-2 control-label"></label>
+                              <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
+                            </div>
+                            <div class="form-group col-sm-12">
+                            <label class="col-sm-2 control-label">Province</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Cagayan</option>
+                              <option value="2">Isabela</option>
+                              <option value="3">Vizcaya</option>
+                              <option value="4">Batanes</option>
+                              <option value="5">Quirino</option>
+                              </select>
+                              </div>
+                            <label class="col-sm-2 control-label">Municipality</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Tuguegarao City</option>
+                              <option value="2">Iguig</option>
+                              <option value="3">Solana</option>
+                              <option value="4">Enrile</option>
+                              <option value="5">Peñablanca</option>
+                              <option value="6">Gonzaga</option>
+                              <option value="7">Sta. Ana</option>
+                              </select>
+                              </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                              <div class="col-sm-2"><input type="text" class="form-control" id="emp_barangay" placeholder="" disabled required=""></div>
+                            <label class="col-sm-2 control-label">Barangay</label>
+                              <div class="col-sm-6">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Ugac Norte</option>
+                              <option value="2">Caritan</option>
+                              <option value="3">Pallua</option>
+                              </select>
+                              </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
+                              <div class="col-sm-10"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
                             </div>
                           </div>
                           <!-- /.box-body -->
@@ -796,11 +845,12 @@
                   </div>
                   <!-- /.tab-content -->
                 </div>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Confirmation</button>
+                <button type="button" class="btn btn-info pull-right" style="margin-right: 7px;"><li class="fa fa-print"></li> Print</button>
                 <!-- nav-tabs-custom -->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
             <!-- /.modal-content -->
