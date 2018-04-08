@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Create Receipt | Pulsar Construction</title>
+  <title>Requisition | Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -15,21 +15,11 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="../../bower_components/datatables.net/css/buttons.dataTables.min.css">
-  <!-- daterange picker -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
-  <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-  <!-- Bootstrap time Picker -->
-  <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
-  <!-- Select2 -->
-  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">  
   <!-- style -->
   <link rel="stylesheet" href="../../dist/css/style.min.css">
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
   <style>
     .example-modal .modal {
       position: relative;
@@ -38,11 +28,9 @@
       right: auto;
       left: auto;
       display: block;
-      z-index: 1;
-    }
-    .example-modal .modal {
-      background: transparent !important;
-    }
+      z-index: 1;}
+    .example-modal .modal {background: transparent !important;}
+    thead {background-color: #e1e1e1;}
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +43,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini" ng-app="myapp" ng-controller="ListController">
 <div class="wrapper">
 
   <header class="main-header">
@@ -258,8 +246,9 @@
       <!-- /.search form -->
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
+        
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="#"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li><a href="../../index.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cogs"></i> <span>Maintenance</span>
@@ -268,9 +257,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="pages/maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="pages/maintenance/list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
+            <li><a href="list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
+            <li><a href="list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -289,7 +278,7 @@
           </ul>
         </li>   
         <li>
-          <a href="pages/calendar/calendar.html">
+          <a href="#">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-aqua">12</small>
@@ -297,29 +286,28 @@
             </span>
           </a>
         </li>
-        <li class="header">TRANSACTIONS</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder-open"></i> <span>Job Orders</span>
+            <i class="fa fa-tags"></i> <span>Job Orders</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/job-order/list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
-            <li><a href="pages/job-order/create-jo.html"><i class="fa fa-pencil"></i> Create J.O.</a></li>
+            <li><a href="#"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
+            <li><a href="#"><i class="fa fa-pencil"></i> Create J.O.</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
-            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
+            <i class="fa fa-file-text"></i> <span>Requesition/Issue Slip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
+            <li class="active"><a href="#"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
+            <li><a href="create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -333,18 +321,6 @@
             <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
             <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
           </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-credit-card"></i> <span> Vouchers</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-list-ul"></i> List of Vouchers</a></li>
-            <li><a href="pages/voucher/create-voucher.html"><i class="fa fa-pencil"></i> Create a Voucher</a></li>
-          </ul>
         </li>        
         <li class="header">DATABASE</li>
         <li class="treeview">
@@ -355,8 +331,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="pages/asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
+            <li><a href="#"><i class="fa fa-list-ul"></i> List of Assets</a></li>
+            <li><a href="add-asset.html"><i class="fa fa-plus"></i> Add an Asset</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -372,18 +348,6 @@
             <li><a href="#"><i class="fa fa-plus"></i> Add Supply</a></li>
           </ul>
         </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-file"></i> <span>Receipts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
-            <li class="active"><a href="#"><i class="fa fa-pencil"></i> Create Receipt</a></li>
-          </ul>
-        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cube"></i> <span>Project Monitoring</span>
@@ -392,8 +356,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
-            <li><a href="pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
+            <li><a href="../../pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
+            <li><a href="../../pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
           </ul>
         </li>
         <li><a href="pages/employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
@@ -418,25 +382,6 @@
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-wrench"></i> <span>Setup</span></a></li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cloud"></i> <span>Advanced</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-chevron-right"></i>Bank</a></li>
-            <li><a href="#"><i class="fa fa-chevron-right"></i>Insurance</a></li>
-            <li><a href="#"><i class="fa fa-chevron-right"></i>Funding</a></li>
-            <li><a href="#"><i class="fa fa-chevron-right"></i>Users</a></li>
-            <li><a href="#"><i class="fa fa-chevron-right"></i>User's Group</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-image"></i> <span>Image Gallery</span></a></li>
-        <li><a href="#"><i class="fa fa-inbox"></i> <span>Documents Gallery</span></a></li>
-        <li><a href="#"><i class="fa fa-check-square"></i> <span>Audit</span></a></li>
-        <li><a href="#"><i class="fa fa-tags"></i> <span>Asset Tags</span></a></li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
       </ul>
     </section>
@@ -447,7 +392,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><span class="fa fa-file-o"> </span> Receipts</h1>
+      <h1><span class="fa fa-file-o"> </span> List of Receipts</h1>
       <ol class="breadcrumb">
         <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li class="active">Receipts</li>
@@ -456,85 +401,168 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <!-- left column -->
-        <div class="col-md-9">
-          <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Create a new receipt</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal" id="">
-              <div class="box-body">
-                <div class="form-group col-sm-12">
-                  <label for="controlnumber" class="col-sm-2 control-label">Control No. </label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="rcpt-controlnumber" placeholder="RCPT-03242018-1" disabled></div>
-                </div>
-                <div class="form-group col-sm-12">
-                  <label for="controlnumber" class="col-sm-2 control-label">Purchase Order* </label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="rcpt-ponumber" placeholder="PO-03102018-1--- autocomplete"></div>
-                </div>
-
-                <div class="form-group col-sm-12">
-                  <label class="col-sm-2 control-label">Receipt Type*</label>
-                  <div class="col-sm-4">
-                  <select class="form-control select2" required="">
-                  <option selected="selected" value="0">- - select type - -</option>
-                  <option value="1">Delivery Receipt (DR)</option>
-                  <option value="2">Official Receipt (OR)</option>
-                  <option value="2">Return Receipt (RR)</option>
-                  <option value="2">Purchase Order (PO)</option>
-                  </select>
-                  </div>
-                </div>
-                <div class="form-group col-sm-12">
-                  <label for="platenumber" class="col-sm-2 control-label">Receipt No.*</label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="reoderlevel" required=""></div>
-                  <label class="col-sm-2 control-label">Receipt Date</label>
-                  <div class="col-sm-4">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="rcpt-date" required="">
-                </div>
-                </div></div>
-                <div class="form-group col-sm-12">
-                  <label for="rcpt-amount" class="col-sm-2 control-label">Amount*</label>
-                  <div class="col-sm-4">
-                  <div class="input-group date">
-                  <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="text" class="form-control" id="rcpt-amount" placeholder="" required="">
-                </div></div>
-                </div>
-                <div class="form-group col-sm-12">
-                  <label for="controlnumber" class="col-sm-2 control-label">Supplier Name* </label>
-                  <div class="col-sm-10"><input type="text" class="form-control" id="rcpt-supplier" placeholder="ERIK CEMENT--- autocomplete" required=""></div>
-                </div>
-                <div class="form-group col-sm-12">
-                  <label for="controlnumber" class="col-sm-2 control-label">Supplier ID* </label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="rcpt-supplierid" placeholder="SUP-12345--- autocomplete" required=""></div>
-                </div>
+      <div class="box">
+            <div class="box-body">
+              <table id="tbl_rs" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>Control No.</th>
+                  <th>Purchase Order</th>
+                  <th>Receipt Type</th>
+                  <th>Receipt No.</th>
+                  <th>Amount</th>
+                  <th>Supplier</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>RCPT-04082018-1</b></a></td>
+                  <td>123456</td>
+                  <td>Official Receipt</td>
+                  <td>456789</td>
+                  <td>500000</td>
+                  <td>Octagon Computers</td>
+                </tr> 
+                </tbody>
+              </table>
             </div>
             <!-- /.box-body -->
-              <div class="box-footer">
-                <div class="form-group col-sm-12">           
-                  <div class="col-sm-8"></div>
-                  <div class="col-sm-4">
-                  <button class="btn btn-large btn-primary btn-block" data-toggle="confirmation"
-                  data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-                  data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-                  data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
-                  </button></div></div>
-              </div>
-            </form>
-          </div>
-          <!-- /.box -->
-        </div>
-        <!--/.col (left) -->
       </div>
-      <!-- /.row -->
-</section>
+      <!-- MODAL POPUP -->
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog modal-lg" style="width: 1200px;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><li class="fa fa-file-o"></li> Receipt Control No: <b>RCPT-04082018-1</b></h4>
+              </div>
+              <div class="modal-body">
+                <p>Add supply items under a receipt number.</p>
+                <!-- Custom Tabs (Pulled to the right) -->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <form ng-submit="addNew()">
+                                <div class="form-group col-md-12 pull-left">
+                                <label for="controlnumber" class="col-sm-4 control-label"> </label>
+                                <div class="col-sm-8"><input type="text" class="form-control" id="rcpt-supplier" required="" placeholder="Please provide Supplier Name and ID"></div>
+                                </div>
+                                <table class="table table-striped table-bordered" class="tbl_rs_supply">
+                                  <thead>
+                                    <tr>
+                                      <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th> 
+                                      <th>Supply Name</th>
+                                      <th width="25%">Description</th>
+                                      <th width="9%">Supply(Qty)</th>
+                                      <th width="9%">Stock Unit</th>
+                                      <th width="11%">Re-order Level</th>
+                                      <th width="11%">Total</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="personalDetail in personalDetails">
+                                      <td><input type="checkbox" ng-model="personalDetail.selected"/></td> 
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_name" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_desc" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_qty" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_unit" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_reorderlvl" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_total" required/></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                  <div class="form-group">
+                                    <input type="button" class="btn btn-info pull-right" value="Submit Form" style="margin-right: 10px;">                                     
+                                    
+                                    <button ng-hide="!personalDetails.length" type="button" class="btn btn-danger pull-left fa fa-trash-o" ng-click="remove()"></button>
+                                    <button type="submit" class="pull-left btn btn-primary fa fa-plus addnew"></button>
+                                </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <form>
+                                <table class="table table-bordered" class="tbl_list_rcpt">
+                                  <thead>
+                                    <tr>
+                                      <th>Supply Name</th>
+                                      <th width="25%">Description</th>
+                                      <th width="9%">Supply(Qty)</th>
+                                      <th width="9%">Stock Unit</th>
+                                      <th width="11%">Re-order Level</th>
+                                      <th width="7%">Total</th>
+                                      <th width="11%">Options</th>
+                                    </tr> 
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Tires for Dump Truck 3.5in</td>
+                                      <td>Piece</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>3</td>
+                                      <td>100,000</td>
+                                      <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
+                                          <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Tires for Dump Truck 3.5in</td>
+                                      <td>Piece</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>3</td>
+                                      <td>100,000</td>
+                                      <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
+                                          <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Tires for Dump Truck 3.5in</td>
+                                      <td>Piece</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>3</td>
+                                      <td>300,000</td>
+                                      <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
+                                          <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
+                                    </tr>
+                                    <tr>
+                                      
+                                      <td colspan="5" align="right"><b>GRAND TOTAL</b></td>
+                                      <td colspan="2"><b>₱500,000.00</b></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+    </section>
   </div>
   <!-- /.content-wrapper -->
 
@@ -550,8 +578,6 @@
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Confirmation -->
-<script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 <!-- FastClick -->
 <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- App -->
@@ -560,171 +586,88 @@
 <script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- SlimScroll -->
 <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.buttons.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jszip.min.js"></script>
+<script src="../../bower_components/datatables.net/js/pdfmake.min.js"></script>
+<script src="../../bower_components/datatables.net/js/vfs_fonts.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.html5.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
 <!-- Select2 -->
 <script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
-<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-<!-- date-range-picker -->
-<script src="../../bower_components/moment/min/moment.min.js"></script>
-<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
-<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- bootstrap color picker -->
-<script src="../../bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
-<!-- page script -->
+<!-- ANGULAR 1.2.1 -->
+<script src="../../bower_components/angular-1.2.1/angular.js"></script>
 <script>
-$('[data-toggle=confirmation]').confirmation({
-  rootSelector: '[data-toggle=confirmation]',
-  // other options
-});
+// FOR ALL DATATABLES.
+$(document).ready(function() {
+    $('#tbl_rs').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: true,
+      "scrollY": 200,
+        "scrollX": true,
+        dom: 'Bfrtilp',
+        buttons: [
+            'colvis',
+            'copyHtml5'
+        ]
+    } );
+} );
 
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    //Money Euro
-    $('[data-mask]').inputmask()
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
-    //Date picker
-    $('#rcpt-date').datepicker({
-      autoclose: true
-    })
-
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass   : 'iradio_minimal-blue'
-    })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
-  })
-</script><script>
-$('[data-toggle=confirmation]').confirmation({
-  rootSelector: '[data-toggle=confirmation]',
-  // other options
-});
-
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    //Money Euro
-    $('[data-mask]').inputmask()
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    })
-    $('#datepicker2').datepicker({
-      autoclose: true
-    })
-    $('#datepicker3').datepicker({
-      autoclose: true
-    })
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass   : 'iradio_minimal-blue'
-    })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
-  })
+$(function () {
+//Initialize Select2 Elements
+$('.select2').select2() });
 </script>
+
+<script type="text/javascript">
+  var app = angular.module("myapp", []);
+app.controller("ListController", ['$scope', function($scope) {
+    $scope.personalDetails = [
+        {
+            'supply_name':'Tires with specs',
+            'supply_desc':'Description of tires bought',
+            'supply_qty':'Box',
+            'supply_unit':'14',
+            'supply_reorderlvl':'4',
+            'supply_total':'20000'
+        }];
+    
+        $scope.addNew = function(personalDetail){
+            $scope.personalDetails.push({ 
+            'supply_name':"",
+            'supply_desc':"",
+            'supply_qty':"",
+            'supply_unit':"",
+            'supply_reorderlvl':"",
+            'total':""
+            });
+        };
+    
+        $scope.remove = function(){
+            var newDataList=[];
+            $scope.selectedAll = false;
+            angular.forEach($scope.personalDetails, function(selected){
+                if(!selected.selected){
+                    newDataList.push(selected);
+                }
+            }); 
+            $scope.personalDetails = newDataList;
+        };
+    
+    $scope.checkAll = function () {
+        if (!$scope.selectedAll) {
+            $scope.selectedAll = true;
+        } else {
+            $scope.selectedAll = false;
+        }
+        angular.forEach($scope.personalDetails, function(personalDetail) {
+            personalDetail.selected = $scope.selectedAll;
+        });
+    };    
+}]);
+</script> 
 </body>
 </html>
