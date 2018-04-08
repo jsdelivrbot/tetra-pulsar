@@ -18,6 +18,8 @@
   <!-- style -->
   <link rel="stylesheet" href="../../dist/css/style.min.css">
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
   <style>
     .example-modal .modal {
       position: relative;
@@ -41,7 +43,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue fixed sidebar-mini" onload="createTable()">
+<body class="hold-transition skin-blue fixed sidebar-mini" ng-app="myapp" ng-controller="ListController">
 <div class="wrapper">
 
   <header class="main-header">
@@ -401,7 +403,7 @@
     <section class="content">
       <div class="box">
             <div class="box-body">
-              <table id="equipments" class="table table-bordered table-hover">
+              <table id="tbl_rs" class="table table-bordered table-hover" width="100%">
                 <thead>
                 <tr>
                   <th>Control No.</th>
@@ -447,7 +449,7 @@
       </div>
       <!-- MODAL POPUP -->
         <div class="modal fade" id="modal-default">
-          <div class="modal-dialog modal-lg">
+          <div class="modal-dialog modal-lg" style="width: 1000px;">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -455,6 +457,7 @@
                 <h4 class="modal-title">Requisition Control No: <b>RS-03102018-1</b></h4>
               </div>
               <div class="modal-body">
+                <p>Add requested supply items to specific Requisition Slip</p>
                 <!-- Custom Tabs (Pulled to the right) -->
                 <div class="nav-tabs-custom">
                   <ul class="nav nav-tabs pull-right">
@@ -472,14 +475,78 @@
                   </ul>
                   <div class="tab-content">
                     <div class="tab-pane active" id="tab_1-1">
-
-                      <div class="col-xs-5">
-                        <p> <input type="button" id="addRow" value="Add New Row" onclick="addRow()" /> </p>
-                        <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
-                        <div id="cont"></div>
-                        <p> <input type="button" id="bt" value="Sumbit Data" onclick="sumbit()" /> </p>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <form ng-submit="addNew()">
+                                <table class="table table-striped table-bordered" class="tbl_rs_supply">
+                                  <thead>
+                                    <tr>
+                                      <!-- <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th> -->
+                                      <th>Supply Name</th>
+                                      <th width="15%">Supply Unit</th>
+                                      <th width="9%">Request(Qty)</th>
+                                      <th width="9%">Stock(Qty)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="personalDetail in personalDetails">
+                                      <!-- <td><input type="checkbox" ng-model="personalDetail.selected"/></td> -->
+                                      <td><select class="form-control select2" ng-model="personalDetail.suply_name" style="width:100%;" required/>
+                                        <option selected="selected">Select Suply</option>
+                                        <option>Dump Truck tires 3.0</option>
+                                        <option>Tire Interior</option>
+                                        </select></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.suply_unit" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.request_qty" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.suply_qty" disabled="" /></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary addnew pull-right" value="Add New" style="margin-right: 10px;">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                                        
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <form ng-submit="addNew()">
+                                <table class="table table-striped table-bordered" class="tbl_rs_supply">
+                                  <thead>
+                                    <tr>
+                                      <!-- <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th> -->
+                                      <th>Supply Name</th>
+                                      <th width="15%">Supply Unit</th>
+                                      <th width="9%">Request(Qty)</th>
+                                      <th width="9%">Stock(Qty)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="personalDetail in personalDetails">
+                                      <!-- <td><input type="checkbox" ng-model="personalDetail.selected"/></td> -->
+                                      <td></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.suply_unit" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.request_qty" required/></td>
+                                      <td><input type="text" class="form-control" ng-model="personalDetail.suply_qty" disabled="" /></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary addnew pull-right" value="Add New" style="margin-right: 10px;">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+         
                     </div>
                     <!-- /.tab-pane -->
                   </div>
@@ -534,107 +601,78 @@
 <script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
 <script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
 <script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- ANGULAR 1.2.1 -->
+<script src="../../bower_components/angular-1.2.1/angular.js"></script>
 <script>
 // FOR ALL DATATABLES.
 $(document).ready(function() {
-    $('#equipments').DataTable( {
+    $('#tbl_rs').DataTable( {
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
       colReorder: true,
       "scrollY": 200,
         "scrollX": true,
-        dom: 'Blfrtip',
+        dom: 'Bfrtilp',
         buttons: [
             'colvis',
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5',
-            'print'
+            'copyHtml5'
         ]
     } );
 } );
 
-// ARRAY FOR HEADER.
-    var arrHead = new Array();
-    arrHead = ['', 'No.', 'Supply Name','Supply Unit', 'Stock(Qty)', 'Request(Qty)', 'Supply Category'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
-
-    // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
-    // ADD THE TABLE TO YOUR WEB PAGE.
-    function createTable() {
-        var RSTable = document.createElement('table');
-        RSTable.setAttribute('id', 'RSTable');            // SET THE TABLE ID.
-
-        var tr = RSTable.insertRow(-1);
-
-        for (var h = 0; h < arrHead.length; h++) {
-            var th = document.createElement('th');          // TABLE HEADER.
-            th.innerHTML = arrHead[h];
-            tr.appendChild(th);
-        }
-
-        var div = document.getElementById('cont');
-        div.appendChild(RSTable);    // ADD THE TABLE TO YOUR WEB PAGE.
-    }
-
-    // ADD A NEW ROW TO THE TABLE.s
-    function addRow() {
-        var empTab = document.getElementById('RSTable');
-
-        var rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
-        var tr = empTab.insertRow(rowCnt);      // TABLE ROW.
-        tr = empTab.insertRow(rowCnt);
-
-        for (var c = 0; c < arrHead.length; c++) {
-            var td = document.createElement('td');          // TABLE DEFINITION.
-            td = tr.insertCell(c);
-
-            if (c == 0) {           // FIRST COLUMN.
-                // ADD A BUTTON.
-                var button = document.createElement('input');
-
-                // SET INPUT ATTRIBUTE.
-                button.setAttribute('type', 'button');
-                button.setAttribute('value', 'Remove');
-
-                // ADD THE BUTTON's 'onclick' EVENT.
-                button.setAttribute('onclick', 'removeRow(this)');
-
-                td.appendChild(button);
-            }
-            else {
-                // CREATE AND ADD TEXTBOX IN EACH CELL.
-                var ele = document.createElement('input');
-                ele.setAttribute('type', 'text');
-                ele.setAttribute('value', '');
-
-                td.appendChild(ele);
-            }
-        }
-    }
-
-    // DELETE TABLE ROW.
-    function removeRow(oButton) {
-        var empTab = document.getElementById('RSTable');
-        empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
-    }
-
-    // EXTRACT AND SUBMIT TABLE DATA.
-    function sumbit() {
-        var myTab = document.getElementById('RSTable');
-        var values = new Array();
-
-        // LOOP THROUGH EACH ROW OF THE TABLE.
-        for (row = 1; row < myTab.rows.length - 1; row++) {
-            for (c = 0; c < myTab.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
-
-                var element = myTab.rows.item(row).cells[c];
-                if (element.childNodes[0].getAttribute('type') == 'text') {
-                    values.push("'" + element.childNodes[0].value + "'");
-                }
-            }
-        }
-        console.log(values);
-    }
+$(function () {
+//Initialize Select2 Elements
+$('.select2').select2() });
 </script>
+
+<!-- <script type="text/javascript">
+  var app = angular.module("myapp", []);
+app.controller("ListController", ['$scope', function($scope) {
+    $scope.personalDetails = [
+        {
+            'suply_no':'1',
+            'suply_category':'',
+            'suply_name':'',
+            'suply_unit':'Piece',
+            'suply_qty':'3',
+            'request_qty':'2'
+        }];
+    
+        $scope.addNew = function(personalDetail){
+            $scope.personalDetails.push({ 
+            'suply_no':"",
+            'suply_category':"",
+            'suply_name':"",
+            'suply_unit':"",
+            'suply_qty':"",
+            'request_qty':""
+
+            });
+        };
+    
+        $scope.remove = function(){
+            var newDataList=[];
+            $scope.selectedAll = false;
+            angular.forEach($scope.personalDetails, function(selected){
+                if(!selected.selected){
+                    newDataList.push(selected);
+                }
+            }); 
+            $scope.personalDetails = newDataList;
+        };
+    
+    $scope.checkAll = function () {
+        if (!$scope.selectedAll) {
+            $scope.selectedAll = true;
+        } else {
+            $scope.selectedAll = false;
+        }
+        angular.forEach($scope.personalDetails, function(personalDetail) {
+            personalDetail.selected = $scope.selectedAll;
+        });
+    };    
+}]);
+</script> -->
 </body>
 </html>

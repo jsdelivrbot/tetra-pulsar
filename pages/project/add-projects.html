@@ -414,7 +414,7 @@
     <section class="content">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-8">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -424,25 +424,37 @@
             <!-- form start -->
             <form class="form-horizontal">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="controlnumber" class="col-sm-3 control-label">Control Number</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="controlnumber" placeholder="PROJ-01012017-5310001" disabled></div>
+                <div class="form-group col-sm-12"">
+                  <label for="controlnumber" class="col-sm-2 control-label">Control Number</label>
+                  <div class="col-sm-6"><input type="text" class="form-control" id="controlnumber" placeholder="PROJ-01012017-5310001" disabled></div>
                 </div>
-                <div class="form-group">
-                  <label for="projectid" class="col-sm-3 control-label">Project ID*</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="projectid" placeholder="" required=""></div>
+                <div class="form-group col-sm-12"">
+                  <label for="projectid" class="col-sm-2 control-label">Project ID</label>
+                  <div class="col-sm-6"><input type="text" class="form-control" id="projectid" placeholder="" required=""></div>
                 </div>
-                <div class="form-group">
-                  <label for="projectname" class="col-sm-3 control-label">Project Name*</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="projectname" placeholder="" required=""></div>
+                <div class="form-group col-sm-12"">
+                  <label for="projectname" class="col-sm-2 control-label">Project Name</label>
+                  <div class="col-sm-10"><input type="text" class="form-control" id="projectname" placeholder="" required=""></div>
                 </div>
-                <div class="form-group">
-                  <label for="projectcost" class="col-sm-3 control-label">Project Cost</label>
-                  <div class="col-sm-9"><input type="number" class="form-control" id="projectcost" placeholder="" required=""></div>
+                <div class="form-group col-sm-12"">
+                  <label for="projectcost" class="col-sm-2 control-label">Project Cost</label>
+                  <div class="col-sm-6"><input type="number" class="form-control" id="projectcost" placeholder="" required=""></div>
                 </div>
-                <div class="form-group">
-                <label class="col-sm-3 control-label">Province*</label>
-                  <div class="col-sm-9">
+
+                <div class="form-group col-sm-12">
+                  <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                </div>
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Region</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Region II</option>
+                  <option value="2">Region I</option>
+                  <option value="3">Region III</option>
+                  </select>
+                  </div>
+                  <label class="col-sm-2 control-label">Province</label>
+                  <div class="col-sm-4">
                   <select class="form-control select2" style="width: 100%;" required="">
                   <option selected="selected" value="1">Cagayan</option>
                   <option value="2">Isabela</option>
@@ -452,9 +464,9 @@
                   </select>
                   </div>
                 </div>
-                <div class="form-group">
-                <label class="col-sm-3 control-label">Municipality*</label>
-                  <div class="col-sm-9">
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Municipality</label>
+                  <div class="col-sm-6">
                   <select class="form-control select2" style="width: 100%;" required="">
                   <option selected="selected" value="1">Tuguegarao City</option>
                   <option value="2">Iguig</option>
@@ -465,60 +477,64 @@
                   <option value="7">Sta. Ana</option>
                   </select>
                   </div>
+                  <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                  <div class="col-sm-2"><input type="text" class="form-control" id="emp_barangay" placeholder="" disabled required=""></div>
                 </div>
-                <div class="form-group">
-                  <label for="zipcode" class="col-sm-3 control-label">Zip Code</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="zipcode" placeholder="" disabled></div>
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Barangay</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Ugac Norte</option>
+                  <option value="2">Caritan</option>
+                  <option value="3">Pallua</option>
+                  </select>
+                  </div>
+                  <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
                 </div>
-                <div class="form-group">
-                  <label for="zipcode" class="col-sm-3 control-label">Barangay</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="zipcode" placeholder=""></div>
+                <div class="form-group col-sm-12">
+                  <hr style="border-color:#e1e1e1;border-width:1px 0;">
                 </div>
-                <div class="form-group">
-                  <label for="zipcode" class="col-sm-3 control-label">Street/Bldg/Unit</label>
-                  <div class="col-sm-9"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">Target Date*</label>
-                  <div class="col-sm-9">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
-                </div></div>
-              </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">Date Started*</label>
-                  <div class="col-sm-9">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="datepicker2">
-                </div></div>
-              </div>
-              <div class="form-group">
-                  <label class="col-sm-3 control-label">Date Completed*</label>
-                  <div class="col-sm-9">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="datepicker3">
-                </div></div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Project Engineer*</label>
-                <div class="col-sm-9">
+                <div class="form-group col-sm-12">
+                <label class="col-sm-2 control-label">Project Engineer</label>
+                <div class="col-sm-4">
                 <select class="form-control select2" style="width: 100%;">
                   <option selected="selected">Jay Bulan</option>
                   <option>Mykee Caparas</option>
                   <option>Erick Supnet</option>
                 </select>
-              </div></div>
-              <div class="form-group">
-                  <label class="col-sm-3 control-label">Date Assigned</label>
-                  <div class="col-sm-9">
+              </div>
+                  <label class="col-sm-2 control-label">Date Assigned</label>
+                  <div class="col-sm-4">
                   <div class="input-group date">
                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                   <input type="text" class="form-control pull-right" id="datepicker4">
                 </div></div>
               </div>
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Target Date</label>
+                  <div class="col-sm-4">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="datepicker">
+                </div></div>
+                  <label class="col-sm-2 control-label">Date Started</label>
+                  <div class="col-sm-4">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="datepicker2">
+                </div></div>
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Date Completed</label>
+                  <div class="col-sm-4">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="datepicker3">
+                </div></div>
+              </div>
+              
+              
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

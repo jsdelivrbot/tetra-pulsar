@@ -691,7 +691,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Assign</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Assign Asset</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
                       </ul>
@@ -786,7 +786,15 @@
                               <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
                             </div>
                             <div class="form-group col-sm-12">
-                            <label class="col-sm-2 control-label">Province</label>
+                              <label class="col-sm-2 control-label">Region</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Region II</option>
+                              <option value="2">Region I</option>
+                              <option value="3">Region III</option>
+                              </select>
+                              </div>
+                              <label class="col-sm-2 control-label">Province</label>
                               <div class="col-sm-4">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="1">Cagayan</option>
@@ -796,8 +804,11 @@
                               <option value="5">Quirino</option>
                               </select>
                               </div>
-                            <label class="col-sm-2 control-label">Municipality</label>
-                              <div class="col-sm-4">
+                            
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Municipality</label>
+                              <div class="col-sm-6">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="1">Tuguegarao City</option>
                               <option value="2">Iguig</option>
@@ -808,22 +819,20 @@
                               <option value="7">Sta. Ana</option>
                               </select>
                               </div>
-                            </div>
-                            <div class="form-group col-sm-12">
                               <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
                               <div class="col-sm-2"><input type="text" class="form-control" id="emp_barangay" placeholder="" disabled required=""></div>
-                            <label class="col-sm-2 control-label">Barangay</label>
-                              <div class="col-sm-6">
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Barangay</label>
+                              <div class="col-sm-4">
                               <select class="form-control select2" style="width: 100%;" required="">
                               <option selected="selected" value="1">Ugac Norte</option>
                               <option value="2">Caritan</option>
                               <option value="3">Pallua</option>
                               </select>
                               </div>
-                            </div>
-                            <div class="form-group col-sm-12">
                               <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
-                              <div class="col-sm-10"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
                             </div>
                           </div>
                           <!-- /.box-body -->
