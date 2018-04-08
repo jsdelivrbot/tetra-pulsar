@@ -445,10 +445,6 @@
                           <div class="panel panel-default">
                             <div class="panel-body">
                               <form ng-submit="addNew()">
-                                <div class="form-group col-md-12 pull-left">
-                                <label for="controlnumber" class="col-sm-4 control-label"> </label>
-                                <div class="col-sm-8"><input type="text" class="form-control" id="rcpt-supplier" required="" placeholder="Please provide Supplier Name and ID"></div>
-                                </div>
                                 <table class="table table-striped table-bordered" class="tbl_rs_supply">
                                   <thead>
                                     <tr>
@@ -457,7 +453,6 @@
                                       <th width="25%">Description</th>
                                       <th width="9%">Supply(Qty)</th>
                                       <th width="9%">Stock Unit</th>
-                                      <th width="11%">Re-order Level</th>
                                       <th width="11%">Total</th>
                                     </tr>
                                   </thead>
@@ -468,7 +463,6 @@
                                       <td><input type="text" class="form-control" ng-model="personalDetail.supply_desc" required/></td>
                                       <td><input type="text" class="form-control" ng-model="personalDetail.supply_qty" required/></td>
                                       <td><input type="text" class="form-control" ng-model="personalDetail.supply_unit" required/></td>
-                                      <td><input type="text" class="form-control" ng-model="personalDetail.supply_reorderlvl" required/></td>
                                       <td><input type="text" class="form-control" ng-model="personalDetail.supply_total" required/></td>
                                     </tr>
                                   </tbody>
@@ -499,7 +493,6 @@
                                       <th width="25%">Description</th>
                                       <th width="9%">Supply(Qty)</th>
                                       <th width="9%">Stock Unit</th>
-                                      <th width="11%">Re-order Level</th>
                                       <th width="7%">Total</th>
                                       <th width="11%">Options</th>
                                     </tr> 
@@ -510,7 +503,6 @@
                                       <td>Piece</td>
                                       <td>2</td>
                                       <td>4</td>
-                                      <td>3</td>
                                       <td>100,000</td>
                                       <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
                                           <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
@@ -520,7 +512,6 @@
                                       <td>Piece</td>
                                       <td>2</td>
                                       <td>4</td>
-                                      <td>3</td>
                                       <td>100,000</td>
                                       <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
                                           <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
@@ -530,15 +521,14 @@
                                       <td>Piece</td>
                                       <td>2</td>
                                       <td>4</td>
-                                      <td>3</td>
                                       <td>300,000</td>
                                       <td><a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
                                           <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a></td>
                                     </tr>
                                     <tr>
                                       
-                                      <td colspan="5" align="right"><b>GRAND TOTAL</b></td>
-                                      <td colspan="2"><b>₱500,000.00</b></td>
+                                      <td colspan="4" align="right"><b>GRAND TOTAL</b></td>
+                                      <td colspan="1"><b>₱500,000.00</b></td>
                                       <td></td>
                                     </tr>
                                   </tbody>
