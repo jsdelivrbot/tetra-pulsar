@@ -478,40 +478,60 @@
                   <div class="col-sm-9"><textarea class="col-sm-9 form-control" id="dv-desc" rows="2"></textarea></div>
                 </div>
                 <div class="form-group col-sm-12">
-                  <label for="dv-amount" class="col-sm-3 control-label">Amount</label>
+                  <label for="dv-amount" class="col-sm-3 control-label">VAT Payee</label>
+                  <div class="col-sm-3">
+                  <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-width="60%">
+                  </div>
+                  <label for="dv-amount" class="col-sm-2 control-label">Amount</label>
                   <div class="col-sm-4">
                   <div class="input-group">
                   <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="text" class="form-control" id="dv-amount" required="">
+                  <input type="number" class="form-control" id="dv-amount" required="">
                 </div></div>
-                  <label for="dv-amount" class="col-sm-2 control-label">VAT Payee</label>
-                  <div class="col-sm-3">
-                  <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-width="60%">
-                </div>
+                  
                 </div>
                 <div class="form-group col-sm-12">
                   <label for="dv-othertax1" class="col-sm-3 control-label">Other Taxes</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                   <div class="input-group">
                   <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="text" class="form-control" id="dv-othertax1">
+                  <input type="number" class="form-control" id="dv-othertax1">
                 </div></div>
+                <label for="dv-amount" class="col-sm-2 control-label">Check No.</label>
+                  <div class="col-sm-4">
+                  <input type="number" class="form-control" id="check-number" required="">
+                </div>
                 </div>
                 <div class="form-group col-sm-12">
                 <label for="dv-othertax3" class="col-sm-3 control-label">Tax 1</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                   <div class="input-group">
                   <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="text" class="form-control" id="dv-othertax2">
+                  <input type="number" class="form-control" id="dv-othertax2">
+                </div></div>
+                  <label class="col-sm-2 control-label">Check Date</label>
+                  <div class="col-sm-4">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="datepicker">
                 </div></div>
                 </div>
                 <div class="form-group col-sm-12">
                 <label for="dv-othertax3" class="col-sm-3 control-label">Tax 2</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                   <div class="input-group">
                   <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="text" class="form-control" id="dv-othertax3">
+                  <input type="number" class="form-control" id="dv-othertax3">
                 </div></div>
+                <label for="dv-payee-name" class="col-sm-2 control-label">Bank</label>
+                  <div class="col-sm-3">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="0">- - select bank - -</option>
+                  <option value="1">Bank 1</option>
+                  <option value="2">Bank 2</option>
+                  <option value="3">Bank 3</option>
+                  </select>
+                  </div>
                 </div>
               </div>
               <!-- /.box-body -->
