@@ -246,9 +246,8 @@
       <!-- /.search form -->
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="../../index.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li><a href="#"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cogs"></i> <span>Maintenance</span>
@@ -257,9 +256,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> View Equipment</a></li>
+            <li><a href="pages/maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
+            <li><a href="pages/maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
+            <li><a href="pages/maintenance/list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+            <li class="treeview">
+            <a href="#">
+              <i class="fa fa-folder-open"></i> <span>Job Orders</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/job-order/list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
+              <li><a href="pages/job-order/create-jo.html"><i class="fa fa-pencil"></i> Create J.O.</a></li>
+            </ul>
+          </li>
           </ul>
         </li>
         <li class="treeview">
@@ -278,7 +290,7 @@
           </ul>
         </li>   
         <li>
-          <a href="#">
+          <a href="pages/calendar/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-aqua">12</small>
@@ -286,28 +298,17 @@
             </span>
           </a>
         </li>
+        <li class="header">TRANSACTIONS</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-tags"></i> <span>Job Orders</span>
+            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create J.O.</a></li>
-          </ul>
-        </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-file-text"></i> <span>Requesition/Issue Slip</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
+            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
+            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -321,6 +322,18 @@
             <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
             <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
           </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-credit-card"></i> <span> Vouchers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-list-ul"></i> List of Vouchers</a></li>
+            <li><a href="pages/voucher/create-voucher.html"><i class="fa fa-pencil"></i> Create a Voucher</a></li>
+          </ul>
         </li>        
         <li class="header">DATABASE</li>
         <li class="treeview">
@@ -331,11 +344,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="add-asset.html"><i class="fa fa-plus"></i> Add an Asset</a></li>
+            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
+            <li><a href="pages/asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-briefcase"></i> <span>Supplies</span>
             <span class="pull-right-container">
@@ -343,9 +356,20 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create Supply</a></li>
-            <li><a href="#"><i class="fa fa-plus"></i> Add Supply</a></li>
+            <li><a href="pages/supplies/list-supply.html"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
+            <li><a href="pages/supplies/create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
+            <li class="active treeview">
+            <a href="#">
+              <i class="fa fa-file"></i> <span>Receipts</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="active"><a href="list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
+              <li><a href="create-receipt.html"><i class="fa fa-pencil"></i> Create Receipt</a></li>
+            </ul>
+          </li>
           </ul>
         </li>
         <li class="treeview">
@@ -356,12 +380,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
-            <li><a href="../../pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
+            <li><a href="pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
+            <li><a href="pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
           </ul>
         </li>
         <li><a href="pages/employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
-        <li class="header">TOOLS</li>
+        <li class="header">OPTIONS</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-bar-chart"></i> <span>Reports</span>
@@ -381,7 +405,37 @@
             <li><a href="#"><i class="fa fa-paperclip"></i>Other Reports</a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="fa fa-wrench"></i> <span>Setup</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-wrench"></i> <span>Tools</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+        <li><a href="#"><i class="fa fa-file-image-o"></i> <span>Image Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Documents Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-flag-o"></i> <span>Audit</span></a></li>
+        <li><a href="#"><i class="fa fa-tag"></i> <span>Asset Tags</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cloud"></i> <span>Advanced</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
+            <li><a href="pages/advanced/create-insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
+            <li><a href="#"><i class="fa fa-money"></i>Funding</a></li>
+            <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>User's Group</a></li>
+            <li><a href="pages/advanced/office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
+          </ul>
+        </li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
       </ul>
     </section>
@@ -410,37 +464,62 @@
                   <th>Purchase Order</th>
                   <th>Receipt Type</th>
                   <th>Receipt No.</th>
+                  <th>Receipt Date.</th>
                   <th>Amount</th>
-                  <th>Supplier</th>
-                  <th>Remarks</th>
+                  <th>Payee Type</th>
+                  <th>Payee Name</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>RCPT-04082018-1</b></a></td>
-                  <td>123456</td>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-supplier"><b>RCPT-01012018-1</b></a></td>
+                  <td>PO-123456</td>
                   <td>Official Receipt</td>
-                  <td>456789</td>
+                  <td>RCPT-456789</td>
+                  <td>04/20/2018</td>
                   <td>500000</td>
+                  <td>Supplier</td>
                   <td>Octagon Computers</td>
-                  <td>remarks here here</td>
+                </tr> 
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-employee"><b>RCPT-01252018-2</b></a></td>
+                  <td>PO-321321</td>
+                  <td>Official Receipt</td>
+                  <td>151515</td>
+                  <td>01/25/2018</td>
+                  <td>15000</td>
+                  <td>Employee</td>
+                  <td>Jerik Supnet</td>
+                </tr> 
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-bank"><b>RCPT-02022018-3</b></a></td>
+                  <td>PO-050505</td>
+                  <td>Official Receipt</td>
+                  <td>151515</td>
+                  <td>02/02/2018</td>
+                  <td>100,000</td>
+                  <td>Bank</td>
+                  <td>Bank of the Philippine Islands (BPI)</td>
                 </tr> 
                 </tbody>
               </table>
             </div>
             <!-- /.box-body -->
       </div>
-      <!-- MODAL POPUP -->
-        <div class="modal fade" id="modal-default">
+
+<!-- MODAL FOR RECEIPT TYPE: SUPPLIER -->
+        <div class="modal fade" id="rcpt-modal-supplier">
           <div class="modal-dialog modal-lg" style="width: 1250px;">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><li class="fa fa-file-o"></li> Receipt Control No: <b>RCPT-04082018-1</b></h4>
+                <h4 class="modal-title"><li class="fa fa-file-o"></li> Receipt Control No: <b>RCPT-01012018-1</b></h4>
               </div>
               <div class="modal-body">
-                <p>Add supply items under a receipt number.</p>
+                <p><b>Add supply items under a receipt number.</b></p>
+                <p><b>Remarks:</b> Remarks here Remarks here Remarks here Remarks here Remarks here. Remarks here Remarks here Remarks here.</p>
+
                 <!-- Custom Tabs (Pulled to the right) -->
                       <div class="row">
                         <div class="col-md-12">
@@ -551,12 +630,90 @@
                           </div>
                         </div>
                       </div>
-
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+<!-- MODAL FOR RECEIPT TYPE: EMPLOYEE -->
+        <div class="modal fade" id="rcpt-modal-employee">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><li class="fa fa-file-o"></li> Receipt Control No: <b>RCPT-01252018-2</b></h4>
+              </div>
+              <div class="modal-body">
+                <p><b>Remarks:</b> Travel expenses for January 20, 2018. Tugeugarao - Manila</p>
+
+                <!-- Custom Tabs (Pulled to the right) -->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <label>Receipt Type:&nbsp;</label>Official Receipt (OR)<br>
+                              <label>Receipt No:&nbsp;</label>151515<br>
+                              <label>Receipt Date:&nbsp;</label>01/25/2018<br>
+                              <label>Amount:&nbsp;</label>15,000<br>
+                              <label>Payee Type:&nbsp;</label>Employee<br>
+                              <label>Payee Name:&nbsp;</label>Jerik Supnet<br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+<!-- MODAL FOR RECEIPT TYPE: BANK -->
+        <div class="modal fade" id="rcpt-modal-bank">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><li class="fa fa-file-o"></li> Receipt Control No: <b>RCPT-02022018-3</b></h4>
+              </div>
+              <div class="modal-body">
+                <p><b>Remarks:</b> Fund Transfer February 2, 2018.</p>
+
+                <!-- Custom Tabs (Pulled to the right) -->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <label>Receipt Type:&nbsp;</label>Official Receipt (OR)<br>
+                              <label>Purchase Order No:&nbsp;</label>050505<br>
+                              <label>Receipt No:&nbsp;</label>212121<br>
+                              <label>Receipt Date:&nbsp;</label>02/02/2018<br>
+                              <label>Amount:&nbsp;</label>100,000<br>
+                              <label>Payee Type:&nbsp;</label>Bank<br>
+                              <label>Payee Name:&nbsp;</label>Bank of the Philippine Islands (BPI)<br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
               </div>
             </div>
             <!-- /.modal-content -->
