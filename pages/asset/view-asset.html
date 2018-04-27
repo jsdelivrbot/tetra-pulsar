@@ -41,18 +41,17 @@
       right: auto;
       left: auto;
       display: block;
-      z-index: 1;
-    }
-    .assets-modal .modal {
-      background: transparent !important;
-    }
+      z-index: 1;}
+    .assets-modal .modal {background: transparent !important;}
     .box-body {overflow: auto; }
-    thead {background-color: #d2d6de;}
+    thead {background-color: #f0f0f0;}
     #assets {cursor: pointer;}
     textarea { resize:vertical; }
     .btn-app {margin-right: 6px !important;}
     .counter {margin-right: 15px !important;}
     .counter {text-align: center;}
+    .tab-head {background-color: #dcdcdc;}
+    .btn-app {background-color: #fff;}
 
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -426,15 +425,15 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-
-        <div class="col-md-7">
+<!-- ////// LEFT COLUMN -->
+        <div class="col-md-8">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Dumptruck: <b>CONE-03082018-DT1</b></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="col-md-7">
+              <div class="col-md-6">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
@@ -471,7 +470,7 @@
                   </a>
                 </div>
               </div>
-<!-- Basic Details -->
+<!-- ////// BASIC DETAILS -->
               <div class="col-md-5"> 
                 <div class="box">
                   <div class="box-header with-border">
@@ -492,12 +491,13 @@
                   </div>
                 </div>
               </div>
+<!-- ////// END BASIC DETAILS -->
             </div>
           </div>
-                  <div>
-          <!-- Custom Tabs (Pulled to the right) -->
+        <div>
+<!-- ////// ASSET EVENTS -->
           <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs pull-right">
+            <ul class="nav nav-tabs pull-right tab-head">
               <li><a href="#tab_5-5" data-toggle="tab">History</a></li>
               <li><a href="#tab_4-4" data-toggle="tab">Audit</a></li>
               <li><a href="#tab_2-2" data-toggle="tab">Events</a></li>
@@ -589,62 +589,6 @@
                     <td>₱58,333.33</td>
                     <td>₱441,666.67</td>
                   </tr>
-                  <tr>
-                    <td>4th</td>
-                    <td>2015</td>
-                    <td>₱20,000.00</td>
-                    <td>₱78,333.33</td>
-                    <td>₱421,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>5th</td>
-                    <td>2016</td>
-                    <td>₱20,000.00</td>
-                    <td>₱98,333.33</td>
-                    <td>₱401,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>6th</td>
-                    <td>2017</td>
-                    <td>₱20,000.00</td>
-                    <td>₱118,333.33</td>
-                    <td>₱381,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>7th</td>
-                    <td>2018</td>
-                    <td>₱20,000.00</td>
-                    <td>₱138,333.33</td>
-                    <td>₱361,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>8th</td>
-                    <td>2019</td>
-                    <td>₱20,000.00</td>
-                    <td>₱158,333.33</td>
-                    <td>₱341,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>9th</td>
-                    <td>2020</td>
-                    <td>₱20,000.00</td>
-                    <td>₱178,333.33</td>
-                    <td>₱321,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>10th</td>
-                    <td>2021</td>
-                    <td>₱20,000.00</td>
-                    <td>₱198,333.33</td>
-                    <td>₱301,666.67</td>
-                  </tr>
-                  <tr>
-                    <td>11th</td>
-                    <td>2022</td>
-                    <td>₱1,666.67</td>
-                    <td>₱200,000.00</td>
-                    <td>₱300,000.00</td>
-                  </tr>
                 </table> -->
               </div>
               <!-- /.tab-pane -->
@@ -682,138 +626,11 @@
               </table>
               </div>            
             </div>
-            <!-- /.tab-content -->
           </div>
-          <!-- nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
-        </div>
-
-        <div class="col-md-4">
-          <!-- Application buttons -->
-          <div class="box"> 
-            <div class="box-header with-border">
-              <h4 class="box-title"><li class="fa fa-th-large"></li> Application Buttons</h4>
-            </div>
-            <div class="box-body">
-              <a class="btn btn-app" >
-                <i class="fa fa-edit"></i> Edit
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-image"></i> Photo
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-external-link"></i> Assign
-              </a>              
-              <a class="btn btn-app">
-                <i class="fa fa-wrench"></i> Repair
-              </a>
-              <a href="javascript: window.open('pdfasset.pdf');"  class="btn btn-app">
-                <i class="fa fa-print"></i> Print
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-bookmark-o"></i> Lease
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-heart-o"></i> Donate
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-folder-o"></i> Sell
-              </a>              
-              <a class="btn btn-app">
-                <i class="fa fa-unlink"></i> Dispose
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-eye-slash"></i> Lost/Missing
-              </a>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-          <div class="box"> 
-            <div class="box-header with-border">
-              <h4 class="box-title"><li class="fa fa-taxi"></li> Operating Data</h4>
-            </div>
-            <div class="box-body">
-              <p> Total data per asset operation. </p>
-              <div class="wrapper" style="color: #000;background-color: #e1e1e1;">
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="12345" data-speed="1500"></h2>
-                     <li class="fa fa-clock-o fa-1x"></li><p class="count-text ">Operating Hours</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
-                    <li class="fa fa-road fa-1x"></li><p class="count-text ">Kilometers Traveled</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="55123" data-speed="1500"></h2>
-                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Diesel (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="90123" data-speed="1500"></h2>
-                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Gas (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="23123" data-speed="1500"></h2>
-                    <li class="fa fa-bullseye fa-1x"></li><p class="count-text ">Oil (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth end col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
-                    <li class="fa fa-truck fa-1x"></li><p class="count-text ">Loads (m3)</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.box -->
-          <div class="box"> 
-            <div class="box-header with-border">
-              <h4 class="box-title"><li class="fa fa-folder-o"></li> Job Order Data</h4>
-            </div>
-            <div class="box-body">
-              <p> Total data per asset operation. </p>
-              <div class="wrapper" style="color: #000;background-color: #e1e1e1;">
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="12345" data-speed="1500"></h2>
-                     <li class="fa fa-clock-o fa-1x"></li><p class="count-text ">Operating Hours</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
-                    <li class="fa fa-road fa-1x"></li><p class="count-text ">Kilometers Traveled</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="55123" data-speed="1500"></h2>
-                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Diesel (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="90123" data-speed="1500"></h2>
-                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Gas (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="23123" data-speed="1500"></h2>
-                    <li class="fa fa-bullseye fa-1x"></li><p class="count-text ">Oil (L) Consumed</p>
-                  </div>
-                  <div class="counter col_fourth end col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
-                    <li class="fa fa-truck fa-1x"></li><p class="count-text ">Loads (m3)</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.col -->
-      </div>
-
-
-<!-- START TABS -->
-<br>
-<div class="row">
-
-
-
-        <div class="col-md-7">
-          <!-- Custom Tabs (Pulled to the right) -->
+<!-- ////// END ASSET ATTRIBUTES -->
+<!-- ////// START ASSET ATTACHMENTS -->
           <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs pull-right">
+            <ul class="nav nav-tabs pull-right tab-head">
               <li><a href="#tab_8-8" data-toggle="tab">Documents</a></li>
               <li><a href="#tab_7-7" data-toggle="tab">Insurances</a></li>
               <li class="active"><a href="#tab_6-6" data-toggle="tab">Warranty</a></li>
@@ -839,18 +656,6 @@
                   <td>12/12/2019</td>
                   <td>36 months</td>
                   <td>3 year warranty for dumptruck</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-warranty"><code class="text-green">EDIT</code></a></td>
-                </tr><tr>
-                  <td>Active</td>
-                  <td>12/12/2020</td>
-                  <td>60 months</td>
-                  <td>5 year warranty for mixer</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-warranty"><code class="text-green">EDIT</code></a></td>
-                </tr><tr>
-                  <td>Active</td>
-                  <td>12/12/2017</td>
-                  <td>24 months</td>
-                  <td>3 year warranty for dumptruck2</td>
                   <td><a href="#" data-toggle="modal" data-target="#modal-warranty"><code class="text-green">EDIT</code></a></td>
                 </tr>
                 </tbody>
@@ -933,12 +738,103 @@
             </div>
             <!-- /.tab-content -->
           </div>
-          <!-- nav-tabs-custom -->
+<!-- ////// END ASSET ATTACHMENTS -->
         </div>
         <!-- /.col -->
+      </div>
+
+<!-- ////// RIGHT COLUMN -->
+        <div class="col-md-4">
+<!-- ////// APPLICATION BUTTONS -->
+          <div class="box"> 
+
+            <div class="box-body">
+              <a class="btn btn-app" >
+                <i class="fa fa-edit"></i> Edit
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-image"></i> Photo
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-external-link"></i> Assign
+              </a>              
+              <a class="btn btn-app">
+                <i class="fa fa-wrench"></i> Repair
+              </a>
+              <a href="javascript: window.open('pdfasset.pdf');"  class="btn btn-app">
+                <i class="fa fa-print"></i> Print
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-bookmark-o"></i> Lease
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-heart-o"></i> Donate
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-folder-o"></i> Sell
+              </a>              
+              <a class="btn btn-app">
+                <i class="fa fa-unlink"></i> Dispose
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-eye-slash"></i> Lost/Missing
+              </a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+<!-- ////// END APPLICATION BUTTONS -->
+<!-- ////// OPERATING DATA -->
+          <div class="box"> 
+
+            <div class="box-body">
+
+              <div class="wrapper" style="color: #000;background-color: #fff;">
+                  <div class="counter col_fourth col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="12345" data-speed="1500"></h2>
+                     <li class="fa fa-clock-o fa-1x"></li><p class="count-text ">Operating Hours</p>
+                  </div>
+                  <div class="counter col_fourth col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
+                    <li class="fa fa-road fa-1x"></li><p class="count-text ">Kilometers Traveled</p>
+                  </div>
+                  <div class="counter col_fourth col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="55123" data-speed="1500"></h2>
+                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Diesel (L) Consumed</p>
+                  </div>
+                  <div class="counter col_fourth col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="90123" data-speed="1500"></h2>
+                    <li class="fa fa-database fa-1x"></li><p class="count-text ">Gas (L) Consumed</p>
+                  </div>
+                  <div class="counter col_fourth col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="23123" data-speed="1500"></h2>
+                    <li class="fa fa-bullseye fa-1x"></li><p class="count-text ">Oil (L) Consumed</p>
+                  </div>
+                  <div class="counter col_fourth end col-sm-3">
+                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
+                    <li class="fa fa-truck fa-1x"></li><p class="count-text ">Loads (m3)</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+<!-- ////// END OPERATING DATA -->
+        </div>
+<!-- ////// END RIGHT COLUMN -->
+      </div>
+
+
+
+<!-- START TABS -->
+<br>
+<div class="row">
+
+
+<!-- ////// RIGHT COLUMN -->
+
+        <!-- /.col -->
 </div>
-<!-- ATTRIBUTES MODALS HERE -->
-<!-- MODAL-WARRANTY HERE HERE -->
+
+<!-- ////// ATTRIBUTES MODALS HERE -->
+<!-- ////// MODAL-WARRANTY HERE HERE -->
         <div class="modal fade" id="modal-depreciation">
           <div class="modal-dialog">
             <div class="modal-content">

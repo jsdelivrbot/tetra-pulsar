@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/select.bootstrap.min.css">
   <link rel="stylesheet" href="../../bower_components/datatables.net/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/dataTables.checkboxes.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/fixedColumns.dataTables.min.css">
   <!-- daterange picker -->
   <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap datepicker -->
@@ -26,14 +29,12 @@
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- Select2 -->
-  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">    
-  <!-- Bootstrap Toggle -->
-  <link rel="stylesheet" href="../../plugins/bootstrap-toggle/bootstrap-toggle.min.css">  
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">  
   <!-- style -->
   <link rel="stylesheet" href="../../dist/css/style.min.css">
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
   <style>
-    .example-modal .modal {
+    .vouchers-modal .modal {
       position: relative;
       top: auto;
       bottom: auto;
@@ -42,10 +43,11 @@
       display: block;
       z-index: 1;
     }
-    .example-modal .modal {
-      background: transparent !important;
-    }
-    textarea { resize:vertical; }
+    .vouchers-modal .modal {background: transparent !important;}
+    .rcpt_dv {background-color: #3c8dbc; color: #fff;}
+    #tbl_rcpt_dv_view thead {background-color: #e2e2e2;}
+    #vouchers {cursor: pointer;}
+    textarea {resize:vertical;}
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -338,16 +340,7 @@
           </ul>
         </li>
         <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-credit-card"></i> <span> Vouchers</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../voucher/list-voucher.html"><i class="fa fa-list-ul"></i> List of Vouchers</a></li>
-            <li class="active"><a href="#"><i class="fa fa-pencil"></i> Create a Voucher</a></li>
-          </ul>
+          <a href="#"><i class="fa fa-credit-card"></i> <span> Vouchers</span></a>
         </li>        
         <li class="header">DATABASE</li>
         <li class="treeview">
@@ -419,7 +412,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><span class="fa fa-credit-card"> </span> Create Disbursement Voucher</h1>
+      <h1><span class="fa fa-credit-card"> </span> List of Disbursement Vouchers</h1>
       <ol class="breadcrumb">
         <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li class="active">Vouchers</li>
@@ -429,16 +422,25 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-8">
+        <div id="button-top" class="col-md-8"> 
+<!-- BUTTONS -->
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#create-voucher" data-parent="#btn-top">
+              <span class="glyphicon glyphicon-plus"></span> Create Voucher
+          </button> &nbsp;&nbsp;&nbsp;
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#filter" data-parent="#btn-top">
+              <span class="glyphicon glyphicon-refresh"></span> Filter Display
+          </button> <br>
+
+<!-- CREATE VOUCHER -->
+          <div id="create-voucher" class="collapse"><br>
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"></h3>
+              <h3 class="box-title">Create Disbursement Voucher</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" id="">
+            <form id="from-unit" class="form-horizontal" role="form">
               <div class="box-body">
                 <div class="form-group col-sm-12">
                   <label for="controlnumber" class="col-sm-3 control-label">Control Number</label>
@@ -484,55 +486,6 @@
                   <label for="dv-desc" class="col-sm-3 control-label">Description/Remarks</label>
                   <div class="col-sm-9"><textarea class="col-sm-9 form-control" id="dv-desc" rows="2"></textarea></div>
                 </div>
-<!--                 <div class="form-group col-sm-12">
-                  <label for="dv-amount" class="col-sm-3 control-label">VAT Payee</label>
-                  <div class="col-sm-3">
-                  <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-width="60%">
-                  </div>
-                  <label for="dv-amount" class="col-sm-2 control-label">Amount</label>
-                  <div class="col-sm-4">
-                  <div class="input-group">
-                  <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="number" class="form-control" id="dv-amount" required="">
-                </div></div>
-                </div>
-                <div class="form-group col-sm-12">
-                  <label for="dv-othertax1" class="col-sm-3 control-label">Other Taxes</label>
-                  <div class="col-sm-3">
-                  <div class="input-group">
-                  <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="number" class="form-control" id="dv-othertax1">
-                </div></div>
-                <label for="dv-amount" class="col-sm-2 control-label">Check No.</label>
-                  <div class="col-sm-4">
-                  <input type="number" class="form-control" id="check-number" required="">
-                </div>
-                </div>
-                <div class="form-group col-sm-12">
-                <label for="dv-othertax3" class="col-sm-3 control-label">Tax 1</label>
-                  <div class="col-sm-3">
-                  <div class="input-group">
-                  <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="number" class="form-control" id="dv-othertax2">
-                </div></div>
-                  <label class="col-sm-2 control-label">Check Date</label>
-                  <div class="col-sm-4">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
-                </div></div>
-                </div>
-                <div class="form-group col-sm-12">
-                <label for="dv-othertax3" class="col-sm-3 control-label">Tax 2</label>
-                  <div class="col-sm-3">
-                  <div class="input-group">
-                  <span class="input-group-addon" style="font-size: 20px;">₱</span>
-                  <input type="number" class="form-control" id="dv-othertax3">
-                </div></div>
-                </div> -->
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
                 <div class="form-group col-sm-12">           
                   <div class="col-sm-8"></div>
                   <div class="col-sm-4">
@@ -545,13 +498,214 @@
             </form>
           </div>
           <!-- /.box -->
+          </div>
+
+<!-- FILTER DISPLAY -->
+          <div id="filter" class="collapse"><br>
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Filter Displayed Data</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            <!-- form start -->
+            <form id="from-unit" class="form-horizontal" role="form">
+              <div class="form-group col-sm-12"">
+                <div class="col-sm-3">
+                <select class="form-control select2" style="width: 100%;" required="">
+                <option selected="selected" value="0">Select Payee Type</option>
+                <option value="1">SUPPLIER</option>
+                <option value="2">BANK</option>
+                <option value="3">EMPLOYEE</option>
+                </select>
+                </div>
+                <div class="col-sm-4"> 
+                <button type="button" class="btn btn-default" id="daterange-btn" style="width: 100%;">
+                  <span><i class="fa fa-calendar"></i> Date range picker </span> <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+                <div class="col-sm-4">
+                  <button type="button" class="btn btn-default btn-flat">Filter Display</button></div>
+              </div>
+            </form>
+          </div>
+          </div>
+          <!-- /.box -->
+          </div>
         </div>
-        <!--/.col (left) -->
+      </div><br>  
+   
+
+
+<!-- /// VOUCHERS TABLE -->
+      <div class="box box-primary">
+            <div class="box-body">
+              <table id="vouchers" class="table table-bordered table-hover" width="100%">
+                <thead class="rcpt_dv">
+                <tr>
+                  <!-- <th></th> -->
+                  <th>DV No.</th>
+                  <th>Payee Type</th>
+                  <th>Payee Name</th>
+                  <th>Particulars</th>
+                  <th>Description/Remarks</th>
+                  <th>Check No</th>
+                  <th>DV Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <!-- <td> </td> -->
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-1</b></a></td>
+                  <td>SUPPLIER</td>
+                  <td>Metal Construction &amp; Supplies</td>
+                  <td>StatementofAccountHere</td>
+                  <td>Pay for dumptruck 1 maintenance, etc.</td>
+                  <td>Check12345</td>
+                  <td>Paid</td>
+                </tr>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-2</b></a></td>
+                  <td>SUPPLIER</td>
+                  <td>Metal Construction &amp; Supplies</td>
+                  <td>StatementofAccountHere</td>
+                  <td>Pay for dumptruck 1 maintenance, etc.</td>
+                  <td></td>
+                  <td><span class="text-red">On Process</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default" title="Click for details"><b>03302018-3</b></a></td>
+                  <td>SUPPLIER</td>
+                  <td>Metal Construction &amp; Supplies</td>
+                  <td>StatementofAccountHere</td>
+                  <td>Pay for dumptruck 1 maintenance, etc.</td>
+                  <td>Check12345</td>
+                  <td>Paid</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
       </div>
-      <!-- /.row -->
     </section>
   </div>
   <!-- /.content-wrapper -->
+
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title"><li class="fa fa-credit-card"></li> DV No: <b>03302018-1</b>&nbsp;&nbsp;&nbsp;
+            (For:&nbsp;Metal Construction &amp; Supplies)</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please select particular unpaid receipt/s for the voucher.</p>
+              <table id="tbl_rcpt_dv" class="table table-bordered table-hover" width="100%">
+                <thead class="rcpt_dv">
+                <tr>
+                  <th></th>
+                  <th>Control No.</th>
+                  <th>Receipt Type</th>
+                  <th>Receipt No.</th>
+                  <th>Receipt Date</th>
+                  <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td></td>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-supplier"><b>RCPT-01012018-1</b></a></td>
+                  <td>Official Receipt</td>
+                  <td>RCPT-456789</td>
+                  <td>04/20/2018</td>
+                  <td>10,000</td>
+                </tr> 
+                <tr>
+                  <td></td>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-employee"><b>RCPT-01252018-2</b></a></td>
+                  <td>Delivery Receipt</td>
+                  <td>151515</td>
+                  <td>01/25/2018</td>
+                  <td>5,000</td>
+                </tr> 
+                </tbody>
+              </table>
+              <button type="button" id="add-row" class="btn btn-sm btn-flat btn-success">Add selected receipt</button><br>
+              <hr>
+          <p>Selected unpaid receipt/s for the voucher.</p>
+              <table id="tbl_rcpt_dv_view" class="table table-bordered table-hover" width="100%">
+                <thead class="thead_rcpt_dv_view">
+                <tr>
+                  <th>Control No.</th>
+                  <th>Receipt Type</th>
+                  <th>Receipt No.</th>
+                  <th>Receipt Date</th>
+                  <th>Amount</th>
+                  <th>Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#rcpt-modal-supplier"><b>RCPT-01012018-3</b></a></td>
+                  <td>Official Receipt</td>
+                  <td>RCPT-456789</td>
+                  <td>04/20/2018</td>
+                  <td>20,000</td>
+                  <td>
+                    <a href="#" data-toggle="modal" data-target="#modal-edit"><code class="text-green">EDIT</code></a>
+                    <a href="#" data-toggle="modal" data-target="#modal-delete"><code class="text-red">REMOVE</code></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" align="right"><b>TOTAL VOUCHER AMOUNT</b></td>
+                  <td><b>20,000</b></td>
+                  <td></td>
+                </tr>  
+                </tbody>
+              </table>
+        
+        <p>Please provide check details to complete the voucher.</p>
+        <div class="form-group">
+          <div class="col-sm-4">
+          <div class="input-group checknum">
+          <span class="input-group-addon" style="font-size: 15px;">Check #</span>
+          <input type="number" class="form-control" id="rcpt-number" placeholder="" required="">
+        </div></div>
+        <div class="col-sm-4">
+          <div class="input-group checkdate">
+          <span class="input-group-addon" style="font-size: 15px;">Check Date</span>
+          <input type="text" class="form-control pull-right" id="datepicker_check">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="input-group checkbank">
+          <span class="input-group-addon" style="font-size: 15px;">Bank</span>
+          <select class="form-control select2" style="width: 100%;" required="">
+            <option selected="selected" value="">Select Bank</option>
+            <option value="1">Bank 1</option>
+            <option value="2">Bank 2</option>
+            <option value="3">Bank 3</option>
+          </select>
+          </div>
+        </div>
+        </div> <br>
+        </div>
+
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->  
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
@@ -565,8 +719,8 @@
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Confirmation -->
-<script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- FastClick -->
 <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- App -->
@@ -575,29 +729,239 @@
 <script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- SlimScroll -->
 <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- Select2 -->
-<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
-<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- Confirmation -->
+<script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 <!-- date-range-picker -->
 <script src="../../bower_components/moment/min/moment.min.js"></script>
 <script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- bootstrap datepicker -->
 <script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- bootstrap color picker -->
-<script src="../../bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
-<!-- Bootstrap Toggle -->
-<script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.buttons.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jszip.min.js"></script>
+<script src="../../bower_components/datatables.net/js/pdfmake.min.js"></script>
+<script src="../../bower_components/datatables.net/js/vfs_fonts.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.html5.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.select.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.checkboxes.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.fixedColumns.min.js"></script>
 <!-- page script -->
 <script>
+  $(document).ready(function() {
+    var table = $('#tbl_rcpt_dv').DataTable();
+ 
+    $('#tbl_rcpt_dv tbody').on( 'click', 'tr', function () {
+        $(this).toggleClass('selected');
+    } );
+ 
+    $('#add-row').click( function () {
+        alert( table.rows('.selected').data().length +' row(s) selected' );
+    } );
+} );
+///////////// FOR POPUP - CHECKBOX  
+let example = $('#tbl_rcpt_dv').DataTable({
+    columnDefs: [{
+        orderable: false,
+        className: 'select-checkbox',
+        targets: 0
+    }],
+    select: {
+        style: 'multi',
+    },
+    order: [
+        [1, 'asc']
+    ]
+});
+example.on("click", "th.select-checkbox", function() {
+    if ($("th.select-checkbox").hasClass("selected")) {
+        example.rows().deselect();
+        $("th.select-checkbox").removeClass("selected");
+    } else {
+        example.rows().select();
+        $("th.select-checkbox").addClass("selected");
+    }
+}).on("select deselect", function() {
+    ("Some selection or deselection going on")
+    if (example.rows({
+            selected: true
+        }).count() !== example.rows().count()) {
+        $("th.select-checkbox").removeClass("selected");
+    } else {
+        $("th.select-checkbox").addClass("selected");
+    }
+});
+
+
+///////////// END
+
+$(document).ready(function() {
+    $('#vouchers').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: true,
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'Blfrtip',
+      buttons: [
+//// FOR PRINT BUTTON
+            {
+              extend: "print",
+              pageSize: 'LEGAL',
+              exportOptions: { columns: ':visible',search: 'applied',order: 'applied',modifier: { selected: null } },
+              customize: function(win)
+              {
+                $(win.document.body)
+                  .css( 'font-size', '9pt' );
+
+                $(win.document.body).find( 'table' )
+                  .addClass( 'compact' )
+                  .css( 'font-size', '9pt' );
+                  var last = null;
+                  var current = null;
+                  var bod = [];
+   
+                  var css = '@page { size: landscape; }',
+                      head = win.document.head || win.document.getElementsByTagName('head')[0],
+                      style = win.document.createElement('style');
+   
+                  style.type = 'text/css';
+                  style.media = 'print';
+   
+                  if (style.styleSheet)
+                  {
+                    style.styleSheet.cssText = css;
+                  }
+                  else
+                  {
+                    style.appendChild(win.document.createTextNode(css));
+                  }
+                  head.appendChild(style);
+              }
+            },
+            /// FOR PRINT SELECTED BUTTON
+            {
+              extend: 'print',
+              text: 'Print selected',
+                            customize: function(win)
+              {
+                $(win.document.body)
+                  .css( 'font-size', '9pt' );
+
+                $(win.document.body).find( 'table' )
+                  .addClass( 'compact' )
+                  .css( 'font-size', '9pt' );
+                  var last = null;
+                  var current = null;
+                  var bod = [];
+   
+                  var css = '@page { size: landscape; }',
+                      head = win.document.head || win.document.getElementsByTagName('head')[0],
+                      style = win.document.createElement('style');
+   
+                  style.type = 'text/css';
+                  style.media = 'print';
+   
+                  if (style.styleSheet)
+                  {
+                    style.styleSheet.cssText = css;
+                  }
+                  else
+                  {
+                    style.appendChild(win.document.createTextNode(css));
+                  }
+                  head.appendChild(style);
+              }
+            }, 
+//// FOR PDF BUTTON https://codepen.io/RedJokingInn/pen/XMVoXL   
+            {
+              extend: 'pdfHtml5',
+              orientation: 'landscape',
+              pageSize: 'LEGAL',
+              exportOptions: { columns: ':visible',search: 'applied',order: 'applied' },
+              customize: function (doc) 
+              {
+                //Remove the title created by datatTables
+                doc.content.splice(0,1);
+                //Create a date string that we use in the footer. Format is dd-mm-yyyy
+                var now = new Date();
+                var jsDate = now.getDate()+'-'+(now.getMonth()+1)+'-'+now.getFullYear();
+
+                doc.pageMargins = [90,60,30,40];
+                doc.defaultStyle.fontSize = 9;
+                doc.styles.tableHeader.fontSize = 9;
+
+                doc['header']=(function() {
+                  return {
+                    columns: [
+                      {
+                        alignment: 'left',
+                        text: 'Pulsar Construction, Inc.',
+                        fontSize: 16,
+                        margin: [69,10]
+                      },
+                      {
+                        alignment: 'right',
+                        fontSize: 12,
+                        italics: true,
+                        text: 'List of Disbursement Vouchers',
+                        margin: [0,10]
+                      }
+                    ],
+                    margin: 20
+                  }
+                });
+                // Create a footer object with 2 columns
+                doc['footer']=(function(page, pages) {
+                  return {
+                    columns: [
+                      {
+                        alignment: 'left',
+                        text: ['Extracted on: ', { text: jsDate.toString() }],
+                        margin: [69,0,0,40]
+                      },
+                      {
+                        alignment: 'right',
+                        text: ['page ', { text: page.toString() },  ' of ', { text: pages.toString() }],
+                        margin: [0,0,10,40]
+                      }
+                    ],
+                    margin: 10
+                  }
+                });
+                // Change dataTable layout (Table styling)
+                // To use predefined layouts uncomment the line below and comment the custom lines below
+                // doc.content[0].layout = 'lightHorizontalLines'; // noBorders , headerLineOnly
+                var objLayout = {};
+                objLayout['hLineWidth'] = function(i) { return .5; };
+                objLayout['vLineWidth'] = function(i) { return .5; };
+                objLayout['hLineColor'] = function(i) { return '#aaa'; };
+                objLayout['vLineColor'] = function(i) { return '#aaa'; };
+                objLayout['paddingLeft'] = function(i) { return 4; };
+                objLayout['paddingRight'] = function(i) { return 4; };
+                doc.content[0].layout = objLayout;
+              }
+            },
+/// FOR SHOW/HIDE COLUMNS BUTTON
+            {
+              extend: 'colvis',
+              text: 'Show/Hide Columns',
+              postfixButtons: [ 'colvisRestore' ]
+            },
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+        ],
+        columnDefs: [ {visible: false} ],
+        select: true
+    } );
+} );
+
+
 $('[data-toggle=confirmation]').confirmation({
   rootSelector: '[data-toggle=confirmation]',
   // other options
@@ -606,13 +970,6 @@ $('[data-toggle=confirmation]').confirmation({
   $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
-
-    //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    //Money Euro
-    $('[data-mask]').inputmask()
 
     //Date range picker
     $('#reservation').daterangepicker()
@@ -636,42 +993,12 @@ $('[data-toggle=confirmation]').confirmation({
         $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
       }
     )
-
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    })
-    $('#datepicker2').datepicker({
-      autoclose: true
-    })
-    $('#datepicker3').datepicker({
-      autoclose: true
-    })
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass   : 'iradio_minimal-blue'
-    })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
   })
+
+//Date picker
+    $('#datepicker_check').datepicker({
+      autoclose: true
+    })  
 </script>
 </body>
 </html>
