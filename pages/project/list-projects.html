@@ -28,10 +28,10 @@
       display: block;
       z-index: 1;
     }
-
     .example-modal .modal {
       background: transparent !important;
     }
+    #projects-modal-tbl td {padding: 2px !important;}
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -196,7 +196,6 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                 <p>
                   Mykee Caparas - Administrator
                   <small>Member since Nov. 2018</small>
@@ -393,8 +392,7 @@
       <h1><span class="fa fa-cube"> </span> List of Projects</h1>
       <ol class="breadcrumb">
         <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
-        <li><a href="../../pages/maintenance/list-equipments.html">Maintenance</a></li>
-        <li class="active">Projects Monitoring</li>
+        <li class="active">Projects</li>
       </ol>
     </section>
 
@@ -412,14 +410,14 @@
                   <th>Control No.</th>
                   <th>Project ID</th>
                   <th>Project Name</th>
-                  <th>Project Cost</th>
-                  <th>Address</th>
+                  <th>Region</th>
+                  <th>Province</th>
                   <th>Municipality</th>
                   <th>Zip Code</th>
+                  <th>Barangay</th>
+                  <th>Department</th>
+                  <th>Division</th>
                   <th>Date Started</th>
-                  <th>Date Completed</th>
-                  <th>Project Engineer</th>
-                  <th>Date Assigned</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -427,157 +425,14 @@
                   <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310001</b></a></td>
                   <td>5310001</td>
                   <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
+                  <td>Region II</td>
+                  <td>Cagayan</td>
                   <td>Tuguegarao City</td>
                   <td>3500</td>
+                  <td>Buntun</td>
+                  <td>Pulsar Construction</td>
+                  <td>Construction</td>
                   <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310002</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr> 
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310003</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr> 
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310003</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310004</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310005</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310006</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310007</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310008</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310009</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310011</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>2017-5310012</b></a></td>
-                  <td>5310001</td>
-                  <td>BUNTUN BRIDGE PROJECT</td>
-                  <td>1,234,567</td>
-                  <td>CAGAYAN</td>
-                  <td>Tuguegarao City</td>
-                  <td>3500</td>
-                  <td>01/01/2017</td>
-                  <td>03/10/2018</td>
-                  <td>CAPARAS, MICHAEL</td>
-                  <td>01/30/2017</td>
                 </tr>
                 </tbody>
               </table>
@@ -591,55 +446,104 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Project Profile</h4>
+                <h4 class="modal-title"><i class="fa fa-cube"></i> Project Profile: <b>5310001</b></h4>
               </div>
               <div class="modal-body">
                 <!-- Custom Tabs (Pulled to the right) -->
                 <div class="nav-tabs-custom">
                   <ul class="nav nav-tabs pull-right">
                     <li class="active"><a href="#tab_1-1" data-toggle="tab">Details</a></li>
-                    <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Options <span class="caret"></span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mark as Finished</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
-                      </ul>
-                    </li>
-                    <li class="pull-left header"><i class="fa fa-cube"></i> 5310001</li>
+                    <li class="pull-left header"> BUNTUN BRIDGE PROJECT</li>
                   </ul>
                   <div class="tab-content">
                     <div class="tab-pane active" id="tab_1-1">
-                      <b>BUNTUN BRIDGE PROJECT</b><br>
-                      <b>TABLE HERE.</b><br>
-                      A wonderful serenity has taken possession of my entire soul,
-                      like these sweet mornings of spring which I enjoy with my whole heart.
-                      I am alone, and feel the charm of existence in this spot,
-                      which was created for the bliss of souls like mine. I am so happy,
-                      my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                      that I neglect my talents. I should be incapable of drawing a single stroke
-                      at the present moment; and yet I feel that I never was a greater artist than now.
+                      <form action="view-project.html">
+                        <table id="projects-modal-tbl" class="table table-bordered">
+                          <tr>
+                            <td>Control No.</td>
+                            <td>2017-5310001</td>
+                          </tr>
+                          <tr>  
+                            <td>Project ID</td>
+                            <td>5310001</td>
+                          </tr>
+                          <tr>
+                            <td>Project Name</td>
+                            <td>BUNTUN BRIDGE PROJECT</td>
+                          </tr>  
+                          <tr>
+                            <td>Project Cost</td>
+                            <td>₱ 1,234,567.00</td>
+                          </tr>
+                          <tr>
+                            <td>Region</td>
+                            <td>Region II</td>
+                          </tr>
+                          <tr>
+                            <td>Province</td>
+                            <td>Cagayan</td>
+                          </tr>
+                          <tr>
+                            <td>Municipality</td>
+                            <td>Tuguegarao City</td>
+                          </tr>
+                          <tr>
+                            <td>Zip Code</td>
+                            <td>3500</td>
+                          </tr>
+                          <tr>
+                            <td>Barangay</td>
+                            <td>Buntun</td>
+                          </tr>
+                          <tr>
+                            <td>Department</td>
+                            <td>Pulsar Construction</td>
+                          </tr>
+                          <tr>
+                            <td>Division</td>
+                            <td>Construction</td>
+                          </tr>
+                          <tr>
+                            <td>Date Assigned</td>
+                            <td>01/30/2017</td>
+                          </tr>
+                          <tr>
+                            <td>Target Date</td>
+                            <td>12/25/2018</td>
+                          </tr>
+                          <tr>
+                            <td>Date Started</td>
+                            <td>01/01/2017</td>
+                          </tr> 
+                          <tr>
+                            <td>Project Engineer</td>
+                            <td><a href="../employee/list-employees.html" target="_blank">ENGR. MICHAEL CAPARAS</a></td>
+                          </tr>
+                          <tr>
+                            <td>Date Completed</td>
+                            <td></td>
+                          </tr>
+                          
+                      </table>
                     </div>
                     <!-- /.tab-pane -->
                   </div>
                   <!-- /.tab-content -->
                 </div>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary pull-right" formtarget="_blank">
+                  <li class="fa fa-navicon "></li> More Details</button>
+                <button type="button" class="btn btn-info pull-right" style="margin-right: 7px;"><li class="fa fa-print"></li> Print</button>
                 <!-- nav-tabs-custom -->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
             <!-- /.modal-content -->
           </div>
           <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
+        <!-- /.modal -->       
 
     </section>
   </div>
