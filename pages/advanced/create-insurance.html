@@ -259,9 +259,8 @@
       <!-- /.search form -->
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="../../index.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li><a href="#"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cogs"></i> <span>Maintenance</span>
@@ -270,9 +269,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> View Equipment</a></li>
+            <li><a href="pages/maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
+            <li><a href="pages/maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
+            <li><a href="pages/maintenance/list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
+            <li class="treeview">
+            <a href="#">
+              <i class="fa fa-folder-open"></i> <span>Job Orders</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/job-order/list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
+              <li><a href="pages/job-order/create-jo.html"><i class="fa fa-pencil"></i> Create J.O.</a></li>
+            </ul>
+          </li>
           </ul>
         </li>
         <li class="treeview">
@@ -291,7 +303,7 @@
           </ul>
         </li>   
         <li>
-          <a href="#">
+          <a href="pages/calendar/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-aqua">12</small>
@@ -299,18 +311,7 @@
             </span>
           </a>
         </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-folder-open"></i> <span>Job Orders</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
-            <li class="active"><a href="#"><i class="fa fa-pencil"></i> Create J.O.</a></li>
-          </ul>
-        </li>
+        <li class="header">TRANSACTIONS</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
@@ -319,8 +320,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../requisition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="../requisition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
+            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
+            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -334,7 +335,8 @@
             <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
             <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
           </ul>
-        </li>        
+        </li>
+        <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>    
         <li class="header">DATABASE</li>
         <li class="treeview">
           <a href="#">
@@ -344,8 +346,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="#"><i class="fa fa-plus"></i> Add an Asset</a></li>
+            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
+            <li><a href="pages/asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -356,9 +358,20 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create Supply</a></li>
-            <li><a href="#"><i class="fa fa-plus"></i> Add Supply</a></li>
+            <li><a href="pages/supplies/list-supply.html"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
+            <li><a href="pages/supplies/create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
+            <li class="treeview">
+            <a href="#">
+              <i class="fa fa-file"></i> <span>Receipts</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/receipts/list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
+              <li><a href="pages/receipts/create-receipt.html"><i class="fa fa-pencil"></i> Create Receipt</a></li>
+            </ul>
+          </li>
           </ul>
         </li>
         <li class="treeview">
@@ -369,12 +382,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
-            <li><a href="../../pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
+            <li><a href="pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
+            <li><a href="pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
           </ul>
         </li>
         <li><a href="pages/employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
-        <li class="header">TOOLS</li>
+        <li class="header">OPTIONS</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-bar-chart"></i> <span>Reports</span>
@@ -394,7 +407,37 @@
             <li><a href="#"><i class="fa fa-paperclip"></i>Other Reports</a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="fa fa-wrench"></i> <span>Setup</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-wrench"></i> <span>Tools</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+        <li><a href="#"><i class="fa fa-file-image-o"></i> <span>Image Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Documents Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-flag-o"></i> <span>Audit</span></a></li>
+        <li><a href="#"><i class="fa fa-tag"></i> <span>Asset Tags</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-cloud"></i> <span>Advanced</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
+            <li class="active"><a href="create-insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
+            <li><a href="#"><i class="fa fa-money"></i>Funding</a></li>
+            <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>User's Group</a></li>
+            <li><a href="office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
+          </ul>
+        </li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
       </ul>
     </section>
@@ -621,7 +664,10 @@ $('[data-toggle=confirmation]').confirmation({
       showInputs: false
     })
   })
-</script><script>
+</script>
+
+<script>
+/// FOR CONFIRMATION BUTTON
 $('[data-toggle=confirmation]').confirmation({
   rootSelector: '[data-toggle=confirmation]',
   // other options

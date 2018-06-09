@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Office Locations | PULSAR CONSTRUCTION</title>
+  <title>Banks | PULSAR CONSTRUCTION</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -434,12 +434,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
+            <li class="active"><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
             <li><a href="create-insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
             <li><a href="#"><i class="fa fa-money"></i>Funding</a></li>
             <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
             <li><a href="#"><i class="fa fa-users"></i>User's Group</a></li>
-            <li class="active"><a href="office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
+            <li><a href="office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
@@ -452,12 +452,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><span class="fa fa-building"> </span> Office Locations</h1>
-      <p>Manage Departments, Divisions and Units. Each office may have a specific location.</p>
+      <h1><span class="fa fa-building"> </span> Banks</h1>
+      <p>Manage Banks information.</p>
       <ol class="breadcrumb">
         <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li><i class="fa fa-cloud"></i> Advanced</li>
-        <li class="active"><i class="fa fa-building"></i> Office Locations</li>
+        <li class="active"><i class="fa fa-bank"></i> Banks</li>
       </ol>
     </section>
 
@@ -465,18 +465,30 @@
     <section class="content">
       <div class="row">
         <div class="col-md-12"> 
-          <div id="add-department" class="collapse department">
+          <div id="add-bank" class="collapse department">
             <div class="panel panel-default">
               <div class="panel-body">
-<!-- NEW DEPARTMENT -->
-                <form id="from-department" class="form-inline" role="form">
+<!-- NEW BANK -->
+                <form id="from-bank" class="form-inline" role="form">
                   <div class="form-group">
-                    <label style="margin-right:15px;" for="dept-name">Department Name:</label>
-                    <input type="text" class="form-control" id="dept-name" size="125" required="">
+                    <label style="margin-right:15px;" for="bank-name">Bank Name:</label>
+                    <input type="text" class="form-control" id="bank-name" size="133" required="">
                   </div><!-- form group -->
                     <div class="form-group col-sm-12">
                       <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                      <h4>Department Address:</h4><br>
+                      <h4>Bank Address:</h4><br>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-1 control-label">Branch</label>
+                      <div class="col-sm-4">
+                      <select class="form-control select2" style="width: 100%;" required="">
+                      <option selected="selected" value="1">BPI-Tuguegarao Main</option>
+                      <option value="2">BPI-Tanza</option>
+                      <option value="3">BPI-Caritan</option>
+                      </select>
+                      </div>
+                      <label for="zipcode" class="col-sm-1 control-label">St/Bldg/Unit</label>
+                      <div class="col-sm-3"><input type="text" class="form-control" id="bank-street" style="width: 100%;" required=""></div>
                     </div>
                     <div class="form-group col-sm-12">
                       <label class="col-sm-1 control-label">Region</label>
@@ -497,7 +509,7 @@
                       <option value="5">Quirino</option>
                       </select>
                       </div>
-                      <div class="col-sm-1"><input type="text" class="form-control" id="dept-zipcode" placeholder="Zip Code" disabled required=""></div>
+                      <div class="col-sm-1"><input type="text" class="form-control" id="bank-zipcode" placeholder="Zip Code" disabled required=""></div>
                     </div>
                     <div class="form-group col-sm-12">
                       <label class="col-sm-1 control-label">Municipality</label>
@@ -521,290 +533,73 @@
                       </select>
                       </div>
                     </div>
+                    <br>
                     <div class="form-group col-sm-12">
-                      <label for="zipcode" class="col-sm-1 control-label">St/Bldg/Unit</label>
-                      <div class="col-sm-4"><input type="text" class="form-control" id="dept-street" style="width: 100%;" required=""></div>
-                      <div class="col-sm-1"> </div>
-                      <div class="col-sm-3">
                       <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                      <button class="btn btn-large btn-success btn-block" data-toggle="confirmation"
-                      data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-                      data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-                      data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
-                      </button>
+                      <h4>Contact Details:</h4><br>
                     </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-1 control-label">Manager</label>
+                      <div class="col-sm-4"><input type="text" class="form-control" id="bank-manager" style="width: 100%;" required=""></div>
+                      <label for="zipcode" class="col-sm-1 control-label">Mobile #</label>
+                      <div class="col-sm-3"><input type="text" class="form-control" id="bank-mobile" style="width: 100%;" required=""></div>
                     </div>
-                </form>
-              </div>
-            </div>
-          </div>
-<!-- NEW DIVISION -->
-          <div id="add-division" class="collapse division">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form id="from-division" class="form-inline" role="form">
-                  <div class="form-group">
-                    <div class="col-sm-4">
-                    <label style="margin-right:15px;" for="dept-name">Department Name:</label>
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="">Select Department</option>
-                    <option value="1">Pulsar</option>
-                    <option value="2">JJE Construction</option>
-                    </select>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-1 control-label">Email</label>
+                      <div class="col-sm-4"><input type="text" class="form-control" id="bank-email" style="width: 100%;" required=""></div>
+                      <label class="col-sm-1 control-label">Telephone #</label>
+                      <div class="col-sm-3"><input type="text" class="form-control" id="bank-telephone" style="width: 100%;" required=""></div>
                     </div>
-                    <div class="col-sm-8">
-                    <label style="margin-right:15px;" for="division-name">Division Name:</label> <br>
-                    <input type="text" class="form-control" id="division-name" size="92" required="">
+                    <div class="form-group col-sm-12">
+                      <div class="col-sm-6"></div>
+                        <div class="col-sm-3">
+                        <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                        <button class="btn btn-large btn-success btn-block" data-toggle="confirmation"
+                        data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                        data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                        data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                    <h4>Division Address:</h4><br>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label class="col-sm-1 control-label">Region</label>
-                    <div class="col-sm-4">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Region II</option>
-                    <option value="2">Region I</option>
-                    <option value="3">Region III</option>
-                    </select>
-                    </div>
-                    <label class="col-sm-1 control-label">Province</label>
-                    <div class="col-sm-3">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Cagayan</option>
-                    <option value="2">Isabela</option>
-                    <option value="3">Vizcaya</option>
-                    <option value="4">Batanes</option>
-                    <option value="5">Quirino</option>
-                    </select>
-                    </div>
-                    <div class="col-sm-1"><input type="text" class="form-control" id="division-zipcode" placeholder="Zip Code" disabled required=""></div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label class="col-sm-1 control-label">Municipality</label>
-                    <div class="col-sm-4">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Tuguegarao City</option>
-                    <option value="2">Iguig</option>
-                    <option value="3">Solana</option>
-                    <option value="4">Enrile</option>
-                    <option value="5">Peñablanca</option>
-                    <option value="6">Gonzaga</option>
-                    <option value="7">Sta. Ana</option>
-                    </select>
-                    </div>
-                    <label class="col-sm-1 control-label">Barangay</label>
-                    <div class="col-sm-3">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Ugac Norte</option>
-                    <option value="2">Caritan</option>
-                    <option value="3">Pallua</option>
-                    </select>
-                    </div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label for="zipcode" class="col-sm-1 control-label">St/Bldg/Unit</label>
-                    <div class="col-sm-4"><input type="text" class="form-control" id="division-street" style="width: 100%;" required=""></div>
-                    <div class="col-sm-1"> </div>
-                    <div class="col-sm-3">
-                    <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                    <button class="btn btn-large btn-success btn-block" data-toggle="confirmation"
-                    data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-                    data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-                    data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
-                    </button>
-                  </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-<!-- NEW UNIT -->
-          <div id="add-unit" class="collapse unit">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form id="from-unit" class="form-inline" role="form">
-                  <div class="form-group">
-                    <div class="col-sm-4">
-                    <label style="margin-right:15px;" for="dept-name">Department Name:</label>
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="">Select Department</option>
-                    <option value="1">Pulsar</option>
-                    <option value="2">JJE Construction</option>
-                    </select>
-                    </div>
-                    <div class="col-sm-4">
-                    <label style="margin-right:15px;" for="division-name">Division Name:</label> <br>
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="">Select Division</option>
-                    <option value="1">Engineering</option>
-                    <option value="2">General Services</option>
-                    </select>
-                    </div>
-                    <div class="col-sm-4">
-                    <label style="margin-right:15px;" for="division-name">Unit Name:</label> <br>
-                    <input type="text" class="form-control" id="division-name" size="51" required="">
-                    </div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                    <h4>Unit Address:</h4><br>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label class="col-sm-1 control-label">Region</label>
-                    <div class="col-sm-4">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Region II</option>
-                    <option value="2">Region I</option>
-                    <option value="3">Region III</option>
-                    </select>
-                    </div>
-                    <label class="col-sm-1 control-label">Province</label>
-                    <div class="col-sm-3">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Cagayan</option>
-                    <option value="2">Isabela</option>
-                    <option value="3">Vizcaya</option>
-                    <option value="4">Batanes</option>
-                    <option value="5">Quirino</option>
-                    </select>
-                    </div>
-                    <div class="col-sm-1"><input type="text" class="form-control" id="unit-zipcode" placeholder="Zip Code" disabled required=""></div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label class="col-sm-1 control-label">Municipality</label>
-                    <div class="col-sm-4">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Tuguegarao City</option>
-                    <option value="2">Iguig</option>
-                    <option value="3">Solana</option>
-                    <option value="4">Enrile</option>
-                    <option value="5">Peñablanca</option>
-                    <option value="6">Gonzaga</option>
-                    <option value="7">Sta. Ana</option>
-                    </select>
-                    </div>
-                    <label class="col-sm-1 control-label">Barangay</label>
-                    <div class="col-sm-3">
-                    <select class="form-control select2" style="width: 100%;" required="">
-                    <option selected="selected" value="1">Ugac Norte</option>
-                    <option value="2">Caritan</option>
-                    <option value="3">Pallua</option>
-                    </select>
-                    </div>
-                  </div>
-                  <div class="form-group col-sm-12">
-                    <label for="zipcode" class="col-sm-1 control-label">St/Bldg/Unit</label>
-                    <div class="col-sm-4"><input type="text" class="form-control" id="unit-street" style="width: 100%;" required=""></div>
-                    <div class="col-sm-1"> </div>
-                    <div class="col-sm-3">
-                    <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                    <button class="btn btn-large btn-success btn-block" data-toggle="confirmation"
-                    data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-                    data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-                    data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
-                    </button>
-                  </div>
-                  </div>
                 </form>
               </div>
             </div>
           </div>
 <!-- BUTTONS -->
-          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#add-department">
-              <span class="glyphicon glyphicon-plus"></span> New Department
-          </button> &nbsp;
-          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#add-division">
-              <span class="glyphicon glyphicon-plus"></span> New Division
-          </button> &nbsp;
-          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#add-unit">
-              <span class="glyphicon glyphicon-plus"></span> New Unit
+          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#add-bank">
+              <span class="glyphicon glyphicon-plus"></span> New Bank
           </button>
         </div>
       </div><br>  
 <!-- TABLES -->
       <div class="row">
-        <div class="col-md-6"> 
+        <div class="col-md-12"> 
 <h4><b>Units Table</b></h4>
           <div class="box box-primary">
             <div class="box-body">
               <table id="employees" class="table table-bordered table-hover" width="100%">
                 <thead>
                 <tr>
-                  <th>Department</th>
-                  <th>Division</th>
-                  <th>Unit</th>
+                  <th>Name of Bank</th>
+                  <th>Branch</th>
                   <th>Address</th>
+                  <th>Manager</th>
+                  <th>Mobile No.</th>
+                  <th>Telephone No.</th>
+                  <th>Email</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Pulsar</td>
-                  <td>Engineering</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>Construction</b></a></td>
-                  <td>Centro, Penablanca, Cagayan</td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>BPI-Bank of the Philippines Islands</b></a></td>
+                  <td>BPI-Tuguegarao Main</td>
+                  <td>Centro 10, Tuguegarao City, Cagayan</td>
+                  <td>Mr. Erickson B. Supnet</td>
+                  <td>09123456789</td>
+                  <td>844-1234</td>
+                  <td>support@bpi.com.ph</td>
                 </tr>
-                <tr>
-                  <td>Pulsar</td>
-                  <td>General Services</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>Accounting</b></a></td>
-                  <td>123, Cabbo, Penablanca, Cagayan</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6"> 
-<h4><b>Divisions Table</b></h4>
-          <div class="box box-primary">
-            <div class="box-body">
-              <table id="employees" class="table table-bordered table-hover" width="100%">
-                <thead>
-                <tr>
-                  <th>Department</th>
-                  <th>Division</th>
-                  <th>Address</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Pulsar</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>Engineering</b></a></td>
-                  <td>Centro, Penablanca, Cagayan</td>
-                </tr>
-                <tr>
-                  <td>Pulsar</td>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>Accounting</b></a></td>
-                  <td>123, Cabbo, Penablanca, Cagayan</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6"> 
-<h4><b>Departments Table</b></h4>
-          <div class="box box-primary">
-            <div class="box-body">
-              <table id="employees" class="table table-bordered table-hover" width="100%">
-                <thead>
-                <tr>
-                  <th>Department</th>
-                  <th>Address</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>Pulsar</b></a></td>
-                  <td>123, Cabbo, Penablanca, Cagayan</td>
-                </tr>
-                <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>JJE Construction</b></a></td>
-                  <td>444, guig, Cagayan</td>
-                </tr>
+
                 </tbody>
               </table>
             </div>
@@ -822,105 +617,11 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Edit Department Information</h4>
+                <h4 class="modal-title">Edit Bank Information</h4>
               </div>
               <div class="modal-body">
                 <!-- Custom Tabs (Pulled to the right) -->
-                <form class="form-horizontal" id="">
-                          <div class="box-body">
-                            <div class="form-group col-sm-12">
-                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                              <!-- <label class="col-sm-2 control-label"></label>
-                              <div class="col-sm-10 text-blue"><h4><i class="fa fa-clone"></i><b> Assignment</b></h4></div> -->
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-2 control-label">Department</label>
-                              <div class="col-sm-10">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="0">- - select department - -</option>
-                              <option value="1">PULSAR CONSTRUCTION</option>
-                              <option value="2">DEPTARTMENT 1</option>
-                              <option value="3">DEPTARTMENT 2</option>
-                              </select></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-2 control-label">Division</label>
-                              <div class="col-sm-4">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="0">- - select division - -</option>
-                              <option value="1">CONSTRUCTION</option>
-                              <option value="2">OPERATIONS</option>
-                              <option value="3">ACCOUNTING</option>
-                              <option value="3">ENGINEERING</option>
-                              </select></div>
-                              <label class="col-sm-2 control-label">Unit</label>
-                              <div class="col-sm-4">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="0">- - select unit - -</option>
-                              <option value="1">MAINTENANCE</option>
-                              <option value="2">UNIT 2</option>
-                              <option value="3">UNIT 3</option>
-                              </select></div>
-                            </div>
-                            <br>
-                            
-                            <div class="form-group col-sm-12">
-                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
-                              <!-- <label class="col-sm-2 control-label"></label>
-                              <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-2 control-label">Region</label>
-                              <div class="col-sm-4">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="1">Region II</option>
-                              <option value="2">Region I</option>
-                              <option value="3">Region III</option>
-                              </select>
-                              </div>
-                              <label class="col-sm-2 control-label">Province</label>
-                              <div class="col-sm-4">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="1">Cagayan</option>
-                              <option value="2">Isabela</option>
-                              <option value="3">Vizcaya</option>
-                              <option value="4">Batanes</option>
-                              <option value="5">Quirino</option>
-                              </select>
-                              </div>
-                            
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-2 control-label">Municipality</label>
-                              <div class="col-sm-6">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="1">Tuguegarao City</option>
-                              <option value="2">Iguig</option>
-                              <option value="3">Solana</option>
-                              <option value="4">Enrile</option>
-                              <option value="5">Peñablanca</option>
-                              <option value="6">Gonzaga</option>
-                              <option value="7">Sta. Ana</option>
-                              </select>
-                              </div>
-                              <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
-                              <div class="col-sm-2"><input type="text" class="form-control" id="emp_barangay" placeholder="" disabled required=""></div>
-                            </div>
-                            <div class="form-group col-sm-12">
-                              <label class="col-sm-2 control-label">Barangay</label>
-                              <div class="col-sm-4">
-                              <select class="form-control select2" style="width: 100%;" required="">
-                              <option selected="selected" value="1">Ugac Norte</option>
-                              <option value="2">Caritan</option>
-                              <option value="3">Pallua</option>
-                              </select>
-                              </div>
-                              <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
-                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
-                            </div>
-                          </div>
-                          <!-- /.box-body -->
-                        </form>
+                <form class="form-horizontal" id=""></form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -953,17 +654,10 @@
 <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- App -->
 <script src="../../dist/js/app.min.js"></script>
-<!-- Sparkline -->
-<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- SlimScroll -->
 <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- Confirmation -->
 <script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
-<!-- date-range-picker -->
-<script src="../../bower_components/moment/min/moment.min.js"></script>
-<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
-<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- DataTables -->
 <script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -1012,35 +706,7 @@ $('[data-toggle=confirmation]').confirmation({
   $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
   })
-
-    //Date picker
-    $('#datepicker-bday').datepicker({
-      autoclose: true
-    })  
 
     $(document).ready(function(){
     $(".btn-primary").click(function(){
