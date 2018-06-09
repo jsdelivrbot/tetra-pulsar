@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- iCheck for checkboxes and radio inputs -->
   <link rel="stylesheet" href="../../plugins/iCheck/all.css">
-  <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+  <!-- TreeGrid -->
+  <link rel="stylesheet" href="../../bower_components/tree-grid/src/treeGrid.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- Select2 -->
@@ -641,9 +641,24 @@
               </table>
             </div>
             <!-- /.tab-content -->
-          
           </div>
 <!-- ////// END ASSET ATTACHMENTS -->
+<!-- ////// START REQUISITIONS -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs pull-right tab-head">
+              <li class="active"><a href="#tab_8-8" data-toggle="tab">Documents</a></li>
+              <li class="pull-left header"><h4><i class="fa fa-file-text-o"></i> Requisitions</li></h4>
+            </ul>
+            <div class="tab-content">
+              <div ng-controller="treeGridController">
+            <button ng-click="my_tree.collapse_all()" class="btn btn-default btn-sm">Collapse All</button>
+            <input class="input-sm pull-right" type="text" data-ng-model="filterString" placeholder="Filter" />
+            <tree-grid tree-data="tree_data" tree-control="my_tree" col-defs="col_defs" expand-on="expanding_property" on-select="my_tree_handler(branch)" expand-level="1" icon-leaf= "glyphicon glyphicon-globe"></tree-grid>
+        </div>
+            </div>
+            <!-- /.tab-content -->
+          </div>
+<!-- ////// END REQUISITIONS -->
         </div>
         <!-- /.col -->
       </div>
@@ -697,46 +712,6 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Update</button>
-              </div>
-            </form>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-<!-- ATTATCHMENT MODALS HERE -->
-<!-- MODAL-WARRANTY HERE HERE -->
-        <div class="modal fade" id="modal-warranty">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><li class="fa fa-plus"></li> Add an Asset Warranty</h4>
-              </div>
-            <form class="form-horizontal" id="">
-              <div class="modal-body"><br>
-                <div class="form-group">
-                  <label for="controlnumber" class="col-sm-3 control-label">Length (Months)</label>
-                  <div class="col-sm-8"><input type="text" class="form-control" id="warranty_months" required=""></div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">Expiration Date</label>
-                  <div class="col-sm-8">
-                  <div class="input-group date">
-                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                  <input type="text" class="form-control pull-right" id="warranty_expiration" required="">
-                </div></div>
-                </div>
-                <div class="form-group">
-                  <label for="rs-desc" class="col-sm-3 control-label">Description/Remarks</label>
-                  <div class="col-sm-8"><textarea class="col-sm-8 form-control" id="warranty_desc" rows="2"></textarea></div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
             </div>
@@ -865,6 +840,12 @@
 <script src="../../bower_components/datatables.net/js/dataTables.select.min.js"></script>
 <script src="../../bower_components/datatables.net/js/dataTables.checkboxes.min.js"></script>
 <script src="../../bower_components/datatables.net/js/dataTables.fixedColumns.min.js"></script>
+<!-- Angular -->
+<script src="../../bower_components/angular-1.2.1/angular.min.js"></script>
+<!-- TreeGrid -->
+<script src="../../bower_components/tree-grid/src/tree-grid-directive.js"></script>
+<script src="../../bower_components/tree-grid/test/treeGridTest.js"></script>
+
 <!-- page script -->
 <script>
     $('#warranty').DataTable( {
@@ -878,56 +859,15 @@
         select: true
     } );    
 
-    $('#insurance').DataTable( {
-      "scrollY": 110,
-      "scrollX": true,
-      dom: 'rtip',
-      buttons: [
-            'copyHtml5'
-        ],
-        columnDefs: [ {visible: false} ],
-        select: true
-    } );
-
-
 $('[data-toggle=confirmation]').confirmation({
   rootSelector: '[data-toggle=confirmation]',
   // other options
 });
 
-  $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-  })
-
-    //Date picker
-    $('#warranty_expiration').datepicker({
-      autoclose: true
-    })  
 </script>
+<!-- FILE UPLOAD JS -->
 <script type="text/javascript">
 $(function() {
 
@@ -954,108 +894,7 @@ $(function() {
 
       });
   });
-  
 });
-</script>
-<script type="text/javascript">
-(function ($) {
-  $.fn.countTo = function (options) {
-    options = options || {};
-    
-    return $(this).each(function () {
-      // set options for current element
-      var settings = $.extend({}, $.fn.countTo.defaults, {
-        from:            $(this).data('from'),
-        to:              $(this).data('to'),
-        speed:           $(this).data('speed'),
-        refreshInterval: $(this).data('refresh-interval'),
-        decimals:        $(this).data('decimals')
-      }, options);
-      
-      // how many times to update the value, and how much to increment the value on each update
-      var loops = Math.ceil(settings.speed / settings.refreshInterval),
-        increment = (settings.to - settings.from) / loops;
-      
-      // references & variables that will change with each update
-      var self = this,
-        $self = $(this),
-        loopCount = 0,
-        value = settings.from,
-        data = $self.data('countTo') || {};
-      
-      $self.data('countTo', data);
-      
-      // if an existing interval can be found, clear it first
-      if (data.interval) {
-        clearInterval(data.interval);
-      }
-      data.interval = setInterval(updateTimer, settings.refreshInterval);
-      
-      // initialize the element with the starting value
-      render(value);
-      
-      function updateTimer() {
-        value += increment;
-        loopCount++;
-        
-        render(value);
-        
-        if (typeof(settings.onUpdate) == 'function') {
-          settings.onUpdate.call(self, value);
-        }
-        
-        if (loopCount >= loops) {
-          // remove the interval
-          $self.removeData('countTo');
-          clearInterval(data.interval);
-          value = settings.to;
-          
-          if (typeof(settings.onComplete) == 'function') {
-            settings.onComplete.call(self, value);
-          }
-        }
-      }
-      
-      function render(value) {
-        var formattedValue = settings.formatter.call(self, value, settings);
-        $self.html(formattedValue);
-      }
-    });
-  };
-  
-  $.fn.countTo.defaults = {
-    from: 0,               // the number the element should start at
-    to: 0,                 // the number the element should end at
-    speed: 1000,           // how long it should take to count between the target numbers
-    refreshInterval: 100,  // how often the element should be updated
-    decimals: 0,           // the number of decimal places to show
-    formatter: formatter,  // handler for formatting the value before rendering
-    onUpdate: null,        // callback method for every time the element is updated
-    onComplete: null       // callback method for when the element finishes updating
-  };
-  
-  function formatter(value, settings) {
-    return value.toFixed(settings.decimals);
-  }
-}(jQuery));
-
-jQuery(function ($) {
-  // custom formatting example
-  $('.count-number').data('countToOptions', {
-  formatter: function (value, options) {
-    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-  }
-  });
-  
-  // start all the timers
-  $('.timer').each(count);  
-  
-  function count(options) {
-  var $this = $(this);
-  options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-  $this.countTo(options);
-  }
-});  
 </script>
 </body>
 </html>
