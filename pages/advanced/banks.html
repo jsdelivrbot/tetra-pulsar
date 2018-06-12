@@ -435,11 +435,11 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
-            <li><a href="create-insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
+            <li><a href="insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
             <li><a href="#"><i class="fa fa-money"></i>Funding</a></li>
             <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
             <li><a href="#"><i class="fa fa-users"></i>User's Group</a></li>
-            <li><a href="office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
+            <li><a href="offices.html"><i class="fa fa-building"></i>Offices</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
@@ -481,11 +481,7 @@
                     <div class="form-group col-sm-12">
                       <label class="col-sm-1 control-label">Branch</label>
                       <div class="col-sm-4">
-                      <select class="form-control select2" style="width: 100%;" required="">
-                      <option selected="selected" value="1">BPI-Tuguegarao Main</option>
-                      <option value="2">BPI-Tanza</option>
-                      <option value="3">BPI-Caritan</option>
-                      </select>
+                      <input type="text" class="form-control" id="bank-branch" style="width: 100%;" required="">
                       </div>
                       <label for="zipcode" class="col-sm-1 control-label">St/Bldg/Unit</label>
                       <div class="col-sm-3"><input type="text" class="form-control" id="bank-street" style="width: 100%;" required=""></div>
@@ -590,7 +586,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td><a href="#" data-toggle="modal" data-target="#modal-default"><b>BPI-Bank of the Philippines Islands</b></a></td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-edit-bank"><b>BPI-Bank of the Philippines Islands</b></a></td>
                   <td>BPI-Tuguegarao Main</td>
                   <td>Centro 10, Tuguegarao City, Cagayan</td>
                   <td>Mr. Erickson B. Supnet</td>
@@ -610,7 +606,7 @@
   <!-- /.content-wrapper -->
 
       <!-- MODAL CONTENTS -->
-        <div class="modal fade" id="modal-default">
+        <div class="modal fade" id="modal-edit-bank">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
@@ -620,12 +616,118 @@
               </div>
               <div class="modal-body">
                 <!-- Custom Tabs (Pulled to the right) -->
-                <form class="form-horizontal" id=""></form>
+                <form class="form-horizontal" id="">
+                          <div class="box-body">
+
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Bank Name</label>
+                              <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="" required="">
+                              </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Branch</label>
+                              <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="" required="">
+                              </div>
+                            </div>
+                           <br>
+                            <div class="form-group col-sm-12">
+                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                              <!-- <label class="col-sm-2 control-label"></label>
+                              <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Region</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Region II</option>
+                              <option value="2">Region I</option>
+                              <option value="3">Region III</option>
+                              </select>
+                              </div>
+                              <label class="col-sm-2 control-label">Province</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Cagayan</option>
+                              <option value="2">Isabela</option>
+                              <option value="3">Vizcaya</option>
+                              <option value="4">Batanes</option>
+                              <option value="5">Quirino</option>
+                              </select>
+                              </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Municipality</label>
+                              <div class="col-sm-6">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Tuguegarao City</option>
+                              <option value="2">Iguig</option>
+                              <option value="3">Solana</option>
+                              <option value="4">Enrile</option>
+                              <option value="5">Peñablanca</option>
+                              <option value="6">Gonzaga</option>
+                              <option value="7">Sta. Ana</option>
+                              </select>
+                              </div>
+                              <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                              <div class="col-sm-2"><input type="text" class="form-control" id="" placeholder="" disabled required=""></div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label class="col-sm-2 control-label">Barangay</label>
+                              <div class="col-sm-4">
+                              <select class="form-control select2" style="width: 100%;" required="">
+                              <option selected="selected" value="1">Ugac Norte</option>
+                              <option value="2">Caritan</option>
+                              <option value="3">Pallua</option>
+                              </select>
+                              </div>
+                              <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="" placeholder=""></div>
+                            </div>
+                           <br>
+                            <div class="form-group col-sm-12">
+                              <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                              <!-- <label class="col-sm-2 control-label"></label>
+                              <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
+                            </div>
+                          <div class="form-group col-sm-12">
+                            <label class="col-sm-2 control-label">Manager</label>
+                            <div class="col-sm-4">
+                               <input type="text" class="form-control" id="" required="">
+                            </div>
+                            <label class="col-sm-2 control-label">Mobile #</label>
+                            <div class="col-sm-4">
+                               <input type="text" class="form-control" id="" required="">
+                            </div>
+                          </div>
+                          <div class="form-group col-sm-12">
+                            <label class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-4">
+                               <input type="text" class="form-control" id="" required="">
+                            </div>
+                            <label class="col-sm-2 control-label">Telephone #</label>
+                            <div class="col-sm-4">
+                               <input type="text" class="form-control" id="" required="">
+                            </div>
+                          </div>
+                        </div>
+                          <!-- /.box-body -->
+                        
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary pull-right">Confirmation</button>
-                <button type="button" class="btn btn-info pull-right" style="margin-right: 7px;"><li class="fa fa-print"></li> Print</button>
+                <button class="btn btn-large btn-danger pull-left" data-toggle="confirmation"
+                  data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                  data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                  data-title="Confirmation." data-content="Are you sure?" style="width: 10%;"> Delete
+                </button>
+                <button class="btn btn-large btn-success pull-right" data-toggle="confirmation"
+                  data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                  data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                  data-title="Confirm data entry." data-content="Update entry?" style="width: 20%;"> Update
+                </button>
                 <!-- nav-tabs-custom -->
               </div>
             </div>
