@@ -46,6 +46,8 @@
       h3 {margin-top: 2px; font-size: 23px;}
       table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before {margin-top: -10px !important;}
       .modal-header {background-color: #f1f1f1;}
+      .fa-minus {margin-top: -5px;}
+      .fa-plus {margin-top: -5px;}
   </style>      
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
@@ -608,7 +610,7 @@
               <table id="tbl-linked-assets" class="table table-bordered table-hover" width="100%">
                 <thead>
                 <tr>
-                  <th></th>
+                  <th style="width: 10px;"></th>
                   <th>Asset Tag</th>
                   <th>ID</th>
                   <th>Category</th>
@@ -619,7 +621,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-danger btn-xs fa fa-minus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT99</b></a></td>
                   <td>DT99</td>
                   <td>Construction Equipment</td>
@@ -629,18 +631,13 @@
                 </tr>
                 </tbody>
               </table>
-              <button class="btn btn-sm btn-danger pull-left" data-toggle="confirmation"
-              data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-              data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-              data-title="Confirm data change." data-content="Are you sure?" style="width: 13%;"> <li class="fa fa-unlink"></li> Remove Associated Asset
-            </button>
 <br><hr>
           <h3><li class="fa fa-link"></li> Associate New Assets</h3>
           <p>Select assets that are connected to your insurance policy. To associate assets, check boxes next to all of the assets for the insurance policy and select <strong>Associate Assets</strong>.</p>
               <table id="tbl-assets" class="table table-bordered table-hover" width="100%">
                 <thead>
                 <tr>
-                  <th></th>
+                  <th style="width: 10px;"></th>
                   <th>Asset Tag</th>
                   <th>ID</th>
                   <th>Category</th>
@@ -651,7 +648,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT1</td>
                   <td>Construction Equipment</td>
@@ -659,7 +656,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT2</td>
                   <td>Construction Equipment</td>
@@ -667,7 +664,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT7</td>
                   <td>Construction Equipment</td>
@@ -675,7 +672,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT8</td>
                   <td>Construction Equipment</td>
@@ -683,7 +680,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT9</td>
                   <td>Construction Equipment</td>
@@ -691,7 +688,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT10</td>
                   <td>Construction Equipment</td>
@@ -699,7 +696,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT11</td>
                   <td>Construction Equipment</td>
@@ -707,7 +704,7 @@
                   <td>CXZ19J-3005460</td>
                   <td>ISUZU</td>
                 </tr><tr>
-                  <td></td>
+                  <td align="center"><button type="button" class="btn btn-primary btn-xs fa fa-plus"></button></td>
                   <td><a href="#"><b>CONE-03082018-DT1</b></a></td>
                   <td>DT12</td>
                   <td>Construction Equipment</td>
@@ -717,11 +714,6 @@
                 </tr> 
                 </tbody>
               </table>
-              <button class="btn btn-sm btn-warning pull-left" data-toggle="confirmation"
-              data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-              data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-              data-title="Confirm data change." data-content="Are you sure?" style="width: 13%;"> <li class="fa fa-link"></li> Associate Assets
-            </button>
         </div>   
 <br>
         <div class="modal-footer">
@@ -809,8 +801,6 @@ let example = $('#tbl-assets').DataTable({
     "lengthMenu": [5],
     columnDefs: [{
         orderable: false,
-        className: 'select-checkbox',
-        targets: 0
     }],
     select: {
         style: 'multi',
@@ -824,8 +814,6 @@ let example2 = $('#tbl-linked-assets').DataTable({
     "lengthMenu": [10],
     columnDefs: [{
         orderable: false,
-        className: 'select-checkbox',
-        targets: 0
     }],
     select: {
         style: 'multi',
