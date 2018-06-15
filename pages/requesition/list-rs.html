@@ -468,7 +468,6 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Close RS (Withdrawal)</a></li>
                       </ul>
                     </li>
                     <li class="pull-left header"><i class="fa fa-file-text"></i> STR Ramon Proj</li>
@@ -581,6 +580,56 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+                              <form>
+                                  <h4><b>**Withdrawal Information</b></h4><br>
+                                  <div class="form-group col-sm-12">
+                                    <label for="controlnumber" class="col-sm-2 control-label">Received By</label>
+                                    <div class="col-sm-4">
+                                      <select class="form-control select2" style="width:100%;" required/>
+                                        <option selected="selected">Select Employee</option>
+                                        <option value="1">Erik Super</option>
+                                        <option value="2">Erik Pawer</option>
+                                      </select>
+                                    </div>
+                                    <label for="controlnumber" class="col-sm-2 control-label">Inspected by</label>
+                                    <div class="col-sm-4">
+                                      <select class="form-control select2" style="width:100%;" required/>
+                                        <option selected="selected">Select Employee</option>
+                                        <option value="1">Erik Super</option>
+                                        <option value="2">Erik Pawer</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group col-sm-12">
+                                    <label class="col-sm-2 control-label">Date Received</label>
+                                    <div class="col-sm-4">
+                                    <div class="input-group date">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input type="text" class="form-control pull-right" id="">
+                                  </div></div>
+
+                                    <label class="col-sm-2 control-label">Date Inspected</label>
+                                    <div class="col-sm-4">
+                                    <div class="input-group date">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input type="text" class="form-control pull-right" id="">
+                                  </div></div>
+                                  </div>
+                                      <div class="form-group">
+                                        <div class="form-group">
+                                          <input type="button" class="btn btn-info pull-right" value="Save Changes" style="margin-right: 30px;">
+                                      </div>
+                                      </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
          
                     </div>
                     <!-- /.tab-pane -->
@@ -591,8 +640,6 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
             <!-- /.modal-content -->
