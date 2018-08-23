@@ -1,11 +1,12 @@
 body{
-    background-color: #d2d6de;
+    background-color: #ecf0f5;
 	color: #333;
 	font-family: 'Source Sans', sans-serif;
 	font-size: 13px;
 }
 .container{
 	position:relative;
+	padding-top: 7.85%;
 }
 a{
 	color: #000;
@@ -16,6 +17,7 @@ a{
 }
 .content{
 	position:relative;
+	margin-top: 28px;
 }
 h1{
 	margin:0px;
@@ -105,9 +107,6 @@ h1 span{
 	color:#fff;
 }
 
-#name{font-size: 12px;}     
-#logas{color:gray;}
-
 #footer {
    position:relative;	
    top:125px;
@@ -115,4 +114,15 @@ h1 span{
    height:20px;   
    text-align: center;
    color:gray;
+}
+
+.login-logo {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+.login-logo a {
+  color: #444;
+  font-family: Source Sans Pro;
 }

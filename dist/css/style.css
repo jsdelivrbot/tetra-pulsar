@@ -3246,11 +3246,11 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background: #d2d6de;
+  background: #ecf0f5;
 }
 .login-box,
 .register-box {
-  width: 400px;
+  width: 500px;
   margin: 7% auto;
 }
 @media (max-width: 768px) {

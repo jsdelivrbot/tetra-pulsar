@@ -56,8 +56,7 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 <div class="wrapper">
@@ -421,7 +420,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><span class="fa fa-user"> </span> Manage Employees</h1>
-      <p>To create a new Acknowledgment Receipt of Equipment (ARE), click an <strong>Employee ID</strong> and enter the necessary information.</p>
+      <p>To add a new Employee, click the <strong>New Employee</strong> button and enter the necessary information. To display employee details, click the <strong>Employee's ID Number</strong>.</p>
       <ol class="breadcrumb">
         <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li class="active">Employee Manager</li>
@@ -431,13 +430,194 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-sm-6">
-      <div class="box">
-        <!-- form start -->
-          <form role="form">
+        <div id="button-top" class="col-md-9"> 
+<!-- BUTTONS -->
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#create-voucher" data-parent="#btn-top">
+              <span class="glyphicon glyphicon-plus"></span> New Employee
+          </button> &nbsp;&nbsp;&nbsp;
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#filter" data-parent="#btn-top">
+              <span class="glyphicon glyphicon-refresh"></span> Filter Display
+          </button> <br>
+
+<!-- NEW EMPLOYEE -->
+          <div id="create-voucher" class="collapse"><br>
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add a New Employee</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form id="from-unit" class="form-horizontal" role="form">
+              <div class="box-body">
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Employee ID</label>
+                  <div class="col-sm-3"><input type="number" class="form-control"></div>
+                  <label for="dv-payee-type" class="col-sm-3 control-label">Gender</label>
+                  <div class="radio col-sm-3">
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="supplier" checked>Male</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="bank">Female</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Last Name</label>
+                  <div class="col-sm-4"><input type="text" class="form-control"></div>
+                  <label for="controlnumber" class="col-sm-2 control-label">Birthdate</label>
+                  <div class="col-sm-2">
+                    <div class="input-group date">
+                      <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                      <input type="text" class="form-control pull-right" id="datepicker-bday">
+                    </div>
+                  </div>
+                  <label for="controlnumber" class="col-sm-1 control-label">Suffix</label>
+                  <div class="col-sm-1"><input type="text" class="form-control"></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">First Name</label>
+                  <div class="col-sm-4"><input type="text" class="form-control"></div>
+                  <label for="controlnumber" class="col-sm-2 control-label">Phone Number</label>
+                  <div class="col-sm-3"><input type="number" class="form-control"></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Middle Name</label>
+                  <div class="col-sm-4"><input type="text" class="form-control"></div>
+                  <label for="controlnumber" class="col-sm-2 control-label">Email Address</label>
+                  <div class="col-sm-3"><input type="text" class="form-control"></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                  <!-- <label class="col-sm-2 control-label"></label>
+                  <div class="col-sm-10 text-blue"><h4><i class="fa fa-clone"></i><b> Assignment</b></h4></div> -->
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Job Title</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="0">- - select job title - -</option>
+                  <option value="1">OFFICE CLERK</option>
+                  <option value="2">DRIVER</option>
+                  <option value="3">ENGINEER</option>
+                  </select></div>
+                  <label class="col-sm-2 control-label">Department</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="0">- - select department - -</option>
+                  <option value="1">PULSAR CONSTRUCTION</option>
+                  <option value="2">DEPTARTMENT 1</option>
+                  <option value="3">DEPTARTMENT 2</option>
+                  </select></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Division</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="0">- - select division - -</option>
+                  <option value="1">CONSTRUCTION</option>
+                  <option value="2">OPERATIONS</option>
+                  <option value="3">ACCOUNTING</option>
+                  <option value="3">ENGINEERING</option>
+                  </select></div>
+                  <label class="col-sm-2 control-label">Unit</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="0">- - select unit - -</option>
+                  <option value="1">MAINTENANCE</option>
+                  <option value="2">UNIT 2</option>
+                  <option value="3">UNIT 3</option>
+                  </select></div>
+                </div>
+                            
+                <div class="form-group col-sm-12">
+                  <hr style="border-color:#e1e1e1;border-width:1px 0;">
+                  <!-- <label class="col-sm-2 control-label"></label>
+                  <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Region</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Region II</option>
+                  <option value="2">Region I</option>
+                  <option value="3">Region III</option>
+                  </select>
+                  </div>
+                  <label class="col-sm-2 control-label">Province</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Cagayan</option>
+                  <option value="2">Isabela</option>
+                  <option value="3">Vizcaya</option>
+                  <option value="4">Batanes</option>
+                  <option value="5">Quirino</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Municipality</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Tuguegarao City</option>
+                  <option value="2">Iguig</option>
+                  <option value="3">Solana</option>
+                  <option value="4">Enrile</option>
+                  <option value="5">Peñablanca</option>
+                  <option value="6">Gonzaga</option>
+                  <option value="7">Sta. Ana</option>
+                  </select>
+                  </div>
+                  <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                  <div class="col-sm-2"><input type="text" class="form-control" id="emp_barangay" placeholder="" disabled required=""></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Barangay</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected" value="1">Ugac Norte</option>
+                  <option value="2">Caritan</option>
+                  <option value="3">Pallua</option>
+                  </select>
+                  </div>
+                  <label for="zipcode" class="col-sm-2 control-label">Street/Bldg/Unit</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="emp_street" placeholder=""></div>
+                </div>
+
+                <div class="form-group col-sm-12">           
+                  <div class="col-sm-8"></div>
+                  <div class="col-sm-4">
+                  <button class="btn btn-large btn-primary btn-block" data-toggle="confirmation"
+                  data-btn-ok-label="Save" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                  data-btn-cancel-label="Cancel" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                  data-title="Confirm data entry." data-content="Are you sure?"> CONFIRMATION
+                  </button></div></div>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+          </div>
+
+<!-- FILTER DISPLAY -->
+          <div id="filter" class="collapse"><br>
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Filter Displayed Data</h3>
+            </div>
+            <!-- /.box-header -->
             <div class="box-body">
-              <div class="form-group">
-                <div class="col-sm-4">
+            <!-- form start -->
+            <form id="from-unit" class="form-horizontal" role="form">
+              <div class="form-group col-sm-12"">
+                <div class="col-sm-3">
                 <select class="form-control select2" style="width: 100%;" required="">
                 <option selected="selected" value="0">Select Division</option>
                 <option value="1">ACCOUNTING</option>
@@ -446,19 +626,17 @@
                 <option value="4">OPERATIONS</option>
                 </select>
                 </div>
-                <div class="col-sm-3"> 
-                <button type="button" class="btn btn-default"><li class="fa fa-refresh"></li> Filter Display</button>
-                </div>
-                <div class="col-sm-4"> 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default"><li class="fa fa-plus"></li> Add New Employee</button>
-                </div>  
+                <div class="col-sm-4">
+                  <button type="button" class="btn btn-default btn-flat">Filter Display</button></div>
               </div>
-            </div>
-            <!-- /.box-body -->
-          </form>
+            </form>
+          </div>
+          </div>
+          <!-- /.box -->
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <br>
       <div class="box box-primary">
             <div class="box-body">
               <table id="employees" class="table table-bordered table-hover" width="100%">
@@ -468,11 +646,7 @@
                   <th>Last Name</th>
                   <th>First Name</th>
                   <th>Middle Name</th>
-                  <th>Suffix</th>
                   <th>Job Title</th>
-                  <th>Birthdate</th>
-                  <th>Email Account</th>
-                  <th>Phone No.</th>
                   <th>Department</th>
                   <th>Division</th>
                   <th>Unit</th>
@@ -484,11 +658,7 @@
                   <td>CAPARAS</td>
                   <td>MICHAEL</td>
                   <td>PADILLA</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -498,11 +668,7 @@
                   <td>SUPNET</td>
                   <td>ERIKSON</td>
                   <td>TAGUIAM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -512,11 +678,7 @@
                   <td>BULAN</td>
                   <td>JAY</td>
                   <td>TAGAYUN</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -526,11 +688,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -540,11 +698,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -554,11 +708,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -568,11 +718,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -582,11 +728,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -596,11 +738,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -610,11 +748,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -624,11 +758,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -638,11 +768,7 @@
                   <td>GUZMAN</td>
                   <td>PEDRO</td>
                   <td>LIM</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -652,11 +778,7 @@
                   <td>CAPARAS</td>
                   <td>MICHAEL</td>
                   <td>PADILLA</td>
-                  <td>SR</td>
                   <td>DRIVER C</td>
-                  <td>12/1/1975</td>
-                  <td>TEST@GMAIL.COM</td>
-                  <td>09155107711</td>
                   <td>CONSTRUCTION</td>
                   <td>OPERATIONS</td>
                   <td>MAINTENANCE</td>
@@ -710,11 +832,17 @@
                             </div>
                             <div class="form-group col-sm-12">
                               <label for="controlnumber" class="col-sm-2 control-label">Employee ID</label>
-                              <div class="col-sm-6"><input type="text" class="form-control" id="emp_id"></div>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_id"></div>
+                              <label for="dv-payee-type" class="col-sm-2 control-label">Gender</label>
+                            <div class="radio col-sm-4">
+                              <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="supplier" checked>Male</label>
+                              &nbsp;&nbsp;&nbsp;
+                              <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="bank">Female</label>
+                            </div>
                             </div>
                             <div class="form-group col-sm-12">
                               <label for="controlnumber" class="col-sm-2 control-label">Last Name</label>
-                              <div class="col-sm-6"><input type="text" class="form-control" id="emp_lname"></div>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_lname"></div>
                               <label for="controlnumber" class="col-sm-2 control-label">Suffix</label>
                               <div class="col-sm-2"><input type="text" class="form-control" id="emp_sfx"></div>
                             </div>
@@ -729,10 +857,14 @@
                             </div></div>
                             </div>
                             <div class="form-group col-sm-12">
-                              <label for="controlnumber" class="col-sm-2 control-label">Email Account</label>
+                              <label for="controlnumber" class="col-sm-2 control-label">Middle Name</label>
                               <div class="col-sm-4"><input type="text" class="form-control" id="emp_email"></div>
                               <label for="controlnumber" class="col-sm-2 control-label">Phone No.</label>
                               <div class="col-sm-4"><input type="text" class="form-control" id="emp_phone"></div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                              <label for="controlnumber" class="col-sm-2 control-label">Email Address</label>
+                              <div class="col-sm-4"><input type="text" class="form-control" id="emp_email"></div>
                             </div>
 
                             <div class="form-group col-sm-12">
@@ -740,6 +872,7 @@
                               <!-- <label class="col-sm-2 control-label"></label>
                               <div class="col-sm-10 text-blue"><h4><i class="fa fa-clone"></i><b> Assignment</b></h4></div> -->
                             </div>
+
                             <div class="form-group col-sm-12">
                               <label class="col-sm-2 control-label">Job Title</label>
                               <div class="col-sm-10">
@@ -779,13 +912,13 @@
                               <option value="3">UNIT 3</option>
                               </select></div>
                             </div>
-                            <br>
                             
                             <div class="form-group col-sm-12">
                               <hr style="border-color:#e1e1e1;border-width:1px 0;">
                               <!-- <label class="col-sm-2 control-label"></label>
                               <div class="col-sm-9 text-blue"><h4><i class="fa fa-address-book-o"></i><b> Address</b></h4></div> -->
                             </div>
+
                             <div class="form-group col-sm-12">
                               <label class="col-sm-2 control-label">Region</label>
                               <div class="col-sm-4">
@@ -805,7 +938,6 @@
                               <option value="5">Quirino</option>
                               </select>
                               </div>
-                            
                             </div>
                             <div class="form-group col-sm-12">
                               <label class="col-sm-2 control-label">Municipality</label>
