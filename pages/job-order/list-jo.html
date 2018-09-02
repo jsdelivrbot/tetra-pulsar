@@ -543,29 +543,22 @@
                 <!-- Custom Tabs (Pulled to the right) -->
                 <div class="nav-tabs-custom">
                   <ul class="nav nav-tabs pull-right">
-                    <li class="active"><a href="#tab_1-1" data-toggle="tab">Details</a></li>
-                    <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Options <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Close J.O. (Completed)</a></li>
-                      </ul>
-                    </li>
+                    <li class="active"><a href="#tab_1-1" data-toggle="tab">Job Order Details</a></li>
+
                     <li class="pull-left header"><h4>Dump Truck: <b>CONE-03082018-DT1</b></h4></li>
                   </ul>
                   <br>
                   <div class="tab-content">
                     <div class="tab-pane active" id="tab_1-1">
-
+<!--  ROW TOP  -->
                       <div class="row">
-                        <div class="col-sm-2"> 
-                          <div class="pull-left image col-xs-3">
-                            <img src="../../dist/img/dumptruck3_1024x768.jpg" height="200" width="270" class="img-square">
+                        <div class="col-sm-3"> 
+                          <div class="pull-left image">
+                            <img src="../../dist/img/dumptruck3_1024x768.jpg" height="250" width="330" class="img-square">
                           </div>
                         </div>
-
-                        <div class="col-sm-10"> 
-                          <form class="form-horizontal" id="">
+                      <form class="form-horizontal" id="">
+                        <div class="col-sm-9"> 
                           <div class="box-body">
                             <div class="form-group">
                               <label for="jodate" class="col-sm-3 control-label">Job Order Date</label>
@@ -581,63 +574,74 @@
                             </div>
                             <div class="form-group">
                               <label for="requestingemp" class="col-sm-3 control-label">Requesting Employee</label>
-                              <div class="col-sm-8"><input type="text" class="form-control" id="requestingemp" disabled="" placeholder="Mykee Caparas"></div>
+                              <div class="col-sm-9"><input type="text" class="form-control" id="requestingemp" disabled="" placeholder="Mykee Caparas"></div>
                             </div>
-
-                            <br>
                             <div class="form-group">
                               <label for="particulars" class="col-sm-3 control-label">Particulars</label>
-                              <div class="col-sm-8"><textarea name="particulars" rows="5" cols="93"></textarea></div></div>
+                            <div class="col-sm-9"><textarea name="particulars" rows="2" cols="109"></textarea></div>
                             </div>
-
+                          </div>
+                        </div>
+                      </div>
+<!--  END ROW TOP  -->
+<!--  ROW BOT  -->
+                      <div class="row">     
+<!--  STARTED  --> 
+                        <div class="col-sm-4"> 
+                        <div class="box-body">
                           <div class="form-group">
-                            <label class="col-sm-4 control-label">Date Started</label>
-                            <div class="col-sm-8">
+                            <label class="col-sm-12 control-label">Date Started</label>
+                            <div class="col-sm-12">
                             <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                            <input type="text" class="form-control pull-right" id="datestarted">
+                            <input type="text" class="form-control pull-right" id="datestarted" required="">
                           </div></div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-4 control-label">Date Completed</label>
-                            <div class="col-sm-8">
+                            <label class="col-sm-12 control-label">Date Completed</label>
+                            <div class="col-sm-12">
                             <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                            <input type="text" class="form-control pull-right" id="datecompleted">
+                            <input type="text" class="form-control pull-right" id="datecompleted" required="">
                           </div></div>
                           </div>
                           <div class="form-group">
-                            <label for="workduration" class="col-sm-4 control-label">Work Duration</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="workduration" placeholder="Total Days"></div>
+                            <label for="workduration" class="col-sm-12 control-label">Work Duration</label>
+                            <div class="col-sm-7"><input type="Number" class="form-control" id="workduration" placeholder="Total Days"></div>
                           </div>
                           <div class="form-group">
-                          <label class="col-sm-4 control-label">Conducted by</label>
-                            <div class="col-sm-8">
-                            <select class="form-control select2" style="width: 100%;" required="">
-                            <option selected="selected" value="0">- - select employee - -</option>
-                            <option value="1">Driver 1</option>
-                            <option value="2">Driver 2</option>
-                            <option value="3">Driver 3</option>
-                            </select>
-                            </div>
+                            <label class="col-sm-12 control-label">Conducted by</label>
+                            <div class="col-sm-12"><input type="text" class="form-control" required=""></div>
+                          </div>
+                        </div>
+                        </div>
+<!-- END JOB STARTED  -->
+<!-- ASSESED -->        
+                        <div class="col-sm-4"> 
+                        <div class="box-body">
+                          <div class="form-group">
+                            <label for="assessedby" class="col-sm-12 control-label">Assessed by</label>
+                            <div class="col-sm-12"><input type="text" class="form-control" id="" placeholder=""></div>
                           </div>
                           <div class="form-group">
-                            <label for="assessedby" class="col-sm-4 control-label">Assessed by</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="" placeholder=""></div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-4 control-label">Date Assessed</label>
-                            <div class="col-sm-8">
+                            <label class="col-sm-12 control-label">Date Assessed</label>
+                            <div class="col-sm-12">
                             <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             <input type="text" class="form-control pull-right" id="dateassessed">
                           </div></div>
                           </div>
+                        </div>
+                        </div> 
+<!-- END ASSESED -->        
+<!-- APPROVED -->        
+                        <div class="col-sm-4"> 
+                        <div class="box-body">                   
                           <div class="form-group">
-                          <label class="col-sm-4 control-label">Approved by</label>
-                            <div class="col-sm-8">
+                          <label class="col-sm-12 control-label">Approved by</label>
+                            <div class="col-sm-12">
                             <select class="form-control select2" style="width: 100%;" required="">
-                            <option selected="selected" value="0">- - select employee - -</option>
+                            <option selected="selected" value="0">Select Employee</option>
                             <option value="1">Driver 1</option>
                             <option value="2">Driver 2</option>
                             <option value="3">Driver 3</option>
@@ -645,18 +649,24 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-4 control-label">Date Approved</label>
-                            <div class="col-sm-8">
+                            <label class="col-sm-12 control-label">Date Approved</label>
+                            <div class="col-sm-12">
                             <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                            <input type="text" class="form-control pull-right" id="dateapproved">
+                            <input type="text" class="form-control pull-right" id="dateapproved" required="">
                           </div></div>
                           </div>
+                        </div>
+                        </div>
+<!-- END APPROVED -->       
+<!-- INSPECTED -->
+                        <div class="col-sm-4"> <hr>
+                        <div class="box-body">
                           <div class="form-group">
-                          <label class="col-sm-4 control-label">Inspected by</label>
-                            <div class="col-sm-8">
+                          <label class="col-sm-12 control-label">Inspected by</label>
+                            <div class="col-sm-12">
                             <select class="form-control select2" style="width: 100%;" required="">
-                            <option selected="selected" value="0">- - select employee - -</option>
+                            <option selected="selected" value="0">Select Employee</option>
                             <option value="1">Driver 1</option>
                             <option value="2">Driver 2</option>
                             <option value="3">Driver 3</option>
@@ -664,18 +674,24 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-4 control-label">Date Inspected</label>
-                            <div class="col-sm-8">
+                            <label class="col-sm-12 control-label">Date Inspected</label>
+                            <div class="col-sm-12">
                             <div class="input-group date">
                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             <input type="text" class="form-control pull-right" id="dateinspected">
                           </div></div>
                           </div>
+                        </div>
+                        </div>  
+<!-- END INSPECTED -->        
+<!-- TESTED -->
+                        <div class="col-sm-4"> <hr>
+                        <div class="box-body">
                           <div class="form-group">
-                          <label class="col-sm-4 control-label">Tested by</label>
-                            <div class="col-sm-8">
+                          <label class="col-sm-12 control-label">Tested by</label>
+                            <div class="col-sm-12">
                             <select class="form-control select2" style="width: 100%;" required="">
-                            <option selected="selected" value="0">- - select employee - -</option>
+                            <option selected="selected" value="0">Select Employee</option>
                             <option value="1">Driver 1</option>
                             <option value="2">Driver 2</option>
                             <option value="3">Driver 3</option>
@@ -686,10 +702,10 @@
                             </div>
                           </div>
                           <div class="form-group">
-                          <label class="col-sm-4 control-label">Accepted by</label>
-                            <div class="col-sm-8">
+                          <label class="col-sm-12 control-label">Accepted by</label>
+                            <div class="col-sm-12">
                             <select class="form-control select2" style="width: 100%;" required="">
-                            <option selected="selected" value="0">- - select employee - -</option>
+                            <option selected="selected" value="0">Select Employee</option>
                             <option value="1">Driver 1</option>
                             <option value="2">Driver 2</option>
                             <option value="3">Driver 3</option>
@@ -698,42 +714,49 @@
                             <option value="6">Driver 6</option>
                             </select>
                             </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-12 control-label">Date Accepted</label>
+                            <div class="col-sm-12">
+                            <div class="input-group date">
+                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            <input type="text" class="form-control pull-right" id="dateaccepted">
+                          </div></div>
                           </div>
                         </div>
-              <!-- /.box-body -->
-            </form>
-                    </div>
+                        </div>
+<!-- END TESTED -->
+                      </div>
+<!-- END ROW -->
+                  </form>
+                  </div>
                     <!-- /.tab-pane -->
                   </div>
                   <!-- /.tab-content -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close Window</button>
+                    <button type="button" class="btn btn-default"><li class="fa fa-check"></li> Close J.O.</button>
+                    <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
+                    <button class="btn btn-large btn-primary pull-right" data-toggle="confirmation"
+                      data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                      data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                      data-title="Confirm data change." data-content="Are you sure?" style="width: 12%;"> Save Changes
+                    </button>
+                  </div>
                 </div>
-
-
-        </div>   
-<br>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
-          <button class="btn btn-large btn-primary pull-right" data-toggle="confirmation"
-            data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
-            data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
-            data-title="Confirm data change." data-content="Are you sure?" style="width: 12%;"> Save Changes
-          </button>
+              </div>   
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
         </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
         <!-- /.modal -->
-
       </div>
     </div>
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
-    <strong>Copyright &copy; <a target="_blank" href="http://bizlogiks.ph/">Bizlogiks-Business Solutions</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; <a target="_blank" href="http://bizlogiks.ph/">Bizlogiks-Business Solutions</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -757,8 +780,7 @@
 <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- App -->
 <script src="../../dist/js/app.min.js"></script>
-<!-- Sparkline -->
-<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
 <!-- SlimScroll -->
 <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- Confirmation -->
@@ -806,6 +828,9 @@ $('[data-toggle=confirmation]').confirmation({
       autoclose: true
     })
     $('#dateinspected').datepicker({
+      autoclose: true
+    })
+    $('#dateaccepted').datepicker({
       autoclose: true
     })
 

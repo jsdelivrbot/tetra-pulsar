@@ -498,27 +498,28 @@
 <!-- ////// ASSET EVENTS -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right tab-head">
+              <li><a href="#tab_8-8" data-toggle="tab">Documents</a></li>
+              <li><a href="#tab_7-7" data-toggle="tab">Insurances</a></li>
+              <li class="#tab_6-6"><a href="#tab_6-6" data-toggle="tab">Warranty</a></li>
               <li><a href="#tab_5-5" data-toggle="tab">Maintenance History</a></li>
               <li><a href="#tab_4-4" data-toggle="tab">Status</a></li>
-              <li class="active"><a href="#tab_2-2" data-toggle="tab">Events</a></li>
+              <li class="active"><a href="#tab_3-3" data-toggle="tab">Events</a></li>
               <li class="pull-left header"><h4><i class="fa fa-flag"></i> Attributes</li></h4>
             </ul>
             <div class="tab-content">
               <!-- /.tab-pane -->
-              <div class="tab-pane active" id="tab_2-2">
+              <div class="tab-pane active" id="tab_3-3">
                 <h4><b>Asset Events</b></h4>
                 <table class="table" width="100%">
                 <tbody>
                 <tr>
                   <td><code class="text-success">Assignment</code> Date 02/16/2018 </td>
-                  <td>ARE#000123</td>
                   <td>Assigned to John Juan</td>
                   <td>Notes Event notes here</td>
                   <td><a href="#" data-toggle="modal" data-target="#modal-event"><code class="text-green">EDIT</code></a></td>
                 </tr>
                 <tr>
                   <td><code class="text-success">Assignment</code> Date 01/16/2017 </td>
-                  <td>ARE#000246</td>
                   <td>Assigned to John Erik</td>
                   <td>Notes Event notes here</td>
                   <td><a href="#" data-toggle="modal" data-target="#modal-event"><code class="text-green">EDIT</code></a></td>
@@ -613,23 +614,12 @@
                 </tbody>
               </table>
               </div>
-              <!-- /.tab-pane -->          
-            </div>
-          </div>
-<!-- ////// END ASSET ATTRIBUTES -->
-<!-- ////// START ASSET ATTACHMENTS -->
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs pull-right tab-head">
-              <li><a href="#tab_8-8" data-toggle="tab">Documents</a></li>
-              <li><a href="#tab_7-7" data-toggle="tab">Insurances</a></li>
-              <li class="active"><a href="#tab_6-6" data-toggle="tab">Warranty</a></li>
-              <li class="pull-left header"><h4><i class="fa fa-clipboard"></i> Attachments</li></h4>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_6-6">
+              <!-- /.tab-pane -->
+
+              <div class="tab-pane" id="tab_6-6">
                 <h4><b>Asset Warranty:</b><button type="button" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#modal-warranty">
                 <li class="fa fa-plus"></li> Add New</button></h4> 
-                <table id="warranty" class="table" width="100%">
+                <table class="table" width="100%">
                 <thead>
                 <tr>
                   <th>Status</th>
@@ -681,7 +671,7 @@
               <div class="tab-pane" id="tab_8-8">
                 <h4><b>Asset Documents:</b><button type="button" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#modal-docs">
                 <li class="fa fa-upload"></li> Upload</button></h4> 
-                <table id="warranty" class="table" width="100%">
+                <table class="table" width="100%">
                 <thead>
                 <tr>
                   <th>Description</th>
@@ -724,10 +714,10 @@
               </table>
               </div>
               <!-- /.tab-pane -->
+                      
             </div>
-            <!-- /.tab-content -->
           </div>
-<!-- ////// END ASSET ATTACHMENTS -->
+<!-- ////// END ASSET ATTRIBUTES -->
         </div>
         <!-- /.col -->
       </div>
@@ -743,30 +733,15 @@
               </a>
               <a class="btn btn-app">
                 <i class="fa fa-image"></i> Photo
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-external-link"></i> Assign
-              </a>              
+              </a>            
               <a class="btn btn-app">
                 <i class="fa fa-wrench"></i> Repair
               </a>
               <a href="javascript: window.open('pdfasset.pdf');"  class="btn btn-app">
                 <i class="fa fa-print"></i> Print
               </a>
-              <a class="btn btn-app">
-                <i class="fa fa-bookmark-o"></i> Lease
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-heart-o"></i> Donate
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-folder-o"></i> Sell
-              </a>              
-              <a class="btn btn-app">
-                <i class="fa fa-unlink"></i> Dispose
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-eye-slash"></i> Lost/Missing
+              <a href="javascript: window.open('pdfasset.pdf');"  class="btn btn-app">
+                <i class="fa fa-compass"></i> Other Actions
               </a>
             </div>
             <!-- /.box-body -->
@@ -778,28 +753,28 @@
             <div class="box-body">
 
               <div class="wrapper" style="color: #000;background-color: #fff;">
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="12345" data-speed="1500"></h2>
+                  <div class="counter col_fourth col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="12345" data-speed="1500"></h1>
                      <li class="fa fa-clock-o fa-1x"></li><p class="count-text ">Operating Hours</p>
                   </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
+                  <div class="counter col_fourth col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="71234" data-speed="1500"></h1>
                     <li class="fa fa-road fa-1x"></li><p class="count-text ">Kilometers Traveled</p>
                   </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="55123" data-speed="1500"></h2>
+                  <div class="counter col_fourth col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="55123" data-speed="1500"></h1>
                     <li class="fa fa-database fa-1x"></li><p class="count-text ">Diesel (L) Consumed</p>
                   </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="90123" data-speed="1500"></h2>
+                  <div class="counter col_fourth col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="90123" data-speed="1500"></h1>
                     <li class="fa fa-database fa-1x"></li><p class="count-text ">Gas (L) Consumed</p>
                   </div>
-                  <div class="counter col_fourth col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="23123" data-speed="1500"></h2>
+                  <div class="counter col_fourth col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="23123" data-speed="1500"></h1>
                     <li class="fa fa-bullseye fa-1x"></li><p class="count-text ">Oil (L) Consumed</p>
                   </div>
-                  <div class="counter col_fourth end col-sm-3">
-                    <h2 class="timer count-title count-number" data-to="71234" data-speed="1500"></h2>
+                  <div class="counter col_fourth end col-sm-5">
+                    <h1 class="timer count-title count-number" data-to="71234" data-speed="1500"></h1>
                     <li class="fa fa-truck fa-1x"></li><p class="count-text ">Loads (m3)</p>
                   </div>
               </div>
@@ -986,29 +961,6 @@
 <script src="../../bower_components/datatables.net/js/dataTables.fixedColumns.min.js"></script>
 <!-- page script -->
 <script>
-    $('#warranty').DataTable( {
-      "scrollY": 110,
-      "scrollX": true,
-      dom: 'rtip',
-      buttons: [
-            'copyHtml5'
-        ],
-        columnDefs: [ {visible: false} ],
-        select: true
-    } );    
-
-    $('#insurance').DataTable( {
-      "scrollY": 110,
-      "scrollX": true,
-      dom: 'rtip',
-      buttons: [
-            'copyHtml5'
-        ],
-        columnDefs: [ {visible: false} ],
-        select: true
-    } );
-
-
 $('[data-toggle=confirmation]').confirmation({
   rootSelector: '[data-toggle=confirmation]',
   // other options
