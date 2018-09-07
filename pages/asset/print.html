@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Print Asset | Pulsar Construction</title>
+  <title>Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +21,26 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!--   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+  <style type="text/css">
+    @page {
+    margin-top: 1.7cm;
+    margin-bottom: 1.5cm;
+    margin-left: 1cm;
+    margin-right: 1cm; 
+    }
+    @media print {
+      div.divFooter {
+      position: fixed;
+      bottom: 0; 
+      margin-bottom: -3px; 
+      font-style: italic;
+      font-size: 10px; } 
+    }
+    .table td {
+    padding: 3px !important;  
+    }
+  </style>
 </head>
 <body onload="window.print();">
 <div class="wrapper">
@@ -32,142 +49,249 @@
     <!-- title row -->
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="page-header">
-          <i class="fa fa-globe"></i> AdminLTE, Inc.
-          <small class="pull-right">Date: 2/10/2014</small>
+        <h2 class="page-header" style="border-bottom: 2px solid black;">
+          <i class="fa fa-tags"></i> ASSET PROFILE
+          <small class="pull-right">Asset Tag: CONE-03082018-DT1</small>
         </h2>
       </div>
       <!-- /.col -->
     </div>
-    <!-- info row -->
-    <div class="row invoice-info">
-      <div class="col-sm-4 invoice-col">
-        From
-        <address>
-          <strong>Admin, Inc.</strong><br>
-          795 Folsom Ave, Suite 600<br>
-          San Francisco, CA 94107<br>
-          Phone: (804) 123-5432<br>
-          Email: info@almasaeedstudio.com
-        </address>
-      </div>
-      <!-- /.col -->
-      <div class="col-sm-4 invoice-col">
-        To
-        <address>
-          <strong>John Doe</strong><br>
-          795 Folsom Ave, Suite 600<br>
-          San Francisco, CA 94107<br>
-          Phone: (555) 539-1037<br>
-          Email: john.doe@example.com
-        </address>
-      </div>
-      <!-- /.col -->
-      <div class="col-sm-4 invoice-col">
-        <b>Invoice #007612</b><br>
-        <br>
-        <b>Order ID:</b> 4F3S8J<br>
-        <b>Payment Due:</b> 2/22/2014<br>
-        <b>Account:</b> 968-34567
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
 
-    <!-- Table row -->
+<!-- ASSET DETAILS -->
+    <div class="row invoice-info">
+      <div class="col-xs-7 invoice-col">
+        <h4> ASSET DETAILS </h4>
+          <div style="font-size: 15px;">
+            <b>Category:</b> Construction Equipment<br><br>
+            <b>ID:</b> DT1<br>
+            <b>Name:</b> DUMPTRUCK<br>
+            <b>Model:</b> CXZ19J-3005460<br>
+            <b>Make/Brand:</b> ISUZU<br>
+            <b>Owner Company:</b> PULSAR CONSTRUCTION<br>
+            <b>Date Acquired:</b> 2/7/2012<br>
+            <b>Acquisition Cost:</b> 1,200,000.00<br>
+            <b>Plate No:</b> FGR-254<br>
+            <b>Engine No:</b> 10PC1-970126 <br>
+            <b>Warranty Date:</b> 01/01/2018 <br>
+            <b>Location:</b> Quarry<br>
+            <b>Assigned to:</b> <a href="#">Erik Subnet</a><br>
+            <b>Status:</b> <small class="label bg-green">Active</small>
+          </div>
+      </div>
+      <div class="col-xs-5">
+        <center>
+          <img src="../../dist/img/dumptruck_1024x768.jpg">
+          <div class="well well-sm no-shadow"> <img src="../../dist/img/qrcode.png" height="40%" width="40%"> </div>
+        </center>
+      </div>
+    </div>
+<br>
+
+<!-- MONITORING -->    
+    <div class="row">
+      <div class="col-xs-6 table-responsive">
+        <h4>CURRENT OPERATING RECORD</h4> 
+          <table class="table">
+            <tbody>
+            <tr>
+              <td>Operating Hours</td>
+              <td>12,345</td>
+            </tr>
+            <tr>
+              <td>Kilometers Traveled</td>
+              <td>71,234</td>
+            </tr>
+            <tr>
+              <td>Loads (m3)</td>
+              <td>71,234</td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-xs-6 table-responsive">
+        <h4>&nbsp;</h4> 
+          <table class="table">
+            <tbody>
+            <tr>
+              <td>Diesel (L) Consumed</td>
+              <td>55,123</td>
+            </tr>
+            <tr>
+              <td>Gas (L) Consumed</td>
+              <td>90,123</td>
+            </tr>
+            <tr>
+              <td>Oil (L) Consumed</td>
+              <td>23,123</td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div> 
+<br>
+
+<!-- INSURANCE -->    
     <div class="row">
       <div class="col-xs-12 table-responsive">
+        <h4>INSURANCE</h4> 
         <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>Qty</th>
-            <th>Product</th>
-            <th>Serial #</th>
-            <th>Description</th>
-            <th>Subtotal</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>1</td>
-            <td>Call of Duty</td>
-            <td>455-981-221</td>
-            <td>El snort testosterone trophy driving gloves handsome</td>
-            <td>$64.50</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Need for Speed IV</td>
-            <td>247-925-726</td>
-            <td>Wes Anderson umami biodiesel</td>
-            <td>$50.00</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Monsters DVD</td>
-            <td>735-845-642</td>
-            <td>Terry Richardson helvetica tousled street art master</td>
-            <td>$10.70</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Grown Ups Blue Ray</td>
-            <td>422-568-642</td>
-            <td>Tousled lomo letterpress</td>
-            <td>$25.99</td>
-          </tr>
-          </tbody>
+                <thead>
+                <tr>
+                  <th>Insurance Co.</th>
+                  <th>Description</th>
+                  <th>Contact Person</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>BPI</td>
+                  <td>Comprehensive Insurance</td>
+                  <td>Jerik Erikson</td>
+                  <td>12/12/2012</td>
+                  <td>12/12/2025</td>
+                </tr>
+                <tr>
+                  <td>BPI</td>
+                  <td>Insurance Description</td>
+                  <td>Mykee Caparas</td>
+                  <td>12/12/2015</td>
+                  <td>12/12/2020</td>
+                </tr>
+                </tbody>
         </table>
       </div>
-      <!-- /.col -->
     </div>
-    <!-- /.row -->
+<br>
 
+<!-- MAINTENANCE HISTORY -->    
     <div class="row">
-      <!-- accepted payments column -->
+      <div class="col-xs-12 table-responsive">
+        <h4>MAINTENANCE HISTORY</h4> 
+        <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Control#</th>
+                  <th>JO Date</th>
+                  <th>Date Started</th>
+                  <th>Date Completed</th>
+                  <th>Conducted By</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>JO-03122018-1</td>
+                  <td>03/12/2018</td>
+                  <td>03/15/2018</td>
+                  <td>03/16/2018</td>
+                  <td>Jungle Repair</td>
+                </tr>
+                <tr>
+                  <td>JO-03122018-2</td>
+                  <td>03/12/2018</td>
+                  <td>03/15/2018</td>
+                  <td>03/16/2018</td>
+                  <td>Jungle Repair</td>
+                </tr>
+                <tr>
+                  <td>JO-03122018-1</td>
+                  <td>03/12/2018</td>
+                  <td>03/15/2018</td>
+                  <td>03/16/2018</td>
+                  <td>Jungle Repair</td>
+                </tr>
+                <tr>
+                  <td>JO-03122018-2</td>
+                  <td>03/12/2018</td>
+                  <td>03/15/2018</td>
+                  <td>03/16/2018</td>
+                  <td>Jungle Repair</td>
+                </tr>
+                <tr>
+                  <td>JO-03122018-2</td>
+                  <td>03/12/2018</td>
+                  <td>03/15/2018</td>
+                  <td>03/16/2018</td>
+                  <td>Jungle Repair</td>
+                </tr>
+                </tbody>
+              </table>
+      </div>
+    </div>
+<br>
+
+<!-- EVENTS -->    
+    <div class="row">
+      <div class="col-xs-12 table-responsive">
+        <h4>EVENTS</h4> 
+        <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Event Date</th>
+                  <th>Description/Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>MAINTENANCE</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Dumptruck Preventive Maintenance of engine</td>
+                </tr>
+                <tr>
+                  <td>LEASE</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Dumptruck Preventive Maintenance of engine </td>
+                </tr>
+                <tr>
+                  <td>DONATE</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Description/Remarks</td>
+                </tr>
+                <tr>
+                  <td>SELL</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Description/Remarks</td>
+                </tr>
+                <tr>
+                  <td>DISPOSE</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Description/Remarks</td>
+                </tr>
+                <tr>
+                  <td>LOST/MISSING</td>
+                  <td>Date 02/16/2018</td>
+                  <td>Description/Remarks</td>
+                </tr>
+                </tbody>
+              </table>
+      </div>
+    </div>
+<br>
+
+<center>* * * END OF ASSET PROFILE * * *</center>  
+
+
+<!--   <div class="row">
       <div class="col-xs-6">
         <p class="lead">Payment Methods:</p>
-        <img src="../../dist/img/credit/visa.png" alt="Visa">
-        <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-        <img src="../../dist/img/credit/american-express.png" alt="American Express">
-        <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-
         <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
           Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr
           jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
         </p>
       </div>
-      <!-- /.col -->
       <div class="col-xs-6">
-        <p class="lead">Amount Due 2/22/2014</p>
-
-        <div class="table-responsive">
-          <table class="table">
-            <tr>
-              <th style="width:50%">Subtotal:</th>
-              <td>$250.30</td>
-            </tr>
-            <tr>
-              <th>Tax (9.3%)</th>
-              <td>$10.34</td>
-            </tr>
-            <tr>
-              <th>Shipping:</th>
-              <td>$5.80</td>
-            </tr>
-            <tr>
-              <th>Total:</th>
-              <td>$265.24</td>
-            </tr>
-          </table>
-        </div>
+        <img src="../../dist/img/dumptruck_1024x768.jpg">
       </div>
-      <!-- /.col -->
-    </div>
+    </div>  -->
+
     <!-- /.row -->
   </section>
   <!-- /.content -->
 </div>
+<div class="divFooter"> PULSAR &nbsp; ASSETERIK V.1 &nbsp; (www.bizlogiks.ph) </div>
+
 <!-- ./wrapper -->
 </body>
 </html>
