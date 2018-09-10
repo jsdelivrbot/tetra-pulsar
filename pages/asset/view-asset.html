@@ -554,9 +554,15 @@
                 <tr>
                   <th>Control#</th>
                   <th>JO Date</th>
-                  <th>Date Started</th>
-                  <th>Date Finished</th>
+                  <th>Started</th>
+                  <th>Completed</th>
                   <th>Conducted By</th>
+                  <th>Operating Hours</th>
+                  <th>Distance Travelled</th>
+                  <th>Diesel Consumption</th>
+                  <th>Gas Consumption</th>
+                  <th>Oil Consumption</th>
+                  <th>Loads</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -566,6 +572,12 @@
                   <td>03/15/2018</td>
                   <td>03/16/2018</td>
                   <td>Jungle Repair</td>
+                  <td>11</td>
+                  <td>22</td>
+                  <td>33</td>
+                  <td>44</td>
+                  <td>55</td>
+                  <td>66</td>
                 </tr>
                 <tr>
                   <td>JO-03122018-2</td>
@@ -573,6 +585,12 @@
                   <td>03/15/2018</td>
                   <td>03/16/2018</td>
                   <td>Jungle Repair</td>
+                  <td>11</td>
+                  <td>22</td>
+                  <td>33</td>
+                  <td>44</td>
+                  <td>55</td>
+                  <td>66</td>
                 </tr>
                 </tbody>
               </table>
@@ -945,14 +963,19 @@
               <form class="form-horizontal" id="">
               <div class="box-body">
                 <div class="form-group col-sm-12">
-                  <label for="controlnumber" class="col-sm-2 control-label">Asset Tag</label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="assettag" placeholder="CONE-03082018-DT1" disabled></div>
+                  <label for="controlnumber" class="col-sm-2 control-label">Asset Category</label>
+                  <div class="col-sm-10"><input type="text" class="form-control" id="assettag" placeholder="CONSTRUCTION EQUIPMENT" disabled></div>
                 </div>
 
                 <div class="form-group col-sm-12">  
                   <label for="assetname" class="col-sm-2 control-label">Asset Name</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" id="assetname" placeholder="" required="" autofocus></div>
+                  <div class="col-sm-10"><input type="text" class="form-control" id="assetname" placeholder="DUMPTRUCK" required="" disabled></div>
                 </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Asset ID</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="assettag" placeholder="CONE-03082018-DT1" disabled></div>
+                </div>               
 
                 <div class="form-group col-sm-12">
                   <label for="controlnumber" class="col-sm-2 control-label">Description</label>
@@ -962,40 +985,43 @@
                 <div class="form-group col-sm-12">
                   <label for="modelnumber" class="col-sm-2 control-label">Model</label>
                   <div class="col-sm-4"><input type="text" class="form-control" id="modelnumber" placeholder="" required=""></div>
-                  <label for="brandname" class="col-sm-2 control-label">Make/Brand</label>
+                  <label for="brandname" class="col-sm-2 control-label">Brand</label>
                   <div class="col-sm-4"><input type="text" class="form-control" id="brandname" placeholder=""></div>
                 </div>
 
                 <div class="form-group col-sm-12">
-                  <label class="col-sm-2 control-label">Owner Company</label>
+                  <!-- <label class="col-sm-2 control-label">Owner Company</label>
                   <div class="col-sm-4">
                   <select class="form-control select2" style="width: 100%;" required="">
                   <option selected="selected" value="1">PULSAR CONSTRUCTION</option>
                   <option value="1">JJE CONSTRUCTION</option>
                   </select>
-                  </div>
+                  </div> -->
+
                   <label class="col-sm-2 control-label">Date Acquired</label>
                   <div class="col-sm-4">
                   <div class="input-group date">
                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                   <input type="text" class="form-control pull-right" id="dateacquired">
-                  </div></div>  
-                </div>
-
-                <div class="form-group col-sm-12">
+                  </div></div>
                   <label for="acquisitioncost" class="col-sm-2 control-label">Acquisition Cost</label>
                   <div class="col-sm-4">
                   <div class="input-group date">
                   <span class="input-group-addon" style="font-size: 20px;">₱</span>
                   <input type="text" class="form-control" id="acquisitioncost" placeholder="" required="">
-                  </div></div>
-                  <label for="platenumber" class="col-sm-2 control-label">Plate No.</label>
-                  <div class="col-sm-4"><input type="text" class="form-control" id="platenumber" placeholder="" required=""></div>
+                  </div></div>  
                 </div>
 
                 <div class="form-group col-sm-12">
-                  <label for="enginenumber" class="col-sm-2 control-label">Engine No.</label>
+                  <label for="platenumber" class="col-sm-2 control-label">Plate No.</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="platenumber" placeholder="" required=""></div>
+                  <label for="enginenumber" class="col-sm-2 control-label">Engine/Serial No.</label>
                   <div class="col-sm-4"><input type="text" class="form-control" id="enginenumber" placeholder="" required=""></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="platenumber" class="col-sm-2 control-label">Chassis No.</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="chassisnumber" placeholder="" required=""></div>
                   <label class="col-sm-2 control-label">Warranty Date</label>
                   <div class="col-sm-4">
                   <div class="input-group date">
