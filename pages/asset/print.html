@@ -25,7 +25,7 @@
   <style type="text/css">
     @page {
     margin-top: 1.7cm;
-    margin-bottom: 1.5cm;
+    margin-bottom: 1.6cm;
     margin-left: 1cm;
     margin-right: 1cm; 
     }
@@ -33,12 +33,23 @@
       div.divFooter {
       position: fixed;
       bottom: 0; 
-      margin-bottom: -3px; 
+      margin-bottom: -1px; 
       font-style: italic;
-      font-size: 10px; } 
+      font-size: 9px; } 
     }
     .table td {
-    padding: 3px !important;  
+    padding: 2.5px !important;
+    font-size: 12.5px;  
+    }
+    .table th {
+    padding: 1px !important;
+    font-size: 12.5px;  
+    }
+    #operatingdetails {
+      font-size: 11px;
+    }
+    .page-header {
+      border-style: none;
     }
   </style>
 </head>
@@ -48,37 +59,39 @@
   <section class="invoice">
     <!-- title row -->
     <div class="row">
-      <div class="col-xs-12">
-        <h2 class="page-header" style="border-bottom: 2px solid black;">
-          <i class="fa fa-tags"></i> ASSET PROFILE
+      <div class="col-xs-12" style="border-bottom: 2px solid black;">
+        <h2 class="page-header">
+          <i class="fa fa-tags"></i> ASSET PROFILE<br>
           <small class="pull-right">Asset Tag: CONE-03082018-DT1</small>
         </h2>
       </div>
       <!-- /.col -->
     </div>
-
+<br>
 <!-- ASSET DETAILS -->
-    <div class="row invoice-info">
-      <div class="col-xs-7 invoice-col">
+    <div class="row invoice-info" style="border-bottom: 1px solid black;">
+      <div class="col-xs-6 invoice-col">
         <h4> ASSET DETAILS </h4>
-          <div style="font-size: 15px;">
+          <div style="font-size: 16px;">
             <b>Category:</b> Construction Equipment<br><br>
-            <b>ID:</b> DT1<br>
             <b>Name:</b> DUMPTRUCK<br>
+            <b>Description:</b> Description here...<br>
+            <b>Asset ID:</b> DT1<br>
             <b>Model:</b> CXZ19J-3005460<br>
-            <b>Make/Brand:</b> ISUZU<br>
-            <b>Owner Company:</b> PULSAR CONSTRUCTION<br>
+            <b>Brand:</b> ISUZU<br>
+            <!-- <b>Owner Company:</b> PULSAR CONSTRUCTION<br> -->
             <b>Date Acquired:</b> 2/7/2012<br>
             <b>Acquisition Cost:</b> 1,200,000.00<br>
             <b>Plate No:</b> FGR-254<br>
-            <b>Engine No:</b> 10PC1-970126 <br>
+            <b>Engine/Serial No:</b> 10PC1-970126 <br>
+            <b>Chassis No:</b> 12-1234 <br>
             <b>Warranty Date:</b> 01/01/2018 <br>
-            <b>Location:</b> Quarry<br>
+            <b>Location:</b> Quarry, Kamasi, Penablanca<br>
             <b>Assigned to:</b> <a href="#">Erik Subnet</a><br>
-            <b>Status:</b> <small class="label bg-green">Active</small>
+            <b>Status:</b> <small class="label bg-green">Under Maintenance</small>
           </div>
       </div>
-      <div class="col-xs-5">
+      <div class="col-xs-6">
         <center>
           <img src="../../dist/img/dumptruck_1024x768.jpg">
           <div class="well well-sm no-shadow"> <img src="../../dist/img/qrcode.png" height="40%" width="40%"> </div>
@@ -88,9 +101,9 @@
 <br>
 
 <!-- MONITORING -->    
-    <div class="row">
+    <div class="row" style="border-bottom: 1px solid black;">
       <div class="col-xs-6 table-responsive">
-        <h4>CURRENT OPERATING RECORD</h4> 
+        <h4 style="padding-bottom: 6px;">CURRENT OPERATING RECORD</h4>
           <table class="table">
             <tbody>
             <tr>
@@ -109,7 +122,7 @@
           </table>
       </div>
       <div class="col-xs-6 table-responsive">
-        <h4>&nbsp;</h4> 
+        <h4 style="padding-bottom: 6px;">&nbsp;</h4> 
           <table class="table">
             <tbody>
             <tr>
@@ -131,218 +144,164 @@
 <br>
 
 <!-- INSURANCE -->    
-    <div class="row">
+    <div class="row" style="border-bottom: 1px solid black;">
       <div class="col-xs-12 table-responsive">
         <h4>INSURANCE</h4> 
-        <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th>Insurance Co.</th>
-                  <th>Description</th>
-                  <th>Contact Person</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>BPI</td>
-                  <td>Comprehensive Insurance</td>
-                  <td>Jerik Erikson</td>
-                  <td>12/12/2012</td>
-                  <td>12/12/2025</td>
-                </tr>
-                <tr>
-                  <td>BPI</td>
-                  <td>Insurance Description</td>
-                  <td>Mykee Caparas</td>
-                  <td>12/12/2015</td>
-                  <td>12/12/2020</td>
-                </tr>
-                </tbody>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Insurance Co.</th>
+            <th>Description</th>
+            <th>Contact Person</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>BPI</td>
+            <td>Comprehensive Insurance</td>
+            <td>Jerik Erikson</td>
+            <td>12/12/2012</td>
+            <td>12/12/2025</td>
+          </tr>
+          <tr>
+            <td>BPI</td>
+            <td>Insurance Description</td>
+            <td>Mykee Caparas</td>
+            <td>12/12/2015</td>
+            <td>12/12/2020</td>
+          </tr>
+          </tbody>
         </table>
       </div>
     </div>
-<br>
+<br><br><br><br>
 
 <!-- MAINTENANCE HISTORY -->    
-    <div class="row">
+    <div class="row" style="border-bottom: 1px solid black;">
       <div class="col-xs-12 table-responsive">
         <h4>MAINTENANCE HISTORY</h4> 
-        <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th>Control#</th>
-                  <th>JO Date</th>
-                  <th>Started</th>
-                  <th>Completed</th>
-                  <th>Conducted By</th>
-                  <th>Operating Hours</th>
-                  <th>Distance</th>
-                  <th>Diesel</th>
-                  <th>Gas</th>
-                  <th>Oil</th>
-                  <th>Loads</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>JO-03122018-1</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-1</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                </tbody>
-              </table>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Control#</th>
+            <th>JO Date</th>
+            <th>Started</th>
+            <th>Completed</th>
+            <th>Conducted By</th>
+            <th>Operating Details</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Jungle Repair Incorporated</td>
+            <td id="operatingdetails">Operating Hours: 123 <br>
+                Kilometers Traveled: 123 <br>
+                Diesel (L) Consumed: 123 <br>
+                Gas (L) Consumed: 123 <br>
+                Oil (L) Consumed: 123 <br>
+                Loads (m3): 123 <br>
+            </td>
+          </tr>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Michael Johnson Padilla Caparas</td>
+            <td>Operating Hours: 123 <br>
+                Kilometers Traveled: 123 <br>
+                Diesel (L) Consumed: 123 <br>
+                Gas (L) Consumed: 123 <br>
+                Oil (L) Consumed: 123 <br>
+                Loads (m3): 123 <br>
+            </td>
+          </tr>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Jungle Repair Incorporated</td>
+            <td>Operating Hours: 123 <br>
+                Kilometers Traveled: 123 <br>
+                Diesel (L) Consumed: 123 <br>
+                Gas (L) Consumed: 123 <br>
+                Oil (L) Consumed: 123 <br>
+                Loads (m3): 123 <br>
+            </td>
+          </tr>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Jungle Repair Incorporated</td>
+            <td>Operating Hours: 123 <br>
+                Kilometers Traveled: 123 <br>
+                Diesel (L) Consumed: 123 <br>
+                Gas (L) Consumed: 123 <br>
+                Oil (L) Consumed: 123 <br>
+                Loads (m3): 123 <br>
+            </td>
+          </tr>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Jungle Repair Incorporated</td>
+            <td>Operating Hours: 123 <br>
+                Kilometers Traveled: 123 <br>
+                Diesel (L) Consumed: 123 <br>
+                Gas (L) Consumed: 123 <br>
+                Oil (L) Consumed: 123 <br>
+                Loads (m3): 123 <br>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="col-xs-12 table-responsive">
+<!--  <div class="col-xs-12 table-responsive">
         <h4>MAINTENANCE HISTORY</h4> 
-        <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th>Control#</th>
-                  <th>JO Date</th>
-                  <th>Started</th>
-                  <th>Completed</th>
-                  <th>Conducted By</th>
-                  <th>Operating Hours</th>
-                  <th>Distance</th>
-                  <th>Diesel</th>
-                  <th>Gas</th>
-                  <th>Oil</th>
-                  <th>Loads</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>JO-03122018-1</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-1</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                <tr>
-                  <td>JO-03122018-2</td>
-                  <td>03/12/2018</td>
-                  <td>03/15/2018</td>
-                  <td>03/16/2018</td>
-                  <td>Jungle Repair</td>
-                  <td>11</td>
-                  <td>22</td>
-                  <td>33</td>
-                  <td>44</td>
-                  <td>55</td>
-                  <td>66</td>
-                </tr>
-                </tbody>
-              </table>
-      </div>
-    
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Control#</th>
+            <th>JO Date</th>
+            <th>Started</th>
+            <th>Completed</th>
+            <th>Conducted By</th>
+            <th>Operating Hours</th>
+            <th>Distance</th>
+            <th>Diesel</th>
+            <th>Gas</th>
+            <th>Oil</th>
+            <th>Loads</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>JO-03122018-1</td>
+            <td>03/12/2018</td>
+            <td>03/15/2018</td>
+            <td>03/16/2018</td>
+            <td>Jungle Repair</td>
+            <td>11</td>
+            <td>22</td>
+            <td>33</td>
+            <td>44</td>
+            <td>55</td>
+            <td>66</td>
+          </tr>
+          </tbody>
+        </table>
+      </div> -->
     </div>
 <br>
 
@@ -350,264 +309,57 @@
     <div class="row">
       <div class="col-xs-12 table-responsive">
         <h4>EVENTS</h4> 
-        <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th>Status</th>
-                  <th>Event Date</th>
-                  <th>Description/Remarks</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>MAINTENANCE</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Dumptruck Preventive Maintenance of engine</td>
-                </tr>
-                <tr>
-                  <td>LEASE</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Dumptruck Preventive Maintenance of engine </td>
-                </tr>
-                <tr>
-                  <td>DONATE</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Description/Remarks</td>
-                </tr>
-                <tr>
-                  <td>SELL</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Description/Remarks</td>
-                </tr>
-                <tr>
-                  <td>DISPOSE</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Description/Remarks</td>
-                </tr>
-                <tr>
-                  <td>LOST/MISSING</td>
-                  <td>Date 02/16/2018</td>
-                  <td>Description/Remarks</td>
-                </tr>
-                </tbody>
-              </table>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Status</th>
+            <th>Event Date</th>
+            <th>Description/Remarks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>MAINTENANCE</td>
+            <td>Date 02/16/2018</td>
+            <td>Dumptruck Preventive Maintenance of engine</td>
+          </tr>
+          <tr>
+            <td>LEASE</td>
+            <td>Date 02/16/2018</td>
+            <td>Dumptruck Preventive Maintenance of engine </td>
+          </tr>
+          <tr>
+            <td>DONATE</td>
+            <td>Date 02/16/2018</td>
+            <td>Description/Remarks</td>
+          </tr>
+          <tr>
+            <td>SELL</td>
+            <td>Date 02/16/2018</td>
+            <td>Description/Remarks</td>
+          </tr>
+          <tr>
+            <td>DISPOSE</td>
+            <td>Date 02/16/2018</td>
+            <td>Description/Remarks</td>
+          </tr>
+          <tr>
+            <td>LOST/MISSING</td>
+            <td>Date 02/16/2018</td>
+            <td>Description/Remarks</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 <br>
 
-<!-- NESTED TABLE -->
-<table class="table table-striped table-hover js-table">
-    <thead>
-      <tr>
-        <th>Training</th>
-        <th>Title</th>
-        <th>Date</th>
-        <th>End date</th>
-        <th>Description</th>
-        <th>nb of Applicants</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr data-toggle="collapse" data-target="#collapse4039" class="clickable">
-      <td>Activités nautiques</td>
-      <td>Activités nautiques - 16/10/2016</td>
-      <td>16/oct./2016</td>
-      <td>13/oct./2016</td>
-      <td>Sequelae of viral hepatitis</td>
-      <td>15</td>
-      <td>
-        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-          <div class="btn-group " role="group" aria-label="Voir le detail">
-            <a href="#" class="parents js-view-parents" data-href="formation_json_parents" data-id=4039 data-toggle="tooltip" data-placement="top" alt="Voir les details" title="Details">
-              <span class="glyphicon glyphicon-eye-close" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-
-          <div class="btn-group " role="group" aria-label="Valider les candidats">
-            <a href="valider" data-href='' alt="Valider les candidats" data-toggle="tooltip" data-placement="right" title="Valider les candidats">
-              <span class="glyphicon glyphicon-check" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-          <div class="btn-group " role="group" aria-label="Imprimer la liste d'emargement pour cette formation">
-            <a href="/edsa-AgrementEPS/app_dev.php/formation/4039/liste?print=pdf" data-href="" alt="Download PDF list of applicants" data-toggle="tooltip" data-placement="right" name="Activités nautiques - 16/10/2016" title="Download PDF list of applicants">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-        </div>
-      </td>
-    </tr>
-    <tr data-toggle="collapse" data-target="#collapse4095" class="clickable">
-      <td>Activités nautiques</td>
-      <td> Activités nautiques - 24/10/2016</td>
-      <td>24/oct./2016</td>
-      <td>21/oct./2016</td>
-      <td>Severe pre-eclampsia, third trimester</td>
-      <td>0</td>
-      <td>
-        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-          <div class="btn-group hidden" role="group" aria-label="Voir le detail">
-            <a href="#" class="parents js-view-parents" data-href="formation_json_parents" data-id=4095 data-toggle="tooltip" data-placement="top" alt="Voir les details" title="Voir les inscrits">
-              <span class="glyphicon " aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-
-          <div class="btn-group hidden" role="group" aria-label="Valider les candidats">
-            <a href="/valider" data-href='' alt="Valider les candidats" data-toggle="tooltip" data-placement="right" title="Valider les candidats">
-              <span class="glyphicon glyphicon-check" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-          <div class="btn-group hidden" role="group" aria-label="Imprimer la liste d'emargement pour cette formation">
-            <a href="/print=pdf" data-href="" alt="Download PDF list of applicants" data-toggle="tooltip" data-placement="right" name="Activités nautiques - 24/10/2016" title="Download PDF list of applicants">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-        </div>
-      </td>
-    </tr>
-    <tr data-toggle="collapse" data-target="#collapse3188" class="clickable">
-      <td>Activités nautiques</td>
-      <td>Activités nautiques - 29/10/2016</td>
-      <td>29/oct./2016</td>
-      <td>26/oct./2016</td>
-      <td>Other secondary chronic gout</td>
-      <td>0</td>
-      <td>
-        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-          <div class="btn-group " role="group" aria-label="Voir le detail">
-            <a href="#" class="parents js-view-parents" data-href="formation_json_parents" data-id=4039 data-toggle="tooltip" data-placement="top" alt="Voir les details" title="Voir les inscrits">
-              <span class="glyphicon glyphicon-eye-close" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-
-          <div class="btn-group " role="group" aria-label="Valider les candidats">
-            <a href="valider" data-href='' alt="Valider les candidats" data-toggle="tooltip" data-placement="right" title="Valider les candidats">
-              <span class="glyphicon glyphicon-check" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-          <div class="btn-group " role="group" aria-label="Imprimer la liste d'emargement pour cette formation">
-            <a href="/liste?print=pdf" data-href="" alt="Download PDF list of applicants" data-toggle="tooltip" data-placement="right" name="Activités nautiques - 16/10/2016" title="Download PDF list of applicants">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true" style="color:black; margin: 5px;"></span>
-            </a>
-          </div>
-        </div>
-      </td>
-    </tr>
-</tbody>
-  </table>
-
 <center>* * * END OF ASSET PROFILE * * *</center>  
-
-
-<!--   <div class="row">
-      <div class="col-xs-6">
-        <p class="lead">Payment Methods:</p>
-        <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-          Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr
-          jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-        </p>
-      </div>
-      <div class="col-xs-6">
-        <img src="../../dist/img/dumptruck_1024x768.jpg">
-      </div>
-    </div>  -->
-
     <!-- /.row -->
   </section>
   <!-- /.content -->
 </div>
-<div class="divFooter"> PULSAR &nbsp; ASSETERIK V.1 &nbsp; (www.bizlogiks.ph) </div>
-
-<!-- SCRIPT FOR NESTED TABLE -->
-<script type="text/javascript">
-  $(document).ready(function() {
-
-var parentsData = {
-  "success": true,
-  "parents": [{
-    "id": 1531,
-    "Firstname": "Austin",
-    "Surname": "Ana\u00eblle",
-    "schoolId": "046039",
-    "schoolName": "ARCAMBAL",
-    "commune": "ARCAMBAL"
-  }, {
-    "id": 2032,
-    "Firstname": "Ramos",
-    "Surname": "L\u00e8i",
-    "schoolId": "046043",
-    "schoolName": "J CALVET",
-    "commune": "CAHORS"
-  }, {
-    "id": 3036,
-    "Firstname": "Baker",
-    "Surname": "Salom\u00e9",
-    "schoolId": "046043",
-    "schoolName": "Z LAFAGE",
-    "commune": "CAHORS"
-  }, {
-    "id": 1724,
-    "Firstname": "Berry",
-    "Surname": "Marl\u00e8ne",
-    "schoolId": "046044",
-    "schoolName": "J CALVET",
-    "commune": "CAHORS"
-  }]
-};
-
-var $table = $('.js-table');
-
-$table.find('.js-view-parents').on('click', function(e) {
-  e.preventDefault();
-  var $btn = $(e.target), $row = $btn.closest('tr'), $nextRow = $row.next('tr.expand-child');
-  
-  $btn.toggleClass('glyphicon-eye-close glyphicon-eye-open');
-  // if .expand-chid row exist already, toggle
-  if ($nextRow.length) {
-      $nextRow.toggle($btn.hasClass('glyphicon-eye-open'));
-  // if not, create .expand-child row
-  } else {
-    /*$.ajax({
-        url: '/echo/json/',
-        dataType: "json",
-        data: parentsData,
-        success: function (parentsData) {*/
-    var newRow = '<tr class="expand-child" id="collapse' + $btn.data('id') + '">' +
-      '<td colspan="12">' +
-      '<table class="table table-condensed table-bordered" width=100% >' +
-      '<thead>' +
-      '<tr>' +
-      '<th>Surname</th>' +
-      '<th>FirstName</th>' +
-      '<th>School Id</th>' +
-      '<th>School name</th>' +
-      '</tr>' +
-      '</thead>' +
-      '<tbody>';
-
-    if (parentsData.parents) {
-      $.each(parentsData.parents, function(i, parent) {
-        newRow += '<tr>' +
-          '<td>' + parent.Firstname + '</td>' +
-          '<td>' + parent.Surname + '</td>' +
-          '<td>' + parent.schoolId + '</td>' +
-          '<td>' + parent.schoolName + ' ' + parent.commune + '</td>' +
-          '</tr>';
-      });
-    }
-    newRow += '</tbody></table></td></tr>';
-    // set next row
-    $nextRow = $(newRow).insertAfter($row);
-    
-    
-    /*}
-        });*/
-  }
-});
-
-});
-
-</script>
+<div class="divFooter"> PULSAR &nbsp; ASSETERIK&copy; V.1.0 &nbsp; www.bizlogiks.ph </div>
 
 <!-- ./wrapper -->
 </body>
