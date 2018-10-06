@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Assets | Pulsar Construction</title>
+  <title>Supplies | Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -235,33 +235,53 @@
         <li class="header">MAIN MENU</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-cog"></i> <span>Maintenance</span>
+            <i class="fa fa-briefcase"></i> <span>Supplies</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> View Equipment</a></li>
-            <li><a href="pages/maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="pages/maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="pages/maintenance/list-monitoring.html"><i class="fa fa-cogs"></i> Maintenance Monitoring</a></li>
+            <li><a href="pages/supplies/list-supply.html"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
+            <li><a href="pages/supplies/create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
+            <li class="treeview">
+            <a href="#">
+              <i class="fa fa-file"></i> <span>Receipts</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/receipts/list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
+              <li><a href="pages/receipts/create-receipt.html"><i class="fa fa-pencil"></i> Create Receipt</a></li>
+            </ul>
+          </li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-tags"></i> <span>Asset Database</span>
+            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="pages/asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
-            <li><a href="pages/asset/are.html"><i class="fa fa-file-text-o"></i> ARE</a></li>
+            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
+            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
           </ul>
         </li>
-        <li><a href="pages/job-order/list-jo.html"><i class="fa fa-folder-open"></i> <span>Job Orders</span></a></li>
-        <li><a href="pages/requisition/asset-rs.html"><i class="fa fa-file-text"></i> <span>Requisition Slip</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-shopping-basket"></i> <span>Purchase Order</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
+            <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
+          </ul>
+        </li>
+        <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-exclamation-triangle"></i> <span>Alerts</span>
@@ -311,7 +331,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>Assets Dashboard<small>Version 1.6</small></h1>
+      <h1>Supplies Dashboard<small>Version 1.6</small></h1>
       <ol class="breadcrumb">
         <li class="active"><a href="#"><i class="fa fa-th"></i> Assets Dashboard</a></li>
       </ol>
