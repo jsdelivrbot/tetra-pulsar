@@ -6,12 +6,6 @@
   <title>Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +16,7 @@
 
   <!-- Google Font -->
   <!--   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-  <style type="text/css">
+<!--   <style type="text/css">
     @page {
     margin-top: 1.7cm;
     margin-bottom: 1.6cm;
@@ -51,9 +45,9 @@
     .page-header {
       border-style: none;
     }
-  </style>
+  </style> -->
 </head>
-<body onload="window.print();">
+<body onload="window.print();" style="font-family: Tahoma;">
 <div class="wrapper">
   <!-- Main content -->
   <section class="invoice">
@@ -62,24 +56,24 @@
       <div class="col-xs-12" style="border-bottom: 2px solid black;">
         <h2 class="page-header">
           <i class="fa fa-tags"></i> ASSET PROFILE<br>
-          <small class="pull-right">Asset Tag: CONE-03082018-DT1</small>
+          <small>Asset Tag: CONE-03082018-DT1</small>
         </h2>
       </div>
       <!-- /.col -->
     </div>
 <br>
 <!-- ASSET DETAILS -->
-    <div class="row invoice-info" style="border-bottom: 1px solid black;">
+    <div class="row" style="border-bottom: 1px solid black;">
       <div class="col-md-12">
-        <h4> ASSET DETAILS </h4>
-          <div style="font-size: 16px;">
-            <table border="0"  width="100%">
+        <h4> <b>ASSET DETAILS</b> </h4>
+          <div>
+            <table border="0" width="100%" style="font-size:13px;">
               <tr>
               <th width="20%"></th>
               <th width="45%"></th>
-              <th width="35%" rowspan="16" align="right" valign="top">
-                <img src="../../dist/img/dumptruck_1024x768.jpg"> <br>
-                <center> <img src="../../dist/img/qrcode.png" height="55%" width="55%"> </center>
+              <th width="35%" rowspan="16" valign="top">
+                <img src="../../dist/img/dumptruck_1024x768.jpg" width="250px"> <br>
+                <center> <img src="../../dist/img/qrcode.png" width="200px"> </center>
               </th>
             </tr>
               <tr>
@@ -163,100 +157,80 @@
             <b>Status:</b> <small class="label bg-green">Under Maintenance</small> -->
           </div>
       </div>
-      <!-- <div class="col-xs-6">
-        <center>
-          <img src="../../dist/img/dumptruck_1024x768.jpg">
-          <div class="well well-sm no-shadow"> <img src="../../dist/img/qrcode.png" height="40%" width="40%"> </div>
-        </center>
-      </div> -->
     </div>
 <br>
 
 <!-- MONITORING -->    
     <div class="row" style="border-bottom: 1px solid black;">
-      <div class="col-xs-6 table-responsive">
-        <h4 style="padding-bottom: 6px;">CURRENT OPERATING RECORD</h4>
-          <table class="table">
-            <tbody>
+      <div class="col-md-12">
+        <h4 style="padding-bottom: 6px;"><b>CURRENT OPERATING RECORD</b></h4>
+          <table border="0" width="100%" style="font-size:13px;">
             <tr>
-              <td>Operating Hours</td>
-              <td>12,345</td>
+              <td style="border-top: 1px solid #e1e1e1;">Operating Hours</td>
+              <td style="border-top: 1px solid #e1e1e1;">12,345</td>
+              <td style="border-top: 1px solid #e1e1e1;">Diesel (L) Consumed</td>
+              <td style="border-top: 1px solid #e1e1e1;">55,123</td>
+
             </tr>
             <tr>
-              <td>Kilometers Traveled</td>
-              <td>71,234</td>
+              <td style="border-top: 1px solid #e1e1e1;">Kilometers Traveled</td>
+              <td style="border-top: 1px solid #e1e1e1;">71,234</td>
+              <td style="border-top: 1px solid #e1e1e1;">Gas (L) Consumed</td>
+              <td style="border-top: 1px solid #e1e1e1;">90,123</td>
             </tr>
             <tr>
-              <td>Loads (m3)</td>
-              <td>71,234</td>
+              <td style="border-top: 1px solid #e1e1e1;">Loads (m3)</td>
+              <td style="border-top: 1px solid #e1e1e1;" style="border-top: 1px solid #e1e1e1;">71,234</td>
+              <td style="border-top: 1px solid #e1e1e1;">Oil (L) Consumed</td>
+              <td style="border-top: 1px solid #e1e1e1;">23,123</td>
             </tr>
-            </tbody>
-          </table>
-      </div>
-      <div class="col-xs-6 table-responsive">
-        <h4 style="padding-bottom: 6px;">&nbsp;</h4> 
-          <table class="table">
-            <tbody>
-            <tr>
-              <td>Diesel (L) Consumed</td>
-              <td>55,123</td>
-            </tr>
-            <tr>
-              <td>Gas (L) Consumed</td>
-              <td>90,123</td>
-            </tr>
-            <tr>
-              <td>Oil (L) Consumed</td>
-              <td>23,123</td>
-            </tr>
-            </tbody>
-          </table>
+          </table> <br>
       </div>
     </div> 
 <br>
 
 <!-- INSURANCE -->    
     <div class="row" style="border-bottom: 1px solid black;">
-      <div class="col-xs-12 table-responsive">
-        <h4>INSURANCE</h4> 
-        <table class="table">
+      <div class="col-md-12">
+        <h4><b>INSURANCE</b></h4> 
+          <table border="0" width="100%" style="font-size:13px;">
           <thead>
           <tr>
-            <th>Insurance Co.</th>
-            <th>Description</th>
-            <th>Contact Person</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th align="left">Insurance Co.</th>
+            <th align="left">Description</th>
+            <th align="left">Contact Person</th>
+            <th align="left">Start Date</th>
+            <th align="left">End Date</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>BPI</td>
-            <td>Comprehensive Insurance</td>
-            <td>Jerik Erikson</td>
-            <td>12/12/2012</td>
-            <td>12/12/2025</td>
+            <td style="border-top: 1px solid #e1e1e1;">BPI</td>
+            <td style="border-top: 1px solid #e1e1e1;">Comprehensive Insurance</td>
+            <td style="border-top: 1px solid #e1e1e1;">Jerik Erikson</td>
+            <td style="border-top: 1px solid #e1e1e1;">12/12/2012</td>
+            <td style="border-top: 1px solid #e1e1e1;">12/12/2025</td>
           </tr>
           <tr>
-            <td>BPI</td>
-            <td>Insurance Description</td>
-            <td>Mykee Caparas</td>
-            <td>12/12/2015</td>
-            <td>12/12/2020</td>
+            <td style="border-top: 1px solid #e1e1e1;" style="border-top: 1px solid #e1e1e1;">BPI</td>
+            <td style="border-top: 1px solid #e1e1e1;">Insurance Description</td>
+            <td style="border-top: 1px solid #e1e1e1;">Mykee Caparas</td>
+            <td style="border-top: 1px solid #e1e1e1;">12/12/2015</td>
+            <td style="border-top: 1px solid #e1e1e1;">12/12/2020</td>
           </tr>
           </tbody>
-        </table>
+        </table> <br>
       </div>
     </div>
 <br><br><br><br><br>
 
 <!-- MAINTENANCE HISTORY -->    
     <div class="row" style="border-bottom: 1px solid black;">
-      <div class="col-xs-12 table-responsive">
-        <h4>MAINTENANCE HISTORY</h4> 
-        <table class="table">
+      <div class="col-md-12">
+        <h4><b>MAINTENANCE HISTORY</b></h4> 
+        <table border="0" width="100%" style="font-size:13px;">
           <thead>
-          <tr>
+          <tr align="left">
             <th>Control#</th>
             <th>JO Date</th>
             <th>Started</th>
@@ -266,13 +240,13 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Jungle Repair Incorporated</td>
-            <td id="operatingdetails">Operating Hours: 123 <br>
+          <tr valign="top">
+            <td style="border-top: 1px solid #e1e1e1;">JO-03122018-1</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/12/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/15/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Jungle Repair Incorporated</td>
+            <td style="border-top: 1px solid #e1e1e1;">Operating Hours: 123 <br>
                 Kilometers Traveled: 123 <br>
                 Diesel (L) Consumed: 123 <br>
                 Gas (L) Consumed: 123 <br>
@@ -280,55 +254,13 @@
                 Loads (m3): 123 <br>
             </td>
           </tr>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Michael Johnson Padilla Caparas</td>
-            <td>Operating Hours: 123 <br>
-                Kilometers Traveled: 123 <br>
-                Diesel (L) Consumed: 123 <br>
-                Gas (L) Consumed: 123 <br>
-                Oil (L) Consumed: 123 <br>
-                Loads (m3): 123 <br>
-            </td>
-          </tr>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Jungle Repair Incorporated</td>
-            <td>Operating Hours: 123 <br>
-                Kilometers Traveled: 123 <br>
-                Diesel (L) Consumed: 123 <br>
-                Gas (L) Consumed: 123 <br>
-                Oil (L) Consumed: 123 <br>
-                Loads (m3): 123 <br>
-            </td>
-          </tr>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Jungle Repair Incorporated</td>
-            <td>Operating Hours: 123 <br>
-                Kilometers Traveled: 123 <br>
-                Diesel (L) Consumed: 123 <br>
-                Gas (L) Consumed: 123 <br>
-                Oil (L) Consumed: 123 <br>
-                Loads (m3): 123 <br>
-            </td>
-          </tr>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Jungle Repair Incorporated</td>
-            <td>Operating Hours: 123 <br>
+          <tr valign="top">
+            <td style="border-top: 1px solid #e1e1e1;">JO-03122018-1</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/12/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/15/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">03/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Jungle Repair Incorporated</td>
+            <td style="border-top: 1px solid #e1e1e1;">Operating Hours: 123 <br>
                 Kilometers Traveled: 123 <br>
                 Diesel (L) Consumed: 123 <br>
                 Gas (L) Consumed: 123 <br>
@@ -337,53 +269,18 @@
             </td>
           </tr>
           </tbody>
-        </table>
+        </table> <br>
       </div>
-<!--  <div class="col-xs-12 table-responsive">
-        <h4>MAINTENANCE HISTORY</h4> 
-        <table class="table">
-          <thead>
-          <tr>
-            <th>Control#</th>
-            <th>JO Date</th>
-            <th>Started</th>
-            <th>Completed</th>
-            <th>Conducted By</th>
-            <th>Operating Hours</th>
-            <th>Distance</th>
-            <th>Diesel</th>
-            <th>Gas</th>
-            <th>Oil</th>
-            <th>Loads</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>JO-03122018-1</td>
-            <td>03/12/2018</td>
-            <td>03/15/2018</td>
-            <td>03/16/2018</td>
-            <td>Jungle Repair</td>
-            <td>11</td>
-            <td>22</td>
-            <td>33</td>
-            <td>44</td>
-            <td>55</td>
-            <td>66</td>
-          </tr>
-          </tbody>
-        </table>
-      </div> -->
     </div>
 <br>
 
 <!-- EVENTS -->    
-    <div class="row">
-      <div class="col-xs-12 table-responsive">
-        <h4>EVENTS</h4> 
-        <table class="table">
+    <div class="row" style="border-bottom: 1px solid black;">
+      <div class="col-md-12">
+        <h4><b>EVENTS</b></h4> 
+        <table width="100%" style="font-size:13px;">
           <thead>
-          <tr>
+          <tr align="left">
             <th>Status</th>
             <th>Event Date</th>
             <th>Description/Remarks</th>
@@ -391,38 +288,38 @@
           </thead>
           <tbody>
           <tr>
-            <td>MAINTENANCE</td>
-            <td>Date 02/16/2018</td>
-            <td>Dumptruck Preventive Maintenance of engine</td>
+            <td style="border-top: 1px solid #e1e1e1;">MAINTENANCE</td>
+            <td style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Dumptruck Preventive Maintenance of engine</td>
           </tr>
           <tr>
-            <td>LEASE</td>
-            <td>Date 02/16/2018</td>
-            <td>Dumptruck Preventive Maintenance of engine </td>
+            <td style="border-top: 1px solid #e1e1e1;">LEASE</td>
+            <td style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Dumptruck Preventive Maintenance of engine </td>
           </tr>
           <tr>
-            <td>DONATE</td>
-            <td>Date 02/16/2018</td>
-            <td>Description/Remarks</td>
+            <td style="border-top: 1px solid #e1e1e1;">DONATE</td>
+            <td style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Description/Remarks</td>
           </tr>
           <tr>
-            <td>SELL</td>
-            <td>Date 02/16/2018</td>
-            <td>Description/Remarks</td>
+            <td style="border-top: 1px solid #e1e1e1;" style="border-top: 1px solid #e1e1e1;">SELL</td>
+            <td style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Description/Remarks</td>
           </tr>
           <tr>
-            <td>DISPOSE</td>
-            <td>Date 02/16/2018</td>
-            <td>Description/Remarks</td>
+            <td style="border-top: 1px solid #e1e1e1;">DISPOSE</td>
+            <td style="border-top: 1px solid #e1e1e1;" style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Description/Remarks</td>
           </tr>
           <tr>
-            <td>LOST/MISSING</td>
-            <td>Date 02/16/2018</td>
-            <td>Description/Remarks</td>
+            <td style="border-top: 1px solid #e1e1e1;">LOST/MISSING</td>
+            <td style="border-top: 1px solid #e1e1e1;">Date 02/16/2018</td>
+            <td style="border-top: 1px solid #e1e1e1;">Description/Remarks</td>
           </tr>
           </tbody>
-        </table>
-      </div>
+        </table> 
+      </div> <br>
     </div>
 <br>
 
