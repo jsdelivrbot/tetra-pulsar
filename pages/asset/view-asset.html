@@ -30,9 +30,9 @@
   <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">  
-  <!-- GALLERY -->
-  <link rel="stylesheet" href="../../dist/css/baguetteBox.min.css">
-  <link rel="stylesheet" href="../../dist/css/gallery-clean.css">
+  <!-- simpleLightbox -->
+  <link rel="stylesheet" href="../../bower_components/simpleLightbox-master/dist/simpleLightbox.min.css"> 
+
   <!-- style -->
   <link rel="stylesheet" href="../../dist/css/style.min.css">
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
@@ -56,9 +56,13 @@
     .tab-head {background-color: #e1e1e1;}
     .btn-app {background-color: #fff;}
     @font-face {font-family: Source Sans Pro; src: url(../../dist/fonts/SourceSansPro-Regular.ttf);}
-    .tz-gallery {padding: 10px;}
-    .tz-gallery .col-md-4 {padding: 10px;}
-    .tz-gallery .thumbnail {margin: 0px;}
+    /*Gallery*/
+    .imageGallery1 {
+      overflow: hidden; margin: 10px;}
+    .imageGallery1 > a {
+      float: left; width: 30%; padding: 1px; margin-left: 10px; box-sizing: border-box; position: relative;}
+    .imageGallery1 > a > img {
+    display: block; width: 100%; }
   </style>
 
 </head>
@@ -710,55 +714,10 @@
               <h3 class="box-title"><b>Image Gallery</b></h3>
             </div> 
             <div class="box-body">
-              <div class="wrapper" style="color: #000;background-color: #fff;">
-                <div class="gallery-container">
-                  <div class="tz-gallery">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/dumptruck_1024x768.jpg" data-caption="Dump Truck CONE-03082018-DT1 Uploaded:10/07/2018">
-                              <img src="../../dist/img/dumptruck_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/dumptruck_1024x768.jpg" data-caption="Dump Truck CONE-03082018-DT1 Uploaded:10/07/2018">
-                              <img src="../../dist/img/dumptruck_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/mixer2_1024x768.jpg" data-caption="Transit Mixer CONE-03082018-DT1 Uploaded:10/10/2018">
-                              <img src="../../dist/img/mixer2_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/mixer2_1024x768.jpg" data-caption="Transit Mixer CONE-03082018-DT1 Uploaded:10/10/2018">
-                              <img src="../../dist/img/mixer2_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/mixer2_1024x768.jpg" data-caption="Transit Mixer CONE-03082018-DT1 Uploaded:10/10/2018">
-                              <img src="../../dist/img/mixer2_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="thumbnail">
-                          <a class="lightbox" href="../../dist/img/mixer2_1024x768.jpg" data-caption="Transit Mixer CONE-03082018-DT1 Uploaded:10/10/2018">
-                              <img src="../../dist/img/mixer2_1024x768.jpg">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="imageGallery1">
+                <a href="../../dist/img/dumptruck_1024x768.jpg" title="Dump Truck:CONE-03082018-DT1 10/20/2017"><img src="../../dist/img/dumptruck_1024x768.jpg" alt="Gallery image 1" /></a>
+                <a href="../../dist/img/dumptruck3_1024x768.jpg" title="Dump Truck:CONE-03082018-DT1 10/20/2017"><img src="../../dist/img/dumptruck3_1024x768.jpg" alt="Gallery image 1" /></a>
+                <a href="../../dist/img/mixer_1024x768.jpg" title="Dump Truck:CONE-03082018-DT1 10/20/2017"><img src="../../dist/img/mixer_1024x768.jpg" alt="Gallery image 1" /></a>
               </div>
             </div>
           </div>
@@ -1295,8 +1254,9 @@ jQuery(function ($) {
   }
 });  
 </script>
-<!-- GALLERY -->
-<script src="../../dist/js/baguetteBox.min.js"></script>
-<script> baguetteBox.run('.tz-gallery'); </script>
+
+<!-- simpleLightbox Gallery-->
+<script src="../../bower_components/simpleLightbox-master/dist/simpleLightbox.min.js"></script>
+<script> new SimpleLightbox({elements: '.imageGallery1 a'}); </script>
 </body>
 </html>
