@@ -359,11 +359,12 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
+
+<!-- NEW JOB ORDER POPUP -->
         <div class="col-md-12"> 
-          <div id="add-bank" class="collapse department">
+          <div id="create-jo" class="collapse department">
             <div class="panel panel-default">
               <div class="panel-body">
-<!-- NEW INSURANCE -->
             <form class="form-horizontal" id="">
               <div class="box-body">
                 <div class="form-group col-sm-12">
@@ -430,12 +431,66 @@
               </div>
             </div>
           </div>
-<!-- BUTTONS -->
-          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#add-bank">
-              <span class="glyphicon glyphicon-plus"></span> Create Job Order
-          </button>
         </div>
-      </div><br>
+
+<!-- FILTER POPUP -->
+        <div class="col-md-12"> 
+          <div id="filter" class="collapse department">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+
+                      <label class="col-sm-2 control-label">Date</label>
+                      <div class="col-sm-2">
+                      <div class="input-group date">
+                      <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                      <input type="text" class="form-control pull-right" id="datepicker-filter">
+                      </div></div>
+
+                      <label for="requestpurpose" class="col-sm-2 control-label">Request Purpose</label>
+                      <div class="col-sm-4">
+                      <select class="form-control select2" style="width: 100%;" required="">
+                      <option selected="selected" value="1">All</option>
+                      <option value="2">REPAIRS & MAINTENANCE-BUILDING CONSTRUCTION</option>
+                      <option value="3">REPAIRS & MAINTENANCE-BUILDING LEASEHOLD IMPROVEMENTS</option>
+                      <option value="4">REPAIRS & MAINTENANCE-COMMUNICATION EQUIPMENT</option>
+                      <option value="5">REPAIRS & MAINTENANCE -CONSTRUCTION EQUIPMENT</option>
+                      <option value="6">REPAIRS & MAINTENANCE-FURNITURE AND FIXTUREST</option>
+                      <option value="7">REPAIRS & MAINTENANCE-IT EQUIPMENT & SOFTWARES</option>
+                      <option value="8">REPAIRS & MAINTENANCE-MOTOR VEHICLE</option>
+                      <option value="9">REPAIRS & MAINTENANCE-OFFICE EQUIPMENT</option>
+                      </select></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label for="assetname" class="col-sm-2 control-label">Job Order Status</label>
+                      <div class="col-sm-4">
+                      <label class="checkbox-inline"><input type="checkbox" value="">On-going</label>
+                      <label class="checkbox-inline"><input type="checkbox" value="">Finished</label>
+                      </div>
+
+                      <div class="col-sm-2">
+                      <button class="btn btn-large btn-success">FILTER DISPLAY</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- BUTTONS -->
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#create-jo">
+        <span class="glyphicon glyphicon-plus"></span> Create Job Order
+    </button> &nbsp; 
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter">
+        <span class="glyphicon glyphicon-filter"></span> Filter
+    </button>
+    <br><br>
 
 <!-- LIST OF JO -->      
       <div class="box">
@@ -451,6 +506,8 @@
                   <th>Location</th>
                   <th>Requesting Employee</th>
                   <th>Date Started</th>
+                  <th>Date Completed</th>
+                  <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -463,6 +520,20 @@
                   <td>Tuguegarao City</td>
                   <td>Mykee Caparas</td>
                   <td>03/13/2018</td>
+                  <td></td>
+                  <td><small class="label bg-yellow">On-going</small></td>
+                </tr> 
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-jo"><b>JO-03122018-1</b></a></td>
+                  <td>03/12/2018</td>
+                  <td>REPAIRS & MAINTENANCE -CONSTRUCTION EQUIPMENT</td>
+                  <td>Dumpt Truck</td>
+                  <td>CONE-03082018-DT1</td>
+                  <td>Tuguegarao City</td>
+                  <td>Mykee Caparas</td>
+                  <td>03/13/2018</td>
+                  <td>03/31/2018</td>
+                  <td><small class="label bg-green">Finished</small></td>
                 </tr> 
                 </tbody>
               </table>
@@ -673,6 +744,7 @@
                   <!-- /.tab-content -->
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close Window</button>
+                    <button type="button" class="btn btn-default"><li class="fa fa-file-text-o"></li> Create R.S.</button>
                     <button type="button" class="btn btn-default"><li class="fa fa-check"></li> Close J.O.</button>
                     <button type="button" class="btn btn-info"><li class="fa fa-print"></li> Print</button>
                     <button class="btn btn-large btn-primary pull-right" data-toggle="confirmation"
@@ -769,6 +841,9 @@ $('[data-toggle=confirmation]').confirmation({
       autoclose: true
     })
     $('#dateaccepted').datepicker({
+      autoclose: true
+    })
+    $('#datepicker-filter').datepicker({
       autoclose: true
     })
 
