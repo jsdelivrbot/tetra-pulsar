@@ -446,8 +446,10 @@
                       <div class="col-sm-2">
                       <div class="input-group date">
                       <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                      <input type="text" class="form-control pull-right" id="datepicker-filter">
+                      <input type="text" class="form-control pull-right" id="daterange-filter">
                       </div></div>
+
+
 
                       <label for="requestpurpose" class="col-sm-1 control-label">Request Purpose</label>
                       <div class="col-sm-4">
@@ -796,6 +798,10 @@
 <script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 <!-- bootstrap datepicker -->
 <script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- date-range-picker -->
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+
+<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- page script -->
 <script>
 $(document).ready(function() {
@@ -842,16 +848,9 @@ $('[data-toggle=confirmation]').confirmation({
     $('#dateaccepted').datepicker({
       autoclose: true
     })
-    $('#datepicker-filter').datepicker({
-      autoclose: true
-    })
 
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
+//Date range picker
+    $('#daterange-filter').daterangepicker(
       {
         ranges   : {
           'Today'       : [moment(), moment()],
@@ -865,7 +864,7 @@ $('[data-toggle=confirmation]').confirmation({
         endDate  : moment()
       },
       function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        $('#daterange-filter span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
       }
     )
 
