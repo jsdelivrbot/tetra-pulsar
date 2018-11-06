@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Requisition | Pulsar Construction</title>
+  <title>Receipts | Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -20,28 +20,17 @@
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
   <style>
-    .example-modal .modal {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      right: auto;
-      left: auto;
-      display: block;
-      z-index: 1;}
-    .example-modal .modal {background: transparent !important;}
-    thead {background-color: #e1e1e1;}
+    @font-face {
+      font-family: Source Sans Pro;
+      src: url(../../dist/fonts/SourceSansPro-Regular.ttf);
+    }
+    #filter .form-group {margin-bottom: 0;}
+    textarea {resize: vertical;}  
+    .form-horizontal .control-label {padding-top: 0px;}
   </style>
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini" ng-app="myapp" ng-controller="ListController">
 <div class="wrapper">
@@ -246,34 +235,13 @@
       <!-- /.search form -->
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li><a href="#"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cogs"></i> <span>Maintenance</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> View Equipment</a></li>
-            <li><a href="pages/maintenance/add-operating.html"><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="pages/maintenance/list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="pages/maintenance/list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
-            <li class="treeview">
-            <a href="#">
-              <i class="fa fa-folder-open"></i> <span>Job Orders</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/job-order/list-jo.html"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
-              <li><a href="pages/job-order/create-jo.html"><i class="fa fa-pencil"></i> Create J.O.</a></li>
-            </ul>
-          </li>
-          </ul>
-        </li>
+        <li><a href="../../supplies.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li class="header">MAIN MENU</li>
+        <li><a href="../supplies/list-supply.html"><i class="fa fa-briefcase"></i> <span>Supplies</span></a></li>
+        <li class="active"><a href="../receipts/list-receipt.html"><i class="fa fa-file"></i> <span>Receipts</span></a></li>
+        <li><a href="pages/requesition/list-rs.html"><i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span></a></li>
+        <li><a href="#"><i class="fa fa-shopping-basket"></i> <span>Purchase Order</span></a></li>
+        <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-exclamation-triangle"></i> <span>Alerts</span>
@@ -285,8 +253,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> Due for Maintenance</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-green"></i> On-going Maintenance</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Supply Levels</a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> On-going Maintenance</a></li>
           </ul>
         </li>   
         <li>
@@ -297,114 +264,9 @@
               <small class="label pull-right bg-blue">15</small>
             </span>
           </a>
-        </li>
-        <li class="header">TRANSACTIONS</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-shopping-basket"></i> <span>Purchase Order</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-credit-card"></i> <span> Vouchers</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-list-ul"></i> List of Vouchers</a></li>
-            <li><a href="pages/voucher/create-voucher.html"><i class="fa fa-pencil"></i> Create a Voucher</a></li>
-          </ul>
-        </li>        
-        <li class="header">DATABASE</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-tags"></i> <span>Assets</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/asset/list-equipments.html"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="pages/asset/add-asset.html""><i class="fa fa-plus"></i> Add an Asset</a></li>
-          </ul>
-        </li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-briefcase"></i> <span>Supplies</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/supplies/list-supply.html"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
-            <li><a href="pages/supplies/create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
-            <li class="active treeview">
-            <a href="#">
-              <i class="fa fa-file"></i> <span>Receipts</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
-              <li><a href="create-receipt.html"><i class="fa fa-pencil"></i> Create Receipt</a></li>
-            </ul>
-          </li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cube"></i> <span>Project Monitoring</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
-            <li><a href="pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
-          </ul>
-        </li>
-        <li><a href="pages/employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
+        </li> 
         <li class="header">OPTIONS</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Reports</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-paperclip"></i>Maintenance Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Asset Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Supplies Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>J.O. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>R.S. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>P.O. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Project Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Status Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Other Reports</a></li>
-          </ul>
-        </li>
+        <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Reports</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-wrench"></i> <span>Tools</span>
@@ -415,27 +277,10 @@
           <ul class="treeview-menu">
         <li><a href="#"><i class="fa fa-file-image-o"></i> <span>Image Gallery</span></a></li>
         <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Documents Gallery</span></a></li>
-        <li><a href="#"><i class="fa fa-flag-o"></i> <span>Audit</span></a></li>
         <li><a href="#"><i class="fa fa-tag"></i> <span>Asset Tags</span></a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cloud"></i> <span>Advanced</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-bank"></i>Bank</a></li>
-            <li><a href="pages/advanced/create-insurance.html"><i class="fa fa-shield"></i>Insurance</a></li>
-            <li><a href="#"><i class="fa fa-money"></i>Funding</a></li>
-            <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>User's Group</a></li>
-            <li><a href="pages/advanced/office-locations.html"><i class="fa fa-building"></i>Offices</a></li>
-          </ul>
-        </li>
+        <li><a href="pages/setup/setup-assets.html"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
       </ul>
     </section>
@@ -446,15 +291,174 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><span class="fa fa-file-o"> </span> List of Receipts</h1>
+      <h1><span class="fa fa-briefcase"> </span> Receipts</h1>
+        <p>This page displays the list of Receipts.<br>
+        To add a new receipt, click <strong>Add Receipt</strong> and enter receipt details. Click a receipt <strong>Control No.</strong> to add supply items.</p>
       <ol class="breadcrumb">
-        <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
+        <li><a href="../../supplies.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li class="active">Receipts</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+    <!-- BUTTONS -->
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#create-jo">
+        <span class="glyphicon glyphicon-plus"></span> Add Receipt
+      </button> &nbsp; 
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter">
+        <span class="glyphicon glyphicon-filter"></span> Filter
+      </button> <br><br>
+
+<div class="row">
+
+<!-- NEW JOB ORDER POPUP -->
+        <div class="col-md-12"> 
+          <div id="create-jo" class="collapse department">
+            <div class="panel panel-default">
+              <div class="panel-body">
+            <form class="form-horizontal" id="">
+              <div class="box-body">
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Control Number</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="controlnumber" placeholder="SUP-03102018-1" disabled></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Purchase Order*</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected">Select Purchase Order</option>
+                  <option value="1">PO-03102018-1</option>
+                  <option value="2">PO-03102018-2</option>
+                  <option value="3">PO-03102018-3</option>
+                  </select></div>
+
+                  <label for="payeetype" class="col-sm-2 control-label">Payee Type</label>
+                  <div class="radio col-sm-4">
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="supplier" checked>Supplier</label>
+                    &nbsp;
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="bank">Bank</label>
+                    &nbsp;
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios3" value="employee">Employee</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Receipt Type</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" required="">
+                  <option selected="selected">Select Receipt Type</option>
+                  <option value="1">Delivery Receipt (DR)</option>
+                  <option value="2">Official Receipt (OR)</option>
+                  <option value="2">Return Receipt (RR)</option>
+                  <option value="2">Purchase Order (PO)</option>
+                  </select>
+                  </div>
+                  <label class="col-sm-2 control-label">Payee Name</label>
+                    <div class="col-sm-4">
+                      <select class="form-control select2" required="" style="width: 100%;">
+                      <option selected="selected" required="">Select Payee Name</option>
+                      <option value="1">Supplier 1</option>
+                      <option value="2">Supplier 2</option>
+                      <option value="3">Supplier 3</option>
+                      </select>
+                  </div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label class="col-sm-2 control-label">Receipt Number*</label>
+                  <div class="col-sm-4"><input type="number" class="form-control" id="reoderlevel" placeholder="" required=""></div>
+                  <label class="col-sm-2 control-label">Receipt Date</label>
+                  <div class="col-sm-4">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="rcpt-date" required="">
+                  </div>
+                </div>
+
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="rcpt-amount" class="col-sm-2 control-label">Amount*</label>
+                  <div class="col-sm-4">
+                    <div class="input-group date">
+                    <span class="input-group-addon" style="font-size: 20px;">₱</span>
+                    <input type="number" class="form-control" id="rcpt-amount" placeholder="" required="">
+                    </div>
+                  </div>
+                  <label for="supplydescription" class="col-sm-2 control-label">Remarks</label>
+                  <div class="col-sm-4"><textarea class="form-control" id="remarks" rows="1"></textarea></div>
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <div class="form-group col-sm-12">           
+                  <div class="col-sm-8"></div>
+                  <div class="col-sm-4">
+                  <button class="btn btn-large btn-success pull-right" data-toggle="confirmation"
+                  data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                  data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                  data-title="Confirm data entry." data-content="Are you sure?" style="width: 40%;margin-left: 5%;">CONFIRMATION</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- FILTER POPUP -->
+        <div class="col-md-12"> 
+          <div id="filter" class="collapse department">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+
+                      <label class="col-sm-1 control-label">Receipt Date</label>
+                      <div class="col-sm-2">
+                        <div class="input-group date">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="form-control pull-right" id="rcpt-date-filter" required="">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-2">
+                        <select class="form-control select2" required="" style="width: 100%;">
+                        <option selected="selected" value="1">All Receipt Type</option>
+                        <option value="2">Delivery Receipt (DR)</option>
+                        <option value="3">Official Receipt (OR)</option>
+                        <option value="4">Return Receipt (RR)</option>
+                        <option value="5">Purchase Order (PO)</option>
+                        </select>
+                      </div>
+
+                      <label class="col-sm-1 control-label">Payee Type</label>
+                      <div class="col-sm-3">
+                      <label><input type="radio" name="r1" class="minimal" value="1"> &nbsp; Supplier</label> &nbsp;&nbsp;&nbsp;
+                      <label><input type="radio" name="r1" class="minimal" value="2"> &nbsp; Employee</label> &nbsp;&nbsp;&nbsp;
+                      <label><input type="radio" name="r1" class="minimal" value="3"> &nbsp; Bank</label>
+                      </div>
+
+                    <div class="col-sm-1">
+                    <button class="btn btn-large btn-success">FILTER DISPLAY</button>
+                    </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- LIST OF RECEIPTS -->
       <div class="box">
             <div class="box-body">
               <table id="tbl_rs" class="table table-bordered table-hover" width="100%">
@@ -757,10 +761,14 @@
 <script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
 <script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
 <script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- Select2 -->
 <script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- ANGULAR 1.2.1 -->
 <script src="../../bower_components/angular-1.2.1/angular.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
 <script>
 // FOR ALL DATATABLES.
 $(document).ready(function() {
@@ -778,8 +786,25 @@ $(document).ready(function() {
 } );
 
 $(function () {
-//Initialize Select2 Elements
-$('.select2').select2() });
+  //Initialize Select2 Elements
+  $('.select2').select2()
+
+  //Date picker
+  $('#rcpt-date').datepicker({
+    autoclose: true
+  })  
+  $('#rcpt-date-filter').datepicker({
+    autoclose: true
+  })
+})
+
+
+
+//iCheck for checkbox and radio inputs
+$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+  checkboxClass: 'icheckbox_minimal-blue',
+  radioClass   : 'iradio_minimal-blue'
+})
 </script>
 
 <script type="text/javascript">

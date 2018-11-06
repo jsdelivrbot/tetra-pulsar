@@ -470,6 +470,7 @@
             <ul class="nav nav-tabs pull-right tab-head">
               <li><a href="#tab_8-8" data-toggle="tab">Documents</a></li>
               <li><a href="#tab_7-7" data-toggle="tab">Insurances</a></li>
+              <li><a href="#tab_6-6" data-toggle="tab">Registration Details</a></li>
               <li><a href="#tab_3-3" data-toggle="tab">Events</a></li>
               <li class="active"><a href="#tab_2-2" data-toggle="tab">Maintenance History</a></li>
               <li class="pull-left header"><h4><b>Attributes</b></li></h4>
@@ -509,6 +510,44 @@
                   <td><code class="text-success bg-red">LOST/MISSING</code></td>
                   <td>Date 02/16/2018</td>
                   <td>Description/Remarks</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+              <!-- /.tab-pane -->
+
+              <div class="tab-pane" id="tab_6-6">
+                <h4><b>Registration Details</b><button type="button" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#modal-registration">
+                <li class="fa fa-plus"></li>&nbsp; Add Registration Details</button></h4> 
+                <table class="table" width="100%">
+                <thead>
+                <tr>
+                  <th>Date of Renewal</th>
+                  <th>Status of Renewal</th>
+                  <th>OR No.</th>
+                  <th>OR Date</th>
+                  <th>MV File No.</th>
+                  <th>Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>04/01/2018</td>
+                  <td>Completed</td>
+                  <td>000-111</td>
+                  <td>01/01/2018</td>
+                  <td>123-456</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>04/01/2019</td>
+                  <td>On-process</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><a href="#" data-toggle="modal" data-target="#modal-renewal"><code class="text-green">Enter Renewal Details</code></a>
+                      &nbsp;&nbsp;&nbsp;<a href="#"><code class="text-red">Remove</code></a>
+                  </td>
                 </tr>
                 </tbody>
               </table>
@@ -592,6 +631,7 @@
               </table>
               </div>
               <!-- /.tab-pane -->
+
               <div class="tab-pane" id="tab_8-8">
                 <h4><b>Asset Documents:</b><button type="button" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#modal-docs">
                 <li class="fa fa-upload"></li> Upload</button></h4> 
@@ -727,6 +767,94 @@
       </div>
 
 <!-- ////// ATTRIBUTES MODALS HERE -->
+<!-- MODAL-REGISTRATION DETAILS HERE HERE -->
+        <div class="modal fade" id="modal-registration">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><li class="fa fa-plus"></li> Add Asset Registration Details</h4>
+              </div>
+            <form class="form-horizontal" id="">
+              <div class="modal-body"><br>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Date of Renewal</label>
+                  <div class="col-sm-8">
+                  <div class="input-group date">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  <input type="text" class="form-control pull-right" id="datepicker-renewal" required="">
+                </div></div>
+                </div>
+                <div class="form-group">
+                  <label for="rs-desc" class="col-sm-3 control-label">Status of Renewal</label>
+                  <div class="col-sm-8">
+                    <label><input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> Completed</label>                    
+                    &nbsp;&nbsp;
+                    <label><input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck" checked="checked"> On-process</label>
+                  </div>
+                </div>
+                <div class="form-group" id="ifYes" style="visibility:hidden">
+                  <label for="controlnumber" class="col-sm-3 control-label">OR No.</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="" required=""></div>
+
+                  <label for="controlnumber" class="col-sm-3 control-label">OR Date</label>
+                  <div class="col-sm-8">
+                    <div class="input-group date">
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                    <input type="text" class="form-control pull-right" id="datepicker-ordate" required="">
+                    </div>
+                  </div>
+
+                  <label for="controlnumber" class="col-sm-3 control-label">MV File No.</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="" required=""></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-renewal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><li class="fa fa-plus"></li> Add Renewal Details</h4>
+              </div>
+            <form class="form-horizontal" id="">
+              <div class="modal-body"><br>
+                <div class="form-group">
+                  <label for="controlnumber" class="col-sm-3 control-label">OR No.</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="" required=""></div>
+                </div>
+                <div class="form-group">
+                  <label for="controlnumber" class="col-sm-3 control-label">OR Date</label>
+                  <div class="col-sm-8">
+                    <div class="input-group date">
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                    <input type="text" class="form-control pull-right" id="datepicker-ordate2" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="controlnumber" class="col-sm-3 control-label">MV File No.</label>
+                  <div class="col-sm-8"><input type="text" class="form-control" id="" required=""></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
 <!-- MODAL-WARRANTY HERE HERE -->
         <div class="modal fade" id="modal-warranty">
           <div class="modal-dialog">
@@ -761,11 +889,8 @@
               </div>
             </form>
             </div>
-            <!-- /.modal-content -->
           </div>
-          <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
 <!-- MODAL-INSURANCE HERE HERE -->
         <div class="modal fade" id="modal-insurance">
           <div class="modal-dialog">
@@ -1114,6 +1239,15 @@ $('[data-toggle=confirmation]').confirmation({
     }) 
     $('#event_date').datepicker({
       autoclose: true
+    })      
+    $('#datepicker-renewal').datepicker({
+      autoclose: true
+    })      
+    $('#datepicker-ordate').datepicker({
+      autoclose: true
+    })  
+    $('#datepicker-ordate2').datepicker({
+      autoclose: true
     })  
 </script>
 <script type="text/javascript">
@@ -1244,6 +1378,14 @@ jQuery(function ($) {
   $this.countTo(options);
   }
 });  
+</script>
+<script type="text/javascript">
+  function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+}
 </script>
 
 <!-- simpleLightbox Gallery-->

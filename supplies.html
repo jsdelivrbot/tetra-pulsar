@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -17,16 +17,12 @@
   <!-- style -->
   <link rel="stylesheet" href="dist/css/style.min.css">
   <link rel="stylesheet" href="dist/css/skin-blue.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+  <style>
+    @font-face {
+      font-family: Source Sans Pro;
+      src: url(../../dist/fonts/SourceSansPro-Regular.ttf);
+    }
+  </style>
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 <div class="wrapper">
@@ -233,54 +229,10 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="active"><a href="#"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
         <li class="header">MAIN MENU</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-briefcase"></i> <span>Supplies</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/supplies/list-supply.html"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
-            <li><a href="pages/supplies/create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
-            <li class="treeview">
-            <a href="#">
-              <i class="fa fa-file"></i> <span>Receipts</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/receipts/list-receipt.html"><i class="fa fa-list-ul"></i> List of Receipts</a></li>
-              <li><a href="pages/receipts/create-receipt.html"><i class="fa fa-pencil"></i> Create Receipt</a></li>
-            </ul>
-          </li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/requesition/list-rs.html"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="pages/requesition/create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-shopping-basket"></i> <span>Purchase Order</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
-          </ul>
-        </li>
+        <li><a href="pages/supplies/list-supply.html"><i class="fa fa-briefcase"></i> <span>Supplies</span></a></li>
+        <li><a href="pages/receipts/list-receipt.html"><i class="fa fa-file"></i> <span>Receipts</span></a></li>
+        <li><a href="pages/requesition/list-rs.html"><i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span></a></li>
+        <li><a href="#"><i class="fa fa-shopping-basket"></i> <span>Purchase Order</span></a></li>
         <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>
         <li class="treeview">
           <a href="#">
@@ -333,7 +285,7 @@
     <section class="content-header">
       <h1>Supplies Dashboard<small>Version 1.6</small></h1>
       <ol class="breadcrumb">
-        <li class="active"><a href="#"><i class="fa fa-th"></i> Assets Dashboard</a></li>
+        <li class="active"><a href="#"><i class="fa fa-th"></i> Supplies Dashboard</a></li>
       </ol>
     </section>
 

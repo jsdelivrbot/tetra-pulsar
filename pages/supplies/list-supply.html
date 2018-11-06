@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Requisition | Pulsar Construction</title>
+  <title>Supplies | Pulsar Construction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -20,28 +20,16 @@
   <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
   <style>
-    .example-modal .modal {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      right: auto;
-      left: auto;
-      display: block;
-      z-index: 1;}
-    .example-modal .modal {background: transparent !important;}
-    thead {background-color: #e1e1e1;}
+    @font-face {
+      font-family: Source Sans Pro;
+      src: url(../../dist/fonts/SourceSansPro-Regular.ttf);
+    }
+    #filter .form-group {margin-bottom: 0;}
+    textarea {resize: vertical;}  
   </style>
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini" ng-app="myapp" ng-controller="ListController">
 <div class="wrapper">
@@ -246,22 +234,13 @@
       <!-- /.search form -->
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        
-        <li class="header">MAIN NAVIGATION</li>
-        <li><a href="../../index.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cogs"></i> <span>Maintenance</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Daily Operating Report</a></li>
-            <li><a href="list-operating.html"><i class="fa fa-circle-o"></i> Operating Records</a></li>
-            <li><a href="list-monitoring.html"><i class="fa fa-circle-o"></i> Maintenance Monitoring</a></li>
-          </ul>
-        </li>
+        <li><a href="../../supplies.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li class="header">MAIN MENU</li>
+        <li class="active"><a href="list-supply.html"><i class="fa fa-briefcase"></i> <span>Supplies</span></a></li>
+        <li><a href="../receipts/list-receipt.html"><i class="fa fa-file"></i> <span>Receipts</span></a></li>
+        <li><a href="pages/requesition/list-rs.html"><i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span></a></li>
+        <li><a href="#"><i class="fa fa-shopping-basket"></i> <span>Purchase Order</span></a></li>
+        <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-exclamation-triangle"></i> <span>Alerts</span>
@@ -273,115 +252,34 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> Due for Maintenance</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-green"></i> On-going Maintenance</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Supply Levels</a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> On-going Maintenance</a></li>
           </ul>
         </li>   
         <li>
-          <a href="#">
+          <a href="pages/calendar/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-aqua">12</small>
               <small class="label pull-right bg-blue">15</small>
             </span>
           </a>
-        </li>
+        </li> 
+        <li class="header">OPTIONS</li>
+        <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Reports</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-tags"></i> <span>Job Orders</span>
+            <i class="fa fa-wrench"></i> <span>Tools</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of J.O.</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create J.O.</a></li>
+        <li><a href="#"><i class="fa fa-file-image-o"></i> <span>Image Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Documents Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-tag"></i> <span>Asset Tags</span></a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-file-text"></i> <span>Requesition/Issue Slip</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of R.S.</a></li>
-            <li><a href="create-rs.html"><i class="fa fa-pencil"></i> Create R.S.</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-shopping-basket"></i> <span>Purchase Order</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of P.O.</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> Create P.O.</a></li>
-          </ul>
-        </li>        
-        <li class="header">DATABASE</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-tags"></i> <span>Assets</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> List of Assets</a></li>
-            <li><a href="add-asset.html"><i class="fa fa-plus"></i> Add an Asset</a></li>
-          </ul>
-        </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-briefcase"></i> <span>Supplies</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-list-ul"></i> List of Supplies</a></li>
-            <li><a href="create-supply.html"><i class="fa fa-pencil"></i> Create Supply</a></li>
-            <li><a href="#"><i class="fa fa-plus"></i> Add Supply</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cube"></i> <span>Project Monitoring</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../pages/project/list-projects.html"><i class="fa fa-list-ul"></i> List of Projects</a></li>
-            <li><a href="../../pages/project/add-projects.html"><i class="fa fa-plus"></i> Add a Project</a></li>
-          </ul>
-        </li>
-        <li><a href="pages/employee/list-employees.html"><i class="fa fa-user"></i> <span>Employee Manager</span></a></li>
-        <li class="header">TOOLS</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Reports</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-paperclip"></i>Maintenance Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Asset Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Supplies Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>J.O. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>R.S. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>P.O. Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Project Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Status Reports</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i>Other Reports</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-wrench"></i> <span>Setup</span></a></li>
+        <li><a href="pages/setup/setup-assets.html"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
       </ul>
     </section>
@@ -392,15 +290,160 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><span class="fa fa-briefcase"> </span> Supply List</h1>
+      <h1><span class="fa fa-briefcase"> </span> Supplies</h1>
+        <p>This page displays the list of Supplies.<br>
+        To create a new supply name, click <strong>Create New Supply Name</strong> and enter supply details. For supply quantity, visit <strong>Receipts</strong> page and fill out the form.</p>
       <ol class="breadcrumb">
-        <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
+        <li><a href="../../supplies.html"><i class="fa fa-th"></i> Dashboard</a></li>
         <li class="active">Supplies</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+    <!-- BUTTONS -->
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#create-jo">
+        <span class="glyphicon glyphicon-plus"></span> Create New Supply Name
+      </button> &nbsp; 
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter">
+        <span class="glyphicon glyphicon-filter"></span> Filter
+      </button> <br><br>
+
+<div class="row">
+
+<!-- NEW JOB ORDER POPUP -->
+        <div class="col-md-12"> 
+          <div id="create-jo" class="collapse department">
+            <div class="panel panel-default">
+              <div class="panel-body">
+            <form class="form-horizontal" id="">
+              <div class="box-body">
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Control Number</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="controlnumber" placeholder="SUP-03102018-1" disabled></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="requestpurpose" class="col-sm-2 control-label">Supply Category*</label>
+                  <div class="col-sm-4">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected">Select Supply Category</option>
+                  <option value="1">CONSTRUCTION SUPPLY</option>
+                  <option value="2">IT SUPPLIES</option>
+                  <option value="3">REGULAR OFFICE SUPPLY</option>
+                  <option value="4">REPAIRS &amp; MAINTENANCE-COMMUNICATION EQUIPMENT</option>
+                  <option value="5">REPAIRS &amp; MAINTENANCE-FURNITURE AND FIXTURES</option>
+                  <option value="6">REPAIRS &amp; MAINTENANCE-IT EQUIPMENT &amp; SOFTWARE</option>
+                  <option value="7">REPAIRS &amp; MAINTENANCE-BUILDING LEASEHOLD IMPROVEMENTS</option>
+                  <option value="8">REPAIRS &amp; MAINTENANCE-BUILDING CONSTRUCTION</option>
+                  <option value="9">REPAIRS &amp; MAINTENANCE-OFFICE EQUIPMENT</option>
+                  <option value="10">REPAIRS &amp; MAINTENANCE-CONSTRUCTION EQUIPMENT</option>
+                  <option value="11">REPAIRS &amp; MAINTENANCE-OFFICE EQUIPMENT</option>
+                  <option value="12">REPAIRS &amp; MAINTENANCE-MOTOR VEHICLE</option>
+                  </select></div>
+
+                  <label class="col-sm-2 control-label">Supply Unit*</label>
+                  <div class="col-sm-2">
+                  <select class="form-control select2" style="width: 100%;" required="">
+                  <option selected="selected">Select Supply Unit</option>
+                  <option value="1">BOX</option>
+                  <option value="2">CAN</option>
+                  <option value="3">ROLL</option>
+                  <option value="4">UNIT</option>
+                  <option value="5">PIECE</option>
+                  <option value="6">DOZEN</option>
+                  <option value="7">REAM</option>
+                  </select></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="controlnumber" class="col-sm-2 control-label">Supply Name*</label>
+                  <div class="col-sm-4"><input type="text" class="form-control" id="supplyname" required=""></div>
+                  <label for="platenumber" class="col-sm-2 control-label">Re-order Level*</label>
+                  <div class="col-sm-2"><input type="number" class="form-control" id="reoderlevel" placeholder="" required=""></div>
+                </div>
+
+                <div class="form-group col-sm-12">
+                  <label for="supplydescription" class="col-sm-2 control-label">Description</label>
+                  <div class="col-sm-4"><textarea class="form-control" id="supplydescription" rows="1"></textarea></div>
+                  <label for="supplyimg" class="col-sm-2 control-label">Upload Image</label>
+                  <div class="col-sm-4">
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                        <span class="btn btn-default">Browse&hellip; <input type="file" style="display: none;"></span>
+                      </label>
+                      <input type="text" class="form-control" id="supplyimg" readonly>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <div class="form-group col-sm-12">           
+                  <div class="col-sm-8"></div>
+                  <div class="col-sm-4">
+                  <button class="btn btn-large btn-success pull-right" data-toggle="confirmation"
+                  data-btn-ok-label="Yes" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success"
+                  data-btn-cancel-label="No" data-btn-cancel-icon="fa fa-times" data-btn-cancel-class="btn-danger"
+                  data-title="Confirm data entry." data-content="Are you sure?" style="width: 40%;margin-left: 5%;">CONFIRMATION</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- FILTER POPUP -->
+        <div class="col-md-12"> 
+          <div id="filter" class="collapse department">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+
+                      <label class="col-sm-1 control-label">Supply Category</label>
+                      <div class="col-sm-4">
+                      <select class="form-control select2" style="width: 100%;" required="">
+                      <option selected="selected" value="1">ALL</option>
+                      <option value="2">CONSTRUCTION SUPPLY</option>
+                      <option value="3">IT SUPPLIES</option>
+                      <option value="4">REGULAR OFFICE SUPPLY</option>
+                      <option value="5">REPAIRS &amp; MAINTENANCE-COMMUNICATION EQUIPMENT</option>
+                      <option value="6">REPAIRS &amp; MAINTENANCE-FURNITURE AND FIXTURES</option>
+                      <option value="7">REPAIRS &amp; MAINTENANCE-IT EQUIPMENT &amp; SOFTWARE</option>
+                      <option value="8">REPAIRS &amp; MAINTENANCE-BUILDING LEASEHOLD IMPROVEMENTS</option>
+                      <option value="9">REPAIRS &amp; MAINTENANCE-BUILDING CONSTRUCTION</option>
+                      <option value="10">REPAIRS &amp; MAINTENANCE-OFFICE EQUIPMENT</option>
+                      <option value="11">REPAIRS &amp; MAINTENANCE-CONSTRUCTION EQUIPMENT</option>
+                      <option value="12">REPAIRS &amp; MAINTENANCE-OFFICE EQUIPMENT</option>
+                      <option value="13">REPAIRS &amp; MAINTENANCE-MOTOR VEHICLE</option>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                    <label><input type="radio" name="r1" class="minimal" value="1"> &nbsp; Reached Re-order Level</label> &nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="r1" class="minimal" value="2"> &nbsp; Out of Supply</label>
+                    </div>
+
+                    <div class="col-sm-1">
+                    <button class="btn btn-large btn-success">FILTER DISPLAY</button>
+                    </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- LIST OF SUPPLIES -->
       <div class="box">
             <div class="box-body">
               <table id="tbl_rs" class="table table-bordered table-hover" width="100%">
@@ -579,11 +622,13 @@
 <script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- ANGULAR 1.2.1 -->
 <script src="../../bower_components/angular-1.2.1/angular.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
 <script>
 // FOR ALL DATATABLES.
 $(document).ready(function() {
     $('#tbl_rs').DataTable( {
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      "lengthMenu": [[10, 25, 50], [10, 25, 50]],
       colReorder: true,
       "scrollY": 200,
         "scrollX": true,
@@ -598,6 +643,12 @@ $(document).ready(function() {
 $(function () {
 //Initialize Select2 Elements
 $('.select2').select2() });
+
+//iCheck for checkbox and radio inputs
+$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+  checkboxClass: 'icheckbox_minimal-blue',
+  radioClass   : 'iradio_minimal-blue'
+})
 </script>
 
 <script type="text/javascript">
@@ -647,5 +698,33 @@ app.controller("ListController", ['$scope', function($scope) {
     };    
 }]);
 </script> 
+
+<script type="text/javascript">
+$(function() {
+
+  // We can attach the `fileselect` event to all file inputs on the page
+  $(document).on('change', ':file', function() {
+    var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label]);
+  });
+
+  // We can watch for our custom `fileselect` event like this
+  $(document).ready( function() {
+      $(':file').on('fileselect', function(event, numFiles, label) {
+
+          var input = $(this).parents('.input-group').find(':text'),
+              log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+          if( input.length ) {
+              input.val(log);
+          } else {
+              if( log ) alert(log);
+          }
+      });
+  });
+});
+</script>
 </body>
 </html>
