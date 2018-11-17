@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Supplies | Pulsar Construction</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net/css/buttons.dataTables.min.css">
+  <!-- style -->
+  <link rel="stylesheet" href="../../dist/css/style.min.css">
+  <link rel="stylesheet" href="../../dist/css/skin-blue.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+  <style>
+    @font-face {
+      font-family: Source Sans Pro;
+      src: url(../../dist/fonts/SourceSansPro-Regular.ttf);
+    }
+    #filter .form-group {margin-bottom: 0;}
+    textarea {resize: vertical;}  
+  </style>
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini" ng-app="myapp" ng-controller="ListController">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>P</b>C</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b></b>Pulsar Construction</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Maintenance notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> Purchase order notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> Employee notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Maintenance notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-calendar text-blue"></i> Calendar notifications
+                    </a>
+                  </li>                  
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 1
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 2
+                        <small class="pull-right">40%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 3
+                        <small class="pull-right">60%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Task 4
+                        <small class="pull-right">80%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Mykee Caparas</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Mykee Caparas - Administrator
+                  <small>Member since Nov. 2018</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar ">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Mykee Caparas</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Administrator</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li><a href="../../supplies.html"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+        <li class="header">MAIN MENU</li>
+        <li><a href="list-supply.html"><i class="fa fa-briefcase"></i> <span>Supplies</span></a></li>
+        <li><a href="../receipts/list-receipt.html"><i class="fa fa-file"></i> <span>Receipts</span></a></li>
+        <li><a href="pages/requesition/list-rs.html"><i class="fa fa-file-text"></i> <span>Requisition/Issue Slip</span></a></li>
+        <li><a href="#"><i class="fa fa-shopping-basket"></i> <span>Purchase Order</span></a></li>
+        <li><a href="pages/voucher/list-voucher.html"><i class="fa fa-credit-card"></i> <span>Vouchers</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-exclamation-triangle"></i> <span>Alerts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-yellow">12</small>
+              <small class="label pull-right bg-red">15</small>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o text-red"></i> Due for Maintenance</a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> On-going Maintenance</a></li>
+          </ul>
+        </li>   
+        <li>
+          <a href="pages/calendar/calendar.html">
+            <i class="fa fa-calendar"></i> <span>Calendar</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-aqua">12</small>
+              <small class="label pull-right bg-blue">15</small>
+            </span>
+          </a>
+        </li> 
+        <li class="header">OPTIONS</li>
+        <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Reports</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-wrench"></i> <span>Tools</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+        <li><a href="#"><i class="fa fa-file-image-o"></i> <span>Image Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Documents Gallery</span></a></li>
+        <li><a href="#"><i class="fa fa-tag"></i> <span>Asset Tags</span></a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="pages/setup/setup-assets.html"><i class="fa fa-cog"></i> <span>Setup</span></a></li>
+        <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help/Support</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1><span class="fa fa-cog"> </span> Setup</h1>
+      <p>Browse and modify selection fields</p>
+      <ol class="breadcrumb">
+        <li><a href="../../index.html"><i class="fa fa-th"></i> Dashboard</a></li>
+        <li><i class="fa fa-cloud"></i> Advanced</li>
+        <li class="active">Office Locations</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+<!-- TABLES -->
+      <div class="row">
+        <div class="col-md-3"> 
+          <h4><b>Supply Category</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-category"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="supply-category" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr><th>Description</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><a href="#" data-toggle="modal" data-target="#edit-category"><b>Construction</b></a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<!-- /.content-wrapper -->
+
+<!-- MODAL CONTENTS -->
+<!-- EDIT CATEGORY -->
+        <div class="modal fade" id="edit-category">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Supply Category</h4>
+              </div>
+              <div class="modal-body">
+                <!-- Custom Tabs (Pulled to the right) -->
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Category</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Construction"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Update Category</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- ADD CATEGORY -->
+        <div class="modal fade" id="create-category">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Supply Category</h4>
+              </div>
+              <div class="modal-body">
+                <!-- Custom Tabs (Pulled to the right) -->
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Category</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder=""></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
+    <strong>Copyright &copy; <a target="_blank" href="http://bizlogiks.ph/">Bizlogiks-Business Solutions</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- Sparkline -->
+<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Confirmation -->
+<script src="../../bower_components/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
+<!-- date-range-picker -->
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.buttons.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jszip.min.js"></script>
+<script src="../../bower_components/datatables.net/js/pdfmake.min.js"></script>
+<script src="../../bower_components/datatables.net/js/vfs_fonts.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.html5.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.print.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.colReorder.min.js"></script>
+<script src="../../bower_components/datatables.net/js/buttons.colVis.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.select.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.checkboxes.min.js"></script>
+<script src="../../bower_components/datatables.net/js/dataTables.fixedColumns.min.js"></script>
+<!-- page script -->
+<script>
+$(document).ready(function() {
+    $('#supply-category').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: true,
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp',
+      buttons: [
+
+/// FOR SHOW/HIDE COLUMNS BUTTON
+            {
+              extend: 'colvis',
+              text: 'Show/Hide Columns',
+              postfixButtons: [ 'colvisRestore' ]
+            },
+            'copyHtml5'
+        ],
+        columnDefs: [ {visible: false} ],
+        select: true
+    } );
+} );
+
+/// FOR CONFIRMATION BUTTON
+$('[data-toggle=confirmation]').confirmation({
+  rootSelector: '[data-toggle=confirmation]',
+  // other options
+});
+
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+  })
+
+    //Date picker
+    $('#datepicker-bday').datepicker({
+      autoclose: true
+    })  
+
+    $(document).ready(function(){
+    $(".btn-primary").click(function(){
+        $(".collapse").collapse('toggle');
+    });
+    $(".btn-success").click(function(){
+        $(".collapse").collapse('show');
+    });
+    $(".btn-warning").click(function(){
+        $(".collapse").collapse('hide');
+    });
+});
+</script>
+</body>
+</html>
