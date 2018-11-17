@@ -299,7 +299,7 @@
       </ol>
     </section>
 
-    <!-- Main content -->
+<!-- Main content -->
     <section class="content">
 
 <!-- TABLES -->
@@ -320,13 +320,48 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-9"> 
+          <h4><b>Suppliers</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-supplier"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="suppliers" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>Business Name</th>
+                  <th>Business Owner</th>
+                  <th>DTI Expiration Date</th>
+                  <th>Business Permit No</th>
+                  <th>Business Permit Expiration Date</th>
+                  <th>BIR No</th>
+                  <th>Contact No</th>
+                  <th>Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#edit-supplier"><b>Business Name 123</b></a></td>
+                  <td>Erikson Supnet</td>
+                  <td>01/01/2018</td>
+                  <td>123456789</td>
+                  <td>02/02/2018</td>
+                  <td>1234567777</td>
+                  <td>0912345678</td>
+                  <td>Tuguegarao City, Cagayan</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 <!-- /.content-wrapper -->
 
 <!-- MODAL CONTENTS -->
-<!-- EDIT CATEGORY -->
+<!-- edit category -->
         <div class="modal fade" id="edit-category">
           <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -349,14 +384,14 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary pull-right">Update Category</button> &nbsp;
+                <button type="button" class="btn btn-success pull-right">Update Category</button> &nbsp;
                 <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
               </div>
             </div>
           </div>
         </div>
 
-<!-- ADD CATEGORY -->
+<!-- add category -->
         <div class="modal fade" id="create-category">
           <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -384,6 +419,111 @@
             </div>
           </div>
         </div>
+
+<!-- edit supplier -->
+        <div class="modal fade" id="edit-supplier">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Supplier Information</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-4 control-label">Business Name</label>
+                      <div class="col-sm-8"><input type="text" class="form-control" required=""><br></div>
+                      <label class="col-sm-4 control-label">Business Owner</label>
+                      <div class="col-sm-8"><input type="text" class="form-control" required=""><br></div>
+                      <label class="col-sm-4 control-label">DTI Expiration Date</label>
+                      <div class="col-sm-8">
+                        <div class="input-group date">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="form-control pull-right" id="edit-dti-exp" required="">
+                        </div><br> 
+                      </div>
+                      <label class="col-sm-4 control-label">Business Permit No</label>
+                      <div class="col-sm-8"><input type="text" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label" style="padding-top: 0px;">Business Permit Expiration Date</label>
+                      <div class="col-sm-8">
+                        <div class="input-group date">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="form-control pull-right" id="edit-business-exp" required="">
+                        </div><br> 
+                      </div>                      
+                      <label class="col-sm-4 control-label">BIR No</label>
+                      <div class="col-sm-8"><input type="number" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label">Contact No</label>
+                      <div class="col-sm-8"><input type="number" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label">Address</label>
+                      <div class="col-sm-8"><input type="text" class="form-control"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success pull-right">Update Supplier</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- add supplier -->
+        <div class="modal fade" id="create-supplier">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Supplier</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-4 control-label">Business Name</label>
+                      <div class="col-sm-8"><input type="text" class="form-control" required=""><br></div>
+                      <label class="col-sm-4 control-label">Business Owner</label>
+                      <div class="col-sm-8"><input type="text" class="form-control" required=""><br></div>
+                      <label class="col-sm-4 control-label">DTI Expiration Date</label>
+                      <div class="col-sm-8">
+                        <div class="input-group date">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="form-control pull-right" id="datepicker-dti-exp" required="">
+                        </div><br> 
+                      </div>
+                      <label class="col-sm-4 control-label">Business Permit No</label>
+                      <div class="col-sm-8"><input type="text" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label" style="padding-top: 0px;">Business Permit Expiration Date</label>
+                      <div class="col-sm-8">
+                        <div class="input-group date">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="form-control pull-right" id="datepicker-business-exp" required="">
+                        </div><br> 
+                      </div>                      
+                      <label class="col-sm-4 control-label">BIR No</label>
+                      <div class="col-sm-8"><input type="number" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label">Contact No</label>
+                      <div class="col-sm-8"><input type="number" class="form-control"><br></div>
+                      <label class="col-sm-4 control-label">Address</label>
+                      <div class="col-sm-8"><input type="text" class="form-control"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create Supplier</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
@@ -433,7 +573,17 @@
 $(document).ready(function() {
     $('#supply-category').DataTable( {
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      colReorder: true,
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp'
+    } );
+} );
+
+$(document).ready(function() {
+    $('#suppliers').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: false,
       "scrollY": 370,
       "scrollX": true,
       stateSave: true,
@@ -471,21 +621,20 @@ $('[data-toggle=confirmation]').confirmation({
   })
 
     //Date picker
-    $('#datepicker-bday').datepicker({
+    $('#datepicker-dti-exp').datepicker({
       autoclose: true
     })  
+    $('#datepicker-business-exp').datepicker({
+      autoclose: true
+    }) 
+    $('#edit-dti-exp').datepicker({
+      autoclose: true
+    })  
+    $('#edit-business-exp').datepicker({
+      autoclose: true
+    })
 
-    $(document).ready(function(){
-    $(".btn-primary").click(function(){
-        $(".collapse").collapse('toggle');
-    });
-    $(".btn-success").click(function(){
-        $(".collapse").collapse('show');
-    });
-    $(".btn-warning").click(function(){
-        $(".collapse").collapse('hide');
-    });
-});
+
 </script>
 </body>
 </html>
