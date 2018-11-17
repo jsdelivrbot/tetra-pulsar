@@ -801,12 +801,89 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-3"> 
+          <h4><b>Asset Category</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-category"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="asset-category" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr><th>Description</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><a href="#" data-toggle="modal" data-target="#edit-category"><b>Construction Equipment</b></a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
   <!-- /.content-wrapper -->
 
-      <!-- MODAL CONTENTS -->
+<!-- MODAL CONTENTS -->
+<!-- edit category -->
+        <div class="modal fade" id="edit-category">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Asset Category</h4>
+              </div>
+              <div class="modal-body">
+                <!-- Custom Tabs (Pulled to the right) -->
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Asset Category</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Construction Equipment"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Update Category</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- add category -->
+        <div class="modal fade" id="create-category">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Asset Category</h4>
+              </div>
+              <div class="modal-body">
+                <!-- Custom Tabs (Pulled to the right) -->
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Asset Category</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder=""></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- edit department information -->
         <div class="modal fade" id="modal-default">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -915,11 +992,8 @@
                 <!-- nav-tabs-custom -->
               </div>
             </div>
-            <!-- /.modal-content -->
           </div>
-          <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
@@ -989,6 +1063,17 @@ $(document).ready(function() {
     } );
 } );
 
+$(document).ready(function() {
+    $('#asset-category').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      colReorder: true,
+      "scrollY": 200,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp'
+    } );
+} );
+
 /// FOR CONFIRMATION BUTTON
 $('[data-toggle=confirmation]').confirmation({
   rootSelector: '[data-toggle=confirmation]',
@@ -1028,17 +1113,6 @@ $('[data-toggle=confirmation]').confirmation({
       autoclose: true
     })  
 
-    $(document).ready(function(){
-    $(".btn-primary").click(function(){
-        $(".collapse").collapse('toggle');
-    });
-    $(".btn-success").click(function(){
-        $(".collapse").collapse('show');
-    });
-    $(".btn-warning").click(function(){
-        $(".collapse").collapse('hide');
-    });
-});
 </script>
 </body>
 </html>
