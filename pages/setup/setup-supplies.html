@@ -356,6 +356,56 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-3"> 
+          <h4><b>Supply Unit</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-supply-unit"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="supply-unit" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>Supply Unit</th>
+                  <th>Supply Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#edit-supply-unit"><b>Box</b></a></td>
+                  <td>Supply Unit Code 123</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3"> 
+          <h4><b>Receipt Type</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-receipt-type"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="receipt-type" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>Receipt Type</th>
+                  <th>Receipt Type Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#edit-receipt-type"><b>Delivery Receipt (DR)</b></a></td>
+                  <td>Receipt Type Code 123</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </section>
   </div>
 <!-- /.content-wrapper -->
@@ -524,6 +574,140 @@
           </div>
         </div>
 
+<!-- edit supply unit -->
+        <div class="modal fade" id="edit-supply-unit">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Supply Unit</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Unit</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Box"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Code</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Supply Unit Code 123"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Update Supply Unit</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- add supply unit -->
+        <div class="modal fade" id="create-supply-unit">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Supply Unit</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Unit</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Supply Code</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- edit receipt type -->
+        <div class="modal fade" id="edit-receipt-type">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Receipt Type</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Receipt Type</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Delivery Receipt (DR)"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-4 control-label">Receipt Type Code</label>
+                      <div class="col-sm-8">
+                      <input type="text" class="form-control" placeholder="Receipt Type Code 123"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Update Receipt Type</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- add receipt type -->
+        <div class="modal fade" id="create-receipt-type">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Receipt Type</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Receipt Type</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-4 control-label">Receipt Type Code</label>
+                      <div class="col-sm-8">
+                      <input type="text" class="form-control"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>           
+
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
@@ -583,7 +767,26 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#suppliers').DataTable( {
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      colReorder: false,
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp'
+    } );
+} );
+
+$(document).ready(function() {
+    $('#supply-unit').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      "scrollY": 370,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp'
+    } );
+} );
+
+$(document).ready(function() {
+    $('#receipt-type').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
       "scrollY": 370,
       "scrollX": true,
       stateSave: true,

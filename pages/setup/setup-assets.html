@@ -818,6 +818,29 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-3"> 
+          <h4><b>Asset Event</b> &nbsp; 
+          <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create-event"> <li class="fa fa-plus"></li> </button></h4> 
+          <div class="box box-primary">
+            <div class="box-body">
+              <table id="asset-event" class="table table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Event Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#" data-toggle="modal" data-target="#edit-event"><b>Lease</b></a></td>
+                  <td>Event Code 123</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -882,6 +905,73 @@
             </div>
           </div>
         </div>
+
+<!-- edit asset event -->
+        <div class="modal fade" id="edit-event">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Asset Event</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Event Name</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Lease"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Event Code</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder="Asset Code 123"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Update Asset Event</button> &nbsp;
+                <!-- <button type="button" class="btn btn-danger pull-right">Delete</button> --> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- add category -->
+        <div class="modal fade" id="create-event">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Asset Event</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal" id="">
+                  <div class="box-body">
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Event Name</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                      <label class="col-sm-3 control-label">Event Code</label>
+                      <div class="col-sm-9">
+                      <input type="text" class="form-control" placeholder=""></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary pull-right">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>        
 
 <!-- edit department information -->
         <div class="modal fade" id="modal-default">
@@ -1066,7 +1156,16 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#asset-category').DataTable( {
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      colReorder: true,
+      "scrollY": 200,
+      "scrollX": true,
+      stateSave: true,
+      dom: 'ftlp'
+    } );
+} );
+
+$(document).ready(function() {
+    $('#asset-event').DataTable( {
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
       "scrollY": 200,
       "scrollX": true,
       stateSave: true,
